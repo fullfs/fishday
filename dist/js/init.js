@@ -6,6 +6,9 @@ $(function() {
 	// Блок преимуществ
 	new Project.Blocks.Features($('.features'));
 
+	// Кнопка "Наверх"
+	new Project.Blocks.ToTopButton($('.tothetop'));
+
 	
 	// Контроллеры страниц. По конкроллеру на страницу.
 	// Если переданный элемент найдется на странице, то контроллер инициализируется 
@@ -25,4 +28,6 @@ $(function() {
 	new Project.Pages.Subscribe($('.subscribe'));
 	new Project.Pages.MyOrders($('.orderlist'));
 	new Project.Pages.Profile($('.profile'));
+	new Project.Pages.About($('.about'));
+	new Project.Pages.News($('.news'));
 });

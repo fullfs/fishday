@@ -363,4 +363,15 @@ Project.Blocks.Features = Project.extend({
 				});
 		});
 	}
-})
+});
+
+
+
+Project.Blocks.ToTopButton = Project.extend({
+	init: function() {
+		this.$('.tothetop__button').click(function(e) {
+			e.preventDefault();
+			$('html, body').stop().animate({scrollTop: 0}, '500', 'swing');
+		})
+	}
+});

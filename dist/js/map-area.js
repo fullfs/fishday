@@ -4,7 +4,7 @@ function init() {
     var myMap = new ymaps.Map("map-area", {
         center: [55.0329, 82.915],
         zoom: 11,
-        controls: []
+        controls: ['zoomControl']
     });
 
     myMap.behaviors.disable('scrollZoom');

@@ -23,7 +23,7 @@
 	display: inline-block;
 	margin-left: 16px;
 
-	&:first-child {
+	.about__pic-link:first-child & {
 		margin-left: 0;
 	}
 }

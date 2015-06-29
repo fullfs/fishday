@@ -533,3 +533,23 @@ Project.Pages.Profile = Project.extend({
 		}
 	}
 });
+
+
+
+
+// О компании
+Project.Pages.About = Project.extend({
+	init: function() {
+		this.$('.about__pic-link').fancybox();
+	}
+});
+
+
+
+
+// Новости
+Project.Pages.News = Project.extend({
+	init: function() {
+		this.$('.news__pic-link').fancybox();
+	}
+});
