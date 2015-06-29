@@ -1,0 +1,58 @@
+doctype html
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+html 
+	<!--<![endif]-->
+	head
+		include ./includes/head.jade
+
+	body
+		include ./includes/main-menu.jade
+		.page-wrapper
+			include ./includes/header.jade
+
+
+
+			.content
+
+
+
+
+				.breadcrumbs
+
+					a.breadcrumbs__item(href="#") Главная
+
+				h3.content-header Восстановление пароля
+
+
+				
+				.forgot
+					// В этой форме имена полей завязаны на js-валидацию
+					// Если нужно изменить имена полей, то нужно учесть эти изменения в js
+					// Поменять можно в файле pages.js, поиска Project.Pages.PasswordRecovery
+					form.forgot__form
+
+						.forgot__field-wrap
+							span.forgot__field-name Электронная почта
+							input.forgot__field(type="text" name="email")
+
+						.forgot__captcha-wrap
+							img.forgot__captcha(src="images/captcha.png")
+
+						.forgot__field-wrap
+							span.forgot__field-name._star Введите код с картинки
+							// Пример серверной ошибки. Чтобы вывести серверную ошибку нужно добавить класс validation-error
+							// для поля (input) и добавить под ним span c таким же классом, содержащий текст ошибки
+							input.forgot__field.validation-error(type="text" name="captcha")
+							span.validation-error Введенный код не совпадает с картинкой
+
+						.forgot__text Ссылка для восстановления пароля будет отправлена на адрес электронной почты.
+
+						button.forgot__butt(type="submit") восстановить
+
+
+
+
+		include ./includes/footer.jade
+

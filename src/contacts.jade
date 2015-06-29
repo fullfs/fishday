@@ -1,0 +1,89 @@
+doctype html
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+html 
+	<!--<![endif]-->
+	head
+		include ./includes/head.jade
+		script(src="http://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
+		script(src="js/map-location.js" type="text/javascript")
+
+	body
+		include ./includes/main-menu.jade
+		.page-wrapper
+			include ./includes/header.jade
+			
+
+
+
+
+
+			.content
+
+
+
+
+				.breadcrumbs
+
+					a.breadcrumbs__item(href="#") Главная
+					a.breadcrumbs__item(href="#") Компания
+					span.breadcrumbs__item Контакты
+
+				h3.content-header контакты
+
+				ul.company__menu
+
+					li.company__menu-item
+						a.company__menu-link(href="#") о компании
+
+					li.company__menu-item
+						a.company__menu-link(href="#") дисконтная карта
+
+					li.company__menu-item._selected
+						span.company__menu-link новости
+
+					li.company__menu-item
+						a.company__menu-link(href="#") отзывы
+
+					li.company__menu-item
+						a.company__menu-link(href="#") вопрос-ответ
+
+					li.company__menu-item
+						a.company__menu-link(href="#") правовая информация
+
+					li.company__menu-item
+						a.company__menu-link(href="#") контакты
+
+
+
+				.contacts
+
+					p.contacts__header ООО «Рыбный день»
+
+					p.contacts__address 630040 г. Новосибирск, ул.Кубовая, 1
+					p.contacts__phone Тел.: (383) 203-62-52, 203-85-86
+					a.contacts__mail(href="mailto:managers@fishday-nsk.ru") managers@fishday-nsk.ru
+					a.contacts__mail(href="mailto:office@fishday-nsk.ru") <br/>office@fishday-nsk.ru
+					p.contacts__text <br/> По вопросам рекламы просьба отправлять предложения на: <a class="contacts__mail" href="mailto:office@fishday-nsk.ru">fishaday@gmail.com</a>
+
+
+
+			.contacts-map
+				//- img.contacts-map-pic(src="images/contacts-map.png")
+				#map-location
+				
+
+
+
+
+
+
+
+
+
+
+
+
+		include ./includes/footer.jade
+

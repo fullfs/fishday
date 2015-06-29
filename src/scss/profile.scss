@@ -1,0 +1,204 @@
+.profile {
+	background: #262626;
+	padding: 23px 0px 1px 19px;
+	margin-top: 22px;
+	margin-bottom: 10px;
+}
+
+.profile__box {
+	box-sizing: border-box;
+	width: 736px;
+	border: 3px solid #747474;
+	border-radius: 7px;
+	margin-bottom: 22px;
+}
+
+.profile__header {
+	font-weight: bold;
+	color: #ffffff;
+	text-transform: uppercase;
+	font-size: 24px;
+	margin: 19px 0 0px 24px;
+}
+
+.profile__personal-table {
+	padding: 13px 0 21px 20px;
+}
+
+.profile__personal-stroke {
+	height: 43px;
+}
+
+.profile__personal-lcell {
+	width: 210px;
+}
+
+.profile__personal-text {
+	font-family: Arial;
+	font-size: 18px;
+	color: #c6c6c6;
+}
+
+.profile__personal-rcell {
+	width: 265px;
+}
+
+.profile__field {
+	@include input-common;
+	width: 265px;
+	margin-top: 5px;
+}
+
+.profile__select {
+	@include select-common;
+	width: 100%;
+	margin-top: 5px;
+	background-position: 92% 50%;
+}
+
+.profile__butt-wrap {
+	border-top: 1px solid #747474;
+	padding: 13px 0px 15px 234px;
+}
+
+.profile__butt {
+	width: 169px;
+	height: 49px;
+	box-sizing: border-box;
+	border: 0;
+	border-top: 1px solid #d5d5d5;
+	border-bottom: 3px solid #4c4c4c;
+	cursor: pointer;
+	color: #444444;
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: uppercase;
+	background: url('../images/grey-butt.png');
+
+	&:hover {
+		background: url('../images/grey-butt-hover.png');
+		border-top: 1px solid #e6e6e6;
+		border-bottom: 3px solid #707070;
+		color: #914e26;
+	}
+}
+
+.profile__address-table {
+	padding: 10px 0 7px 20px;
+	font-family: Arial;
+}
+
+.profile__address-stroke {
+	height: 35px;
+
+	&:first-child td {
+		vertical-align: bottom;
+	}
+
+	&._body td {
+		padding-bottom: 13px;
+	}
+}
+
+.profile__address-del-cell {
+	width: 29px;
+}
+
+.profile__address-del {
+	width: 12px;
+	height: 12px;
+	background: url('../images/del.png');
+	display: block;
+	margin-top: 8px;
+	margin-left: 8px;
+	cursor: pointer;
+}
+
+.profile__address-street {
+	width: 205px;
+
+	& .profile__field {
+		width: 100%;
+	}
+}
+
+.profile__address-text {
+	font-family: Arial;
+	font-size: 15px;
+	color: #c6c6c6;
+}
+
+.profile__address-house {
+	width: 65px;
+	padding-left: 7px;
+
+	& .profile__field {
+		width: 100%;
+	}
+}
+
+.profile__address-app {
+	width: 65px;
+	padding-left: 7px;
+
+	& .profile__field {
+		width: 100%;
+	}
+}
+
+.profile__address-district {
+	width: 205px;
+	padding-left: 10px;
+}
+
+.profile__address-main {
+	width: 83px;
+	text-align: center;
+	padding-right: 20px;
+	vertical-align: top;
+	padding-top: 14px;
+}
+
+.profile__address-check {
+
+}
+
+.profile__address-add {
+	height: 26px;
+	display: inline-block;
+	cursor: pointer;
+	text-decoration: none;
+	margin-bottom: 38px;
+
+	&:hover .profile__address-add-link:after {
+		border: 0;
+	}
+}
+
+.profile__address-add-pic {
+	background: url('../images/plus.png') no-repeat;
+	display: inline-block;
+	vertical-align: middle;
+	width: 26px;
+	height: 26px;
+	margin-left: 24px;
+	margin-right: 8px;
+}
+
+.profile__address-add-link {
+	color: #e2630a;
+	position: relative;
+	font-size: 18px;
+
+	&:after {
+		position: absolute;
+		content: '';
+		width: 100%;
+		height: 100%;
+		top: 0px;
+		left: 0;
+		border-bottom: 1px solid #e2630a;
+	}
+
+	
+}

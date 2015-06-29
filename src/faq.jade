@@ -1,0 +1,90 @@
+doctype html
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+html 
+	<!--<![endif]-->
+	head
+		include ./includes/head.jade
+
+	body
+		include ./includes/main-menu.jade
+		.page-wrapper
+			include ./includes/header.jade
+
+
+
+
+			.content
+
+
+
+
+				.breadcrumbs
+
+					a.breadcrumbs__item(href="#") Главная
+					a.breadcrumbs__item(href="#") Компания
+					span.breadcrumbs__item Вопрос-ответ
+
+				h3.content-header вопрос-ответ
+
+
+				ul.company__menu 
+
+					li.company__menu-item
+						a.company__menu-link(href="#") о компании
+
+					li.company__menu-item
+						a.company__menu-link(href="#") дисконтная карта
+
+					li.company__menu-item
+						a.company__menu-link(href="#") новости
+
+					li.company__menu-item
+						a.company__menu-link(href="#") отзывы
+
+					li.company__menu-item._selected
+						span.company__menu-link вопрос-ответ
+
+					li.company__menu-item
+						a.company__menu-link(href="#") правовая информация
+
+					li.company__menu-item
+						a.company__menu-link(href="#") контакты
+
+
+				.faq
+
+					.faq__item 
+						.faq__question Я потерял письмо, что делать?
+						.faq__answer Пришлите письмо на bonus@fishday-nsk.ru с просьбой выслать новый пин-код, в письме обязательно укажите номер карты. И мы вам его вышлем.
+
+					.faq__item 
+						.faq__question Я хочу изменить или добавить адрес доставки, как это сделать?
+						.faq__answer Если вы передумали и хотите изменить адрес доставки или добавить еще один, сделать это легко и просто.<br /><br />На любой странице сайта нажмите на ссылку «Вход» (вверху экрана), введите свой логин (е-мейл) и пароль, и войдите в личный кабинет. На вкладке «Мой профиль» вы сможете внести изменения в адреса.<br /><br />Изменения вступят в силу через 5 дней.
+
+					.faq__item 
+						.faq__question Что делать, если после заказа не начислились баллы на карту, или начислилось меньше, чем ожидалось?
+
+						.faq__answer Ну извините!
+
+					.faq__item 
+						.faq__question Я потерял письмо, что делать?
+						.faq__answer Пришлите письмо на bonus@fishday-nsk.ru с просьбой выслать новый пин-код, в письме обязательно укажите номер карты. И мы вам его вышлем.
+
+
+					.faq__item 
+						.faq__question Я хочу изменить или добавить адрес доставки, как это сделать?
+
+						.faq__answer Если вы передумали и хотите изменить адрес доставки или добавить еще один, сделать это легко и просто.<br /><br />На любой странице сайта нажмите на ссылку «Вход» (вверху экрана), введите свой логин (е-мейл) и пароль, и войдите в личный кабинет. На вкладке «Мой профиль» вы сможете внести изменения в адреса.<br /><br />Изменения вступят в силу через 5 дней.
+
+
+
+				include ./includes/paginator.jade
+
+
+
+
+
+		include ./includes/footer.jade
+

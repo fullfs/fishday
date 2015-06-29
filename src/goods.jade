@@ -1,0 +1,137 @@
+doctype html
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+html 
+	<!--<![endif]-->
+	head
+		include ./includes/head.jade
+
+	body
+		include ./includes/main-menu.jade
+		.page-wrapper
+			include ./includes/header.jade
+
+
+
+			.content
+
+
+
+
+				.breadcrumbs
+
+					a.breadcrumbs__item(href="#") Главная
+					a.breadcrumbs__item(href="#") Каталог
+					a.breadcrumbs__item(href="#") Горячее копчение
+					span.breadcrumbs__item Нерка рулет Г/К
+
+				h3.content-header Нерка рулет Г/К
+
+
+				.goods(data-item='{\
+					"img": "images/big-pic.png",\
+					"name": "Нерка рулет Г/К",\
+					"price": "1300.00"\
+				}')
+
+
+					.goods__main
+
+
+						.goods__top
+							// href - самая большая фотка. используется для показа в галлерее
+							// display - фотка, которая показывается на странице на месте главного фото
+							.goods__gallery(data-items='[\
+								{"href": "images/big-pic.png", "display": "images/big-pic.png"},\
+								{"href": "images/small-pic.png", "display": "images/small-pic.png"}\
+							]')
+								.goods__bar-box 
+									img.goods__label(src="images/label-new.png")
+									img.goods__label(src="images/label-hit.png")
+									img.goods__label(src="images/label-promo.png")
+							
+								// Вот тут, если нет фото, то надо к классу рисунка goods__big-pic добавить ещё класс _no-photo
+								// чтобы скрипт не пытался открыть галлерею
+								img.goods__big-pic(src="images/big-pic.png" alt="")
+								.goods__small-gallery
+									span.goods__small-pic-wrap._selected
+										img.goods__small-pic(src="images/big-pic.png" alt="")
+									span.goods__small-pic-wrap
+										img.goods__small-pic(src="images/small-pic.png" alt="")
+
+
+							.goods__info
+								
+								span.goods__art Артикул: 96458
+								.goods__price
+									span.goods__price-main 1300
+									span.goods__price-tenth ,00
+									span.goods__price-text руб./кг
+
+								.goods__price._small
+									span.goods__price-main 1300
+									span.goods__price-tenth ,00
+									span.goods__price-text руб./кг
+								
+								.goods__add-form
+
+									span.goods__add-less
+									input.goods__add-field(type="text" value="0" maxlength="5" data-type="weight")
+									span.goods__add-form-text г
+									span.goods__add-more
+
+								button.goods__add-butt(type="button") В корзину
+								button.goods__buy-butt(type="button") купить в один клик
+
+								.goods__info-separator
+
+								.goods__info-text-block
+									p.goods__info-text Рулет горячего копчения из брюшек нерки.
+									p.goods__info-text._fat Продается целыми рулетами, примерный вес 500-800 г каждый.
+									p.goods__info-text Происхождение рыбы: Россия, о. Сахалин
+									p.goods__info-text Использование при копчении натуральной щепы вишни и высококачественных специй придает нашим копченым продуктам незабываемый вкус.
+
+								.goods__info-separator
+
+								.goods__share
+									span.goods__share-item
+										img(src="images/share-vk.png")
+									span.goods__share-item
+										img(src="images/share-fb.png")
+									span.goods__share-item
+										img(src="images/share-ok.png")
+
+						.goods__bottom
+							
+							.goods__bottom-separator
+
+							.goods__reciepe
+								
+								span.goods__reciepe-header Вкусный рецепт
+								a.goods__reciepe-block(href="#")
+									img.goods__reciepe-pic(src="images/reciepe.png")
+									.goods__reciepe-info
+										p.goods__reciepe-name Рулетики с лососем и сливочным сыром
+										span.goods__reciepe-type Закуски
+
+							.goods__deliver
+								
+								p.goods__deliver-header Доставка и оплата
+								p.goods__deliver-text Доставка по Новосибирску осуществляется бесплатно при заказе от 800 рублей. инимальная сумма заказа для бесплатной доставки зависит от района города.
+								p.goods__deliver-text Оплата производится наличными или банковскими картами курьеру при получении заказа.
+								p.goods__deliver-text <span class="goods__deliver-text _fat">Обратите внимание</span>, так как товар весовой, сумма заказа может немного меняться. Точную сумму заказа вам скажет оператор при подтверждении.
+								p.goods__deliver-text <a href="" class="goods__deliver-link">Подробнее об условиях доставки</a>
+
+
+					include ./includes/recommended.jade
+
+
+
+					.buy-asap-popup(style="display: none")
+						include ./includes/buy-asap-popup.jade
+					
+
+
+
+		include ./includes/footer.jade

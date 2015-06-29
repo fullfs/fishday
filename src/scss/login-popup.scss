@@ -1,0 +1,156 @@
+.login {
+	width: 700px;
+	padding: 27px 0 24px 44px;
+	@include cf;
+	background: #454545;
+	box-sizing: border-box;
+}
+
+.login__left {
+	float: left;
+	width: 336px;
+}
+
+.login__field-wrap {
+	margin-bottom: 30px;
+	position: relative;
+	width: 245px;
+}
+
+.login__field-name {
+	font-size: 18px;
+	color: #cecece;
+}
+
+.login__forgot {
+	color: #cecece;
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	position: absolute;
+	top: 7px;
+	right: 6px;
+
+	&:hover {
+		color: #ffffff;
+		text-decoration: none;
+	}
+}
+
+.login__field {
+	@include input-common;
+	width: 245px;
+	margin-top: 5px;
+}
+
+.login__butt {
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 14px;
+	color: #444444;
+	background: url('../images/grey-butt.png');
+	width: 149px;
+	height: 45px;
+	margin-top: -9px;
+	border: 0;
+	box-shadow: 0px 3px 1px 0px #4c4c4c;
+	cursor: pointer;
+
+	&:hover {
+		color: #914e26;
+		box-shadow: 0px 3px 1px 0px #707070;
+		background: url('../images/grey-butt-hover.png');
+	}
+}
+
+.login__right {
+	float: left;
+	width: 320px;
+}
+
+.login__register {
+	margin-top: 19px;
+	display: block;
+	font-size: 22px;
+	color: #cecece;
+
+	&:hover {
+		text-decoration: none;
+		color: #ffffff;
+	}
+}	
+
+.login__vk {
+	width: 269px;
+	height: 52px;
+	background: #507195;
+	border-bottom: 3px solid #2f4359;
+	cursor: pointer;
+	margin-top: 36px;
+
+	&:hover {
+		background: url('../images/viavk-hover.png');
+		border-bottom: 3px solid #53759a;
+	}
+}
+
+.login__vk-pic {
+	display: inline-block;
+	vertical-align: top;
+	width: 16px;
+	height: 18px;
+	background: url('../images/viavk-pic.png');
+	margin: 18px 12px 0 19px;
+}
+
+.login__vk-text {
+	vertical-align: top;
+	display: inline-block;
+	color: #ffffff;
+	border-left: 2px solid #ffffff;
+	height: 36px;
+	font-weight: bold;
+	font-size: 14px;
+	text-transform: uppercase;
+	box-sizing: border-box;
+	margin-top: 9px;
+	padding-top: 11px;
+	padding-left: 16px;
+}
+
+.login__fb {
+	width: 269px;
+	height: 52px;
+	background: #4a66a0;
+	border-bottom: 3px solid #32466d;
+	cursor: pointer;
+	margin-top: 22px;
+
+	&:hover {
+		background: url('../images/viafb-hover.png');
+		border-bottom: 3px solid #3e5585;
+	}
+}
+
+.login__fb-pic {
+	display: inline-block;
+	vertical-align: top;
+	width: 13px;
+	height: 24px;
+	background: url('../images/viafb-pic.png');
+	margin: 16px 14px 0 19px;
+}
+
+.login__fb-text {
+	vertical-align: top;
+	display: inline-block;
+	color: #ffffff;
+	border-left: 2px solid #ffffff;
+	height: 36px;
+	font-weight: bold;
+	font-size: 14px;
+	text-transform: uppercase;
+	box-sizing: border-box;
+	margin-top: 9px;
+	padding-top: 11px;
+	padding-left: 16px;
+}

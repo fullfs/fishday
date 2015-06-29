@@ -1,0 +1,150 @@
+doctype html
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+html 
+	<!--<![endif]-->
+	head
+		include ./includes/head.jade
+
+	body
+		include ./includes/main-menu.jade
+		.page-wrapper
+			include ./includes/header.jade
+
+
+
+
+
+			.content
+
+
+
+
+				.breadcrumbs
+
+					a.breadcrumbs__item(href="#") Главная
+					span.breadcrumbs__item Рецепты
+
+				h3.content-header рецепты
+
+
+				ul.company__menu
+
+					li.company__menu-item
+						a.company__menu-link(href="#") завтраки
+
+					li.company__menu-item
+						a.company__menu-link(href="#") закуски
+
+					li.company__menu-item
+						a.company__menu-link(href="#") салаты
+
+					li.company__menu-item
+						a.company__menu-link(href="#") супы
+
+					li.company__menu-item._selected
+						span.company__menu-link основные блюда
+
+					li.company__menu-item
+						a.company__menu-link(href="#") сэндвичи
+
+					li.company__menu-item
+						a.company__menu-link(href="#") низкокалорийное
+
+					li.company__menu-item
+						a.company__menu-link(href="#") детское меню
+
+					li.company__menu-item
+						a.company__menu-link(href="#") пикник
+
+
+
+				a.content__back(href="#") к списку рецептов
+
+
+				.reciepe
+
+					.reciepe__top
+
+						.reciepe__pic-wrap
+							img.reciepe__pic(src="images/reciepe-big-pic.png")
+
+						.reciepe__info
+
+							.reciepe__name Сибас, запеченный в фольге
+							.reciepe_cat-block
+								.reciepe__cat Основные блюда
+								.reciepe__subcat Испанская кухня
+
+							.reciepe__specials
+
+								.reciepe__specials-item._portions
+									span.reciepe__specials-pic
+									span.reciepe__specials-text на 2 пории
+
+								.reciepe__specials-item._time
+									span.reciepe__specials-pic
+									span.reciepe__specials-text 20 минут
+
+								.reciepe__specials-item._level
+									span.reciepe__specials-pic
+									span.reciepe__specials-text Очень просто
+
+							.reciepe__specials-separator
+
+							.reciepe__ingredients
+								.reciepe__ingredients-header Ингредиенты:
+									ul.reciepe__ingredients-list
+
+										li.reciepe__ingredients-item
+											span.reciepe__ingredients-name Сибас
+											span.reciepe__ingredients-measure 2 шт.
+
+										li.reciepe__ingredients-item
+											span.reciepe__ingredients-name Лимон
+											span.reciepe__ingredients-measure 1 шт.
+
+										li.reciepe__ingredients-item
+											span.reciepe__ingredients-name Масло оливковое extra virgin
+											span.reciepe__ingredients-measure 1 ст. л.
+
+										li.reciepe__ingredients-item
+											span.reciepe__ingredients-name Соль, перец черный
+											span.reciepe__ingredients-measure по вкусу
+
+
+					.reciepe__process
+
+						p.reciepe__process-header Процесс
+
+						ol.reciepe__process-list
+
+							li.reciepe__process-item
+								p.reciepe__process-item-text Почистить рыбу, вымыть, высушить бумажными салфетками.<br />Сделать по 2–3 продольных надреза с каждой стороны тушки.
+
+							li.reciepe__process-item
+								p.reciepe__process-item-text Рыбу посолить. Смазать маслом. В полученные надрезы положить половинки долек лимона.
+
+							li.reciepe__process-item
+								p.reciepe__process-item-text Духовку разогреть до 210 градусов.<br />Обернуть сибас в двойной слой фольги и очень хорошо завернуть края ограничив доступ воздуха.
+
+							li.reciepe__process-item
+								p.reciepe__process-item-text Положите в духовку на 20 минут. В момент закладки температуру убавьте до 180 градусов.
+
+						.reciepe__separator
+
+					.reciepe__share
+						span.reciepe__share-item
+							img(src="images/share-vk.png")
+						span.reciepe__share-item
+							img(src="images/share-fb.png")
+						span.reciepe__share-item
+							img(src="images/share-ok.png")
+
+
+
+
+
+		include ./includes/footer.jade
+

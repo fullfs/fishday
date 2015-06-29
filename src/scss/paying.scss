@@ -1,0 +1,307 @@
+.paying-map {
+	// position: absolute;
+	// left: 0;
+	// right: 0;
+	// width: 100%;
+	// top: 119px;
+	// z-index: 2;
+	margin-bottom: -10px;
+
+	#map-area {
+		width: 100%;
+		height: 500px;
+	}
+}
+
+.paying {
+	// margin-top: 531px;
+}
+
+.paying__top-bg {
+	background: #262626;
+	margin-bottom: 22px;
+}
+
+.paying__orders {
+	text-align: center;
+	padding-bottom: 52px;
+}
+
+.paying__orders-text {
+	padding-top: 26px;
+	font-size: 24px;
+	font-weight: bold;
+	color: #ffffff;
+	display: block;
+	text-transform: uppercase;
+}
+
+.paying__orders-time {
+	font-weight: bold;
+	font-size: 60px;
+	color: #ffffff;
+	position: relative;
+	display: block;
+	height: 60px;
+}
+
+.paying__time-num {
+	position: absolute;
+	margin-right: 50px;
+
+	&._left {
+		left: 267px;
+	}
+
+	&._right {
+		left: 407px;
+	}
+
+	&:after {
+		position: absolute;
+		content: '00';
+		top: 7px;
+		right: -39px;
+		font-size: 33px;
+	}
+}
+
+.paying__time-text {
+	font-weight: bold;
+	font-size: 60px;
+	color: #ffffff;
+	position: absolute;
+	left: 359px;
+}
+
+.paying__size {
+	width: 200px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.paying__size._med {
+
+	margin-left: 20px;
+	margin-right: 70px;
+
+	& .paying__size-bg {
+		background: url('../images/round-y.png');
+	}
+
+}
+
+.paying__size._min {
+
+	margin-right: 70px;
+
+	& .paying__size-bg {
+		background: url('../images/round-g.png');
+	}
+
+	& .paying__size-text {
+		font-size: 14px;
+	}
+
+}
+
+.paying__size._max {
+
+	& .paying__size-bg {
+		background: url('../images/round-r.png');
+	}
+
+}
+
+.paying__size-bg {
+	height: 200px;
+	text-align: center;
+	text-transform: uppercase;
+	margin-bottom: 26px;
+}
+
+.paying__top-text {
+	padding-top: 44px;
+	width: 114px;
+	display: block;
+	margin: auto;
+	font-weight: bold;
+	color: #ffffff;
+	font-size: 14px;
+}
+
+.paying__summ {
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 48px;
+	display: block;
+}
+
+.paying__bottom-text {
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.paying__size-text {
+	text-align: center;
+	color: #ffffff;
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 11px;
+	text-transform: uppercase;
+	padding-bottom: 5px;
+	line-height: 16px;
+}
+
+.paying__features {
+	@include gradient-v(#fec400, #fc9400);
+	width: 100%;
+	height: 83px;
+	margin-top: 12px;
+	margin-bottom: 13px;
+	border-bottom: 1px solid #c18a3e;
+}
+
+.paying__feature-item {
+	display: inline-block;
+	width: 261px;
+	position: relative;
+	height: 100%;
+	line-height: 82px;
+
+	&:after{
+		position: absolute;
+		content: '';
+		width: 1px;
+		height: 62px;
+		top: 11px;
+		right: 2px;
+		background: #ca8700;
+		border-left: 1px solid #fec94d;
+		border-right: 1px solid #fec94d;
+	}
+
+	& + & {
+		width: 262px;
+	}
+
+	& + & + & {
+		width: 249px;
+		&:after {
+			content: '';
+			width: 0;
+			height: 0;
+		}
+	}
+
+}
+
+.paying__feature-pic {
+
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 13px;
+
+	&._deliver {
+		width: 48px;
+		height: 43px;
+		background: url('../images/feature1.png');
+		margin-left: 30px;
+		margin-top: 18px;
+	}
+
+	&._cash {
+		width: 48px;
+		height: 42px;
+		background: url('../images/feature2.png');	
+		margin-left: 32px;
+		margin-top: 20px;
+	}
+
+	&._discount {
+		width: 48px;
+		height: 48px;
+		background: url('../images/feature3.png');
+		margin-left: 27px;
+		margin-top: 19px;
+	}
+
+}
+
+.paying__feature-text {
+	display: inline-block;
+	vertical-align: middle;
+	color: #000000;
+	font-size: 17px;
+	line-height: 17px;
+	font-weight: bold;
+}
+
+.paying__bottom-bg {
+	background: #262626;
+}
+
+.paying__condition {
+	padding: 25px 30px 30px 23px;
+	text-align: center;
+	margin-top: 12px;
+}
+
+.paying__condition-header {
+	color: #e67629;
+	text-decoration: none;
+	border-bottom: 1px dashed #e67629;
+	font-weight: bold;
+	font-size: 20px;
+	cursor: pointer;
+
+	&:hover {   
+		color: #de960a;
+		border: 0;
+	} 
+}
+
+.paying__condition-text-wrapper {
+	text-align: left;
+	margin-top: 25px;
+	display: none;
+}
+
+.paying__condition-text {
+	color: #d2d2d2;
+	font-size: 14px;
+	font-family: Arial;
+	line-height: 17px;
+	margin-bottom: 16px;
+}
+
+.paying__condition-close {
+	margin-top: 28px;
+	display: none;
+}
+
+.paying__condition-close-link {
+
+	cursor: pointer;
+	position: relative;
+	color: #e67629;
+	font-size: 14px;
+	font-family: Arial;
+	border-bottom: 1px dashed #e67629;
+
+	&:hover {
+		border: 0;
+		color: #de960a;
+	}
+
+	&:after {
+		content: '';
+		width: 8px;
+		height: 5px;
+		background: url('../images/paying-arr.png');
+		position: absolute;
+		top: -7px;
+		left: 24px;
+	}
+}

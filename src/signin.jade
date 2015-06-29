@@ -1,0 +1,122 @@
+doctype html
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+html 
+	<!--<![endif]-->
+	head
+		include ./includes/head.jade
+
+	body
+		include ./includes/main-menu.jade
+		.page-wrapper
+			include ./includes/header.jade
+
+
+
+
+			.content
+
+
+
+
+				.breadcrumbs
+
+					a.breadcrumbs__item(href="#") Главная
+					span.breadcrumbs__item корзина
+
+				h3.content-header Оформление заказа
+
+
+				.signin
+
+
+					.signin__forms-wrapper
+
+
+
+						.signin__old
+							
+							span.signin__header уже заказывали?
+							p.signin__header-text Если вы регистрировались, введите свои данные в соответствующие поля:
+
+							form.signin__form
+
+								.signin__field-wrap
+									span.signin__field-name Электронная почта:
+									input.signin__field(type="text" name="email")
+								
+								.signin__field-wrap
+									span.signin__field-name Пароль
+									a.signin__forgot(href="#") Забыли пароль?
+									input.signin__field(type="password" name="password")
+
+								button.signin__butt Продолжить оформление
+
+							.signin__vk
+								span.signin__vk-pic
+								span.signin__vk-text войти через вконтакте
+
+							.signin__fb
+								span.signin__fb-pic
+								span.signin__fb-text войти через facebook
+
+
+
+
+
+						.signin__new
+
+							span.signin__header Для новых покупателей
+							p.signin__header-text Зарегистрированные покупатели участвуют в <a href="#" class="signin__link">бонусной программе</a>
+
+							// В этой форме имена полей завязаны на js-валидацию
+							// Если нужно изменить имена полей, то нужно учесть эти изменения в js
+							// Поменять можно в файле pages.js, поиска Project.Pages.CartProceedSignIn
+							form.signin__new-form
+
+								.signin__field-wrap
+									span.signin__field-name._star Имя
+									input.signin__field(type="text" name="firstname")
+
+								.signin__field-wrap
+									span.signin__field-name._star Фамилия
+									input.signin__field(type="text" name="lastname")
+
+								.signin__field-wrap
+									span.signin__field-name._star Электронная почта
+									// Пример серверной ошибки. Чтобы вывести серверную ошибку нужно добавить класс validation-error
+									// для поля (input) и добавить под ним span c таким же классом, содержащий текст ошибки
+									input.signin__field.validation-error(type="text" name="email")
+									span.validation-error Этот адрес уже зарегистрирован
+
+								.signin__field-wrap
+									span.signin__field-name._star Пароль
+									input.signin__field(type="text" name="password")
+
+								.signin__field-wrap
+									span.signin__field-name._star Подтверждение пароля
+									input.signin__field(type="text" name="confirm_password")
+
+								.signin__captcha
+									img.signin__captcha-img(src="images/captcha.png")
+
+								.signin__field-wrap
+									span.signin__field-name._star Введите код с картинки
+									input.signin__field(type="text" name="captcha")
+
+								button.signin__butt(type="submit") Продолжить оформление
+
+
+					p.signin__text Символом "звездочка" (<span class="signin__text _red">*</span>) отмечены обязательные для заполнения поля.
+
+					p.signin__text После регистрации вы получите информационное письмо.
+
+					p.signin__text Личные сведения, полученные в распоряжение интернет-магазина при регистрации или каким-либо иным образом, не будут без разрешения пользователей передаваться третьим организациям и лицам за исключением ситуаций, когда этого требует закон или судебное решение.
+
+
+					
+
+		include ./includes/footer.jade
+
+

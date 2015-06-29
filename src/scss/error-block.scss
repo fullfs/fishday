@@ -1,0 +1,36 @@
+.error-block {
+	margin-top: 17px;
+	padding: 34px 70px 70px 33px;
+	background: #262626;
+}
+
+	.error-block__header {
+		font-weight: bold;
+		text-transform: uppercase;
+		color: #ce283f;
+		font-size: 20px;
+		margin-bottom: 23px;
+	}
+
+	.error-block__text {
+		font-size: 14px;
+		font-family: Arial;
+		color: #cecece;
+	}
+
+	.error-block__link {
+		color: #e2630a;
+		font-size: 15px;
+		display: inline-block;
+		margin-top: 57px;
+
+		&._big {
+			font-size: 18px;
+			margin-right: 53px;
+		}
+
+		&:hover {
+			color: #de960a;
+			text-decoration: none;
+		}
+	}

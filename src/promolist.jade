@@ -1,0 +1,145 @@
+doctype html
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+html 
+	<!--<![endif]-->
+	head
+		include ./includes/head.jade
+
+	body
+		include ./includes/main-menu.jade
+		.page-wrapper
+			include ./includes/header.jade
+
+
+
+
+
+			.content
+
+
+
+
+				.breadcrumbs
+
+					a.breadcrumbs__item(href="#") Главная
+					span.breadcrumbs__item Акции
+
+				h3.content-header Акции
+
+
+				
+				.promolist
+
+					div.promolist__list
+
+
+						div.promolist__row
+
+							div.promolist__item._active
+								a.promolist__link(href="#")
+									img.promolist__pic(src="images/promo.png")
+									.promolist__bottom
+										.promolist__name -10% на все по четвергам
+
+								.promolist__description.
+									Контент модального окна
+
+							div.promolist__item._active
+								a.promolist__link(href="#")
+									img.promolist__pic(src="images/promo.png")
+									.promolist__bottom
+										.promolist__name Доступный лосось
+
+								// Контент для модального окна выводить вот в эти блоки (promolist__description)
+								.promolist__description.
+									Свежий улов дальневосточной горбуши для вашего любимого<br>
+									блюда — гриля, запекания, жарки или ухи.<br><br>
+									Поддержи отечественного производителя!
+
+							div.promolist__item
+								a.promolist__link(href="#")
+									.promolist__unactive-pic
+									img.promolist__pic(src="images/promo.png")
+									.promolist__bottom
+										.promolist__name -10% на все по четвергам и вообще, это очень длинное название для примера
+
+								.promolist__description.
+									Контент модального окна
+
+						div.promolist__row
+
+							div.promolist__item
+								a.promolist__link(href="#")
+									.promolist__unactive-pic
+									img.promolist__pic(src="images/promo.png")
+									.promolist__bottom
+										.promolist__name -10% на все по четвергам
+
+								.promolist__description.
+									Контент модального окна
+
+							div.promolist__item
+								a.promolist__link(href="#")
+									.promolist__unactive-pic
+									img.promolist__pic(src="images/promo.png")
+									.promolist__bottom
+										.promolist__name -10% на все по четвергам и вообще, это очень длинное название для примера
+
+								.promolist__description.
+									Контент модального окна
+
+							div.promolist__item
+								a.promolist__link(href="#")
+									.promolist__unactive-pic
+									img.promolist__pic(src="images/promo.png")
+									.promolist__bottom
+										.promolist__name -10% на все по четвергам
+
+								.promolist__description.
+									Контент модального окна
+
+						div.promolist__row
+
+							div.promolist__item
+								a.promolist__link(href="#")
+									.promolist__unactive-pic
+									img.promolist__pic(src="images/promo.png")
+									.promolist__bottom
+										.promolist__name -10% на все по четвергам
+
+								.promolist__description.
+									Контент модального окна
+
+
+							div.promolist__item
+								a.promolist__link(href="#")
+									.promolist__unactive-pic
+									img.promolist__pic(src="images/promo.png")
+									.promolist__bottom
+										.promolist__name -10% на все по четвергам и вообще, это очень длинное название для примера
+
+								.promolist__description.
+									Контент модального окна
+
+
+							div.promolist__item
+								a.promolist__link(href="#")
+									.promolist__unactive-pic
+									img.promolist__pic(src="images/promo.png")
+									.promolist__bottom
+										.promolist__name -10% на все по четвергам
+
+								.promolist__description.
+									Контент модального окна
+
+
+
+					include ./includes/paginator.jade
+
+
+
+
+		include ./includes/footer.jade
+

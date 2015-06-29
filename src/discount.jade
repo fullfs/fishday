@@ -1,0 +1,85 @@
+doctype html
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+html 
+	<!--<![endif]-->
+	head
+		include ./includes/head.jade
+
+	body
+		include ./includes/main-menu.jade
+		.page-wrapper
+			include ./includes/header.jade
+
+
+
+
+
+			.content
+
+
+
+
+				.breadcrumbs
+
+					a.breadcrumbs__item(href="#") Главная
+					a.breadcrumbs__item(href="#") Компания
+					span.breadcrumbs__item Дисконтная карта
+
+				h3.content-header дисконтная карта
+
+
+				ul.company__menu 
+
+					li.company__menu-item
+						a.company__menu-link(href="#") о компании
+
+					li.company__menu-item._selected
+						span.company__menu-link дисконтная карта
+
+					li.company__menu-item
+						a.company__menu-link(href="#") новости
+
+					li.company__menu-item
+						a.company__menu-link(href="#") отзывы
+
+					li.company__menu-item
+						a.company__menu-link(href="#") вопрос-ответ
+
+					li.company__menu-item
+						a.company__menu-link(href="#") правовая информация
+
+					li.company__menu-item
+						a.company__menu-link(href="#") контакты
+
+
+				.discount
+
+					.discount__header Дисконтная карта<br /> «Рыбный день»
+
+					.discount__sequence
+
+						.discount__step
+							.discount__step-pic._first
+							.discount__step-name Регистрируйтесь на сайте
+						.discount__arr._first 
+						.discount__step
+							.discount__step-pic._second
+							.discount__step-name Получите карту<br />с первым заказом
+						.discount__arr._second
+						.discount__step
+							.discount__step-pic._third
+							.discount__step-name экономьте при заказах и в магазине
+
+					.discount__text При первом заказе вам будет выдана дисконтная карта, позволяющая экономить не только при заказах через сайт, но и при покупках во всех магазинах сети «Рыбный день»
+
+					.discount__link-wrap 
+						a.discount__link(href="#") Соглашение об условиях выдачи<br />и порядке использования дисконтных карт
+				
+
+
+
+
+		include ./includes/footer.jade
+

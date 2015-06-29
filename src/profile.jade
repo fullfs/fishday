@@ -1,0 +1,175 @@
+doctype html
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+html 
+	<!--<![endif]-->
+	head
+		include ./includes/head.jade
+
+	body
+		include ./includes/main-menu.jade
+		.page-wrapper
+			include ./includes/header.jade
+
+
+
+
+
+			.content
+
+
+
+
+				.breadcrumbs
+
+					a.breadcrumbs__item(href="#") Главная
+					a.breadcrumbs__item(href="#") Мой счет
+					span.breadcrumbs__item Мой профиль
+				h3.content-header Мой профиль
+
+				ul.company__menu
+
+					li.company__menu-item
+						a.company__menu-link(href="#") мой профиль
+
+					li.company__menu-item
+						a.company__menu-link(href="#") мои заказы
+
+					li.company__menu-item._selected
+						span.company__menu-link подписка
+
+					li.company__menu-item
+						a.company__menu-link(href="#") выйти
+
+					
+				
+				.profile
+
+					.profile__box
+
+						.profile__header персональные данные
+
+						table.profile__personal-table
+							tr.profile__personal-stroke
+								td.profile__personal-lcell 
+									p.profile__personal-text Фамилия
+								td.profile__personal-rcell
+									input.profile__field(type="text")
+							tr.profile__personal-stroke
+								td.profile__personal-lcell 
+									p.profile__personal-text Имя
+								td.profile__personal-rcell
+									input.profile__field(type="text")
+							tr.profile__personal-stroke
+								td.profile__personal-lcell 
+									p.profile__personal-text Отчество
+								td.profile__personal-rcell
+									input.profile__field(type="text")
+							tr.profile__personal-stroke
+								td.profile__personal-lcell 
+									p.profile__personal-text Дата рождения
+								td.profile__personal-rcell
+									input.profile__field(type="text" placeholder="дд.мм.гггг")
+							tr.profile__personal-stroke
+								td.profile__personal-lcell 
+									p.profile__personal-text Телефон
+								td.profile__personal-rcell
+									input.profile__field(type="text" placeholder="+7 (___) ___-__-__")
+							tr.profile__personal-stroke
+								td.profile__personal-lcell 
+									p.profile__personal-text Электронная почта
+								td.profile__personal-rcell
+									input.profile__field(type="text")
+
+						.profile__butt-wrap
+							button.profile__butt(type="submit") СОХРАНИТЬ
+
+
+					.profile__box
+
+						.profile__header адреса доставки
+
+						table.profile__address-table
+							tr.profile__address-stroke._head
+								td.profile__address-del-cell
+								td.profile__address-street
+									p.profile__address-text Улица
+								td.profile__address-house
+									p.profile__address-text Дом
+								td.profile__address-app
+									p.profile__address-text Квартира
+								td.profile__address-district
+									p.profile__address-text Район
+								td.profile__address-main
+									p.profile__address-text Основной
+
+							tr.profile__address-stroke._body
+								td.profile__address-del-cell
+									span.profile__address-del
+								td.profile__address-street
+									input.profile__field(type="text" name="address[0]street" value="Советская")
+								td.profile__address-house
+									input.profile__field(type="text" name="address[0]building" value="16")
+								td.profile__address-app
+									input.profile__field(type="text" name="address[0]flat" value="24")
+								td.profile__address-district
+									select.profile__select(name="address[0]district")
+										option(value="") Центральный
+										option(value="") Ленинский
+								td.profile__address-main
+									input.profile__check(type="checkbox" name="address[0]main" checked="true")
+
+						a.profile__address-add(href="#")
+							span.profile__address-add-pic
+							span.profile__address-add-link Добавить адрес
+
+						.profile__butt-wrap
+							button.profile__butt(type="submit") СОХРАНИТЬ
+
+
+					.profile__box
+
+						.profile__header дисконтная карта
+
+						table.profile__personal-table
+							tr.profile__personal-stroke
+								td.profile__personal-lcell 
+									p.profile__personal-text Номер карты
+								td.profile__personal-rcell
+									input.profile__field(type="text")
+
+						.profile__butt-wrap
+							button.profile__butt(type="submit") СОХРАНИТЬ
+
+
+					.profile__box
+
+						.profile__header смена пароля
+
+						table.profile__personal-table
+							tr.profile__personal-stroke
+								td.profile__personal-lcell 
+									p.profile__personal-text Текущий пароль
+								td.profile__personal-rcell
+									input.profile__field(type="text")
+							tr.profile__personal-stroke
+								td.profile__personal-lcell 
+									p.profile__personal-text Новый пароль
+								td.profile__personal-rcell
+									input.profile__field(type="text")
+							tr.profile__personal-stroke
+								td.profile__personal-lcell 
+									p.profile__personal-text Повтор нового пароля
+								td.profile__personal-rcell
+									input.profile__field(type="text")
+
+						.profile__butt-wrap
+							button.profile__butt(type="submit") СОХРАНИТЬ
+
+				
+
+
+
+		include ./includes/footer.jade
+

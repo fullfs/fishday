@@ -1,0 +1,15 @@
+span.validation-error {
+	position: absolute;
+	bottom: -18px;
+	width: 100%;
+	left: 0;
+	text-align: center;
+	color: #ea2f48;
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	line-height: 12px;
+}
+
+input.validation-error {
+	background-color: #ff9999;
+}

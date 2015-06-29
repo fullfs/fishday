@@ -1,0 +1,11 @@
+В сборку включены следующие модули:
+Core
+Widget
+Mouse
+Position
+
+Draggaboe
+Resizeable
+
+Button
+Dialog

@@ -1,0 +1,141 @@
+doctype html
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+html 
+	<!--<![endif]-->
+	head
+		include ./includes/head.jade
+
+	body
+		include ./includes/main-menu.jade
+		.page-wrapper
+			include ./includes/header.jade
+
+			.content
+
+				.index-page
+					.index-page__slider
+						.index-page__slider-inner._raw(data-interval="5000")
+							div
+								img(src="images/slider1.png")
+							div
+								img(src="images/slider1.png")
+							div
+								img(src="images/slider1.png")
+
+
+					include ./includes/features.jade
+
+					ul.index-page__food
+						li.index-page__food-item
+							a.index-page__food-link(href="#")
+								h2.index-page__food-label Икра
+								img.index-page__food-pic(src="images/caviar.png")
+
+
+						li.index-page__food-item
+							a.index-page__food-link(href="#")
+								h2.index-page__food-label Морепродукты
+								img.index-page__food-pic(src="images/caviar.png")
+
+
+						li.index-page__food-item
+							a.index-page__food-link(href="#")
+								h2.index-page__food-label Охлажденная рыба
+								img.index-page__food-pic(src="images/caviar.png")
+
+
+						li.index-page__food-item
+							a.index-page__food-link(href="#")
+								h2.index-page__food-label Замороженная рыба
+								img.index-page__food-pic(src="images/caviar.png")
+
+						li.index-page__food-item
+							a.index-page__food-link(href="#")
+								h2.index-page__food-label Горячее копчение
+								img.index-page__food-pic(src="images/caviar.png")
+
+						li.index-page__food-item
+							a.index-page__food-link(href="#")
+								h2.index-page__food-label Холодное копчение
+								img.index-page__food-pic(src="images/caviar.png")
+
+						li.index-page__food-item
+							a.index-page__food-link(href="#")
+								h2.index-page__food-label Слабосоленая
+								img.index-page__food-pic(src="images/caviar.png")
+
+						li.index-page__food-item
+							a.index-page__food-link(href="#")
+								h2.index-page__food-label Вяленая
+								img.index-page__food-pic(src="images/caviar.png")
+
+						li.index-page__food-item
+							a.index-page__food-link(href="#")
+								h2.index-page__food-label Кулинария
+								img.index-page__food-pic(src="images/caviar.png")
+
+						li.index-page__food-item
+							a.index-page__food-link(href="#")
+								h2.index-page__food-label Полуфабрикаты
+								img.index-page__food-pic(src="images/caviar.png")
+
+						li.index-page__food-item
+							a.index-page__food-link(href="#")
+								h2.index-page__food-label Пресервы
+								img.index-page__food-pic(src="images/caviar.png")
+
+						li.index-page__food-item
+							a.index-page__food-link(href="#")
+								h2.index-page__food-label Снеки
+								img.index-page__food-pic(src="images/caviar.png")
+
+						li.index-page__food-item
+							a.index-page__food-link(href="#")
+								h2.index-page__food-label Приправы
+								img.index-page__food-pic(src="images/caviar.png")
+
+
+
+					include ./includes/recommended.jade
+
+
+							
+			.index-page__review
+				.index-page__review-inner
+					.index-page__review-head
+						span.index-page__review-title отзывы
+						span.index-page__review-all
+							a.index-page__review-link(href="#") Все отзывы
+
+					.index-page__review-list
+
+						.index-page__review-item
+							.index-page__review-item-name Сергей
+							.index-page__review-item-text Покупал свежую форель! За пять минут порезали на стейки и упаковали! Ассортимент огромный! Лучше Камшата и дешевле!
+						
+						.index-page__review-item
+							.index-page__review-item-name Андрей
+							.index-page__review-item-text Все очень свежее и вкусное (хожу туда года два). Очереди в выходные просто жуть, но я думаю, что это плюс Рыбного дня — свидетельствует об отличном качестве продукции.
+
+						.index-page__review-item
+							.index-page__review-item-name Ксения
+							.index-page__review-item-text Замечательный магазин для поклонников рыбной продукции). Не могу мимо пройти никогда. Захожу за чем-нибудь определённым, выхожу с парой пакетов). Да, у них имеется в продаже кальмары, порезанные тонкой соломкой, вроде бы называется ,,Пикантный"). А его редко где встретишь в городе)
+
+					.index-page__post
+
+						form.index-page__post-form
+							
+							.index-page__post-mini-wrap
+								input.index-page__post-name(type="text" placeholder="Ваше имя")
+								input.index-page__post-mail(type="text" placeholder="E-mail")
+							.index-page__post-triangle
+								textarea.index-page__post-text
+							input.index-page__post-butt(type="submit" value="ОСТАВИТЬ ОТЗЫВ")
+
+
+
+
+
+		include ./includes/footer.jade

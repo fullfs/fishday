@@ -1,0 +1,89 @@
+doctype html
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+html 
+	<!--<![endif]-->
+	head
+		include ./includes/head.jade
+
+	body
+		include ./includes/main-menu.jade
+		.page-wrapper
+			include ./includes/header.jade
+
+
+
+
+			.content
+
+
+
+
+				.breadcrumbs
+
+					a.breadcrumbs__item(href="#") Главная
+					a.breadcrumbs__item(href="#") Мой счет
+					a.breadcrumbs__item Подписка
+
+				h3.content-header подписка
+
+				ul.company__menu
+
+					li.company__menu-item
+						a.company__menu-link(href="#") мой профиль
+
+					li.company__menu-item
+						a.company__menu-link(href="#") мои заказы
+
+					li.company__menu-item._selected
+						span.company__menu-link(href="#") подписка
+
+					li.company__menu-item
+						a.company__menu-link(href="#") выйти
+
+					
+				
+				.subscribe
+
+					.subscribe__wrapper
+
+						p.subscribe__header Настройка подписки
+
+						// В этой форме имена полей завязаны на js-валидацию
+						// Если нужно изменить имена полей, то нужно учесть эти изменения в js
+						// Поменять можно в файле pages.js, поиска Project.Pages.Subscribe
+						form.subscribe__form
+
+							.subscribe__field-wrap._email
+								span.subscribe__theme Электронная почта
+								input.subscribe__field(type="text" name="email")
+
+							.subscribe__field-wrap
+								span.subscribe__theme Темы
+								label.subscribe__label
+									input.subscribe__check(type="checkbox")
+									span.subscribe__check-text Новости
+								label.subscribe__label
+									input.subscribe__check(type="checkbox")
+									span.subscribe__check-text Акции
+
+							.subscribe__field-wrap
+								span.subscribe__theme
+								label.subscribe__label
+									input.subscribe__check(type="checkbox")
+									span.subscribe__check-text Я хочу получать рассылку по E-mail
+
+							.subscribe__separator
+
+							.subscribe__field-wrap
+								span.subscribe__theme
+								button.subscribe__button(type="submit") Сохранить
+
+					
+
+
+
+
+		include ./includes/footer.jade
+

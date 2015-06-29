@@ -1,0 +1,58 @@
+.callback {
+	width: 460px;
+	box-sizing: border-box;
+	padding: 7px 0 22px 0;
+	background: #262626;
+}
+
+.callback__field-wrap {
+	position: relative;
+	width: 265px;
+	margin: 0 auto 22px auto;
+}
+
+.callback__field-name {
+	font-size: 18px;
+	color: #cecece;
+}
+
+.callback__field {
+	@include input-common;
+	width: 100%;
+	margin-top: 5px;
+}
+
+.callback__area {
+	width: 100%;
+	height: 151px;
+	border: 1px solid #c0c0c0;
+	padding: 10px 10px 10px 14px;
+	box-sizing: border-box;
+	margin-top: 5px;
+}
+
+
+.callback__butt-pane {
+	text-align: center;
+}
+	.callback__butt {
+		font-weight: bold;
+		text-transform: uppercase;
+		text-align: center;
+		font-size: 14px;
+		color: #444444;
+		background: url('../images/callback.png');
+		height: 45px;
+		line-height: 45px;
+		padding: 0 38px;
+		border: 0;
+		box-shadow: 0px 3px 0px 0px #4c4c4c;
+		cursor: pointer;
+		display: inline-block;
+
+		&:hover {
+			color: #914e26;
+			box-shadow: 0px 3px 1px 0px #707070;
+			background: url('../images/callback-hover.png');
+		}
+	}

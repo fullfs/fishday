@@ -1,0 +1,93 @@
+.forgot {
+	background: #262626;
+	margin-top: 17px;
+}
+
+.forgot__form {
+	width: 365px;
+	margin: auto;
+	padding-top: 41px;
+	padding-left: 25px;
+	padding-bottom: 70px;
+}
+
+.forgot__field-wrap {
+	margin: auto;
+	margin-bottom: 40px;
+	position: relative;
+	width: 265px;
+}
+
+.forgot__field-name {
+
+	font-size: 18px;
+	color: #cecece;
+
+	&._star {
+
+		&:after {
+
+			content: '*';
+			color: #e2630a;
+
+		}
+
+	}
+}
+
+.forgot__field {
+	@include input-common;
+	width: 265px;
+	margin-top: 5px;
+}
+
+.forgot__captcha-wrap {
+	margin: auto;
+	text-align: center;
+	padding-top: 6px;
+	padding-bottom: 10px;
+}
+
+.forgot__text {
+	color: #cecece;
+	font-size: 14px;
+	font-family: Arial;
+	margin-bottom: 29px;
+}
+
+.forgot__butt {
+	text-transform: uppercase;
+	margin: auto;
+	box-sizing: border-box;
+	display: block;
+	width: 189px;
+	height: 48px;
+	line-height: 48px;
+	text-align: center;
+	background: url('../images/continue.png');
+	border: 0;
+	border-top: 1px solid #d0d577;
+	border-bottom: 3px solid #575c09;
+	font-weight: bold;
+	color: #474b08;
+	font-size: 14px;
+	cursor: pointer;
+
+		&:hover {
+			background: url('../images/continue-hover.png');
+			border-top: 1px solid #e0e673;
+			border-bottom: 3px solid #81881c;
+			color: #5f640b;
+		}
+
+		.signin__old & {
+			margin-left: 9px;
+			margin-top: -11px;
+		}
+
+		.signin__new & {
+			margin-left: 10px;
+			margin-top: 5px;
+			margin-bottom: 30px;
+		}
+}

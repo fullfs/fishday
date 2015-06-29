@@ -1,0 +1,198 @@
+doctype html
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+html 
+	<!--<![endif]-->
+	head
+		include ./includes/head.jade
+
+	body
+		include ./includes/main-menu.jade
+		.page-wrapper
+			include ./includes/header.jade
+
+
+
+
+
+			.content
+
+
+
+
+				.breadcrumbs
+
+					a.breadcrumbs__item(href="#") Главная
+					a.breadcrumbs__item(href="#") Корзина
+
+				h3.content-header оформление заказа
+
+
+
+				.forming
+
+					// В этой форме имена полей завязаны на js-валидацию
+					// Если нужно изменить имена полей, то нужно учесть эти изменения в js
+					// Поменять можно в файле pages.js, поиска Project.Pages.CartProceedDeliveryInfo
+					form.forming__form
+
+						.forming__info-wrap
+
+							.forming__box._buyer
+
+								.forming__header Информация о покупателе
+
+								.forming__field-wrapper
+									p.forming__field-text Имя
+									input.forming__field(type="text" name="firstname")
+
+								.forming__field-wrapper
+									p.forming__field-text Фамилия
+									input.forming__field(type="text" name="lastname")
+
+								.forming__field-wrapper
+									p.forming__field-text Электронная почта
+									input.forming__field(type="text" name="email")
+
+								.forming__field-wrapper
+									p.forming__field-text Телефон
+									input.forming__field(type="text" value="+7" name="phone")
+
+
+							.forming__box._deliver
+
+								.forming__header Информация о доставке
+
+
+								.forming__field-wrapper._address
+									p.forming__field-text Мои адреса:
+									label.forming__check-wrap
+										input.forming__check(type="radio" name="deliver-type")
+										span.forming__check-text ул. Советская, д. 16, кв. 15
+									label.forming__check-wrap
+										input.forming__check(type="radio" name="deliver-type")
+										span.forming__check-text ул. Котовского, д. 29, кв. 31
+									label.forming__check-wrap
+										input.forming__check(type="radio" name="deliver-type")
+										span.forming__check-text другой адрес
+
+								.forming__field-wrapper
+									p.forming__field-text Адрес доставки
+									textarea.forming__area
+
+								.forming__field-wrapper
+									p.forming__field-text Район
+									select.forming__select
+										option(value="") ...выберите район
+										option(value="1") Дзержинский
+										option(value="2") Калининский
+
+								.forming__field-wrapper
+									p.forming__field-text Вид доставки
+									label.forming__check-wrap
+										input.forming__check(type="radio" name="deliver-type")
+										span.forming__check-text Доставка курьером
+										span.forming__check-ph (краткие условия доствки)
+
+									label.forming__check-wrap
+										input.forming__check(type="radio" name="deliver-type")
+										span.forming__check-text Самовывоз
+										span.forming__check-ph (условия самовывоза)
+
+
+						.forming__box._cash
+
+							.forming__header Оплата заказа
+
+
+							.forming__cash-left
+								label.forming__check-wrap
+									input.forming__check(type="radio" name="pay_type" value="cash" checked)
+									span.forming__check-text Наличными
+								label.forming__check-wrap
+									input.forming__check(type="radio" name="pay_type" value="card")
+									span.forming__check-text Банковской картой
+								.forming__cash-bottom Оплата наличными и картой производится курьеру после получения и проверки заказа.
+
+							.forming__cash-right
+								.forming__field-wrapper
+									p.forming__field-text Дисконтная карта
+									input.forming__field._discount-card(type="text")
+								a.forming__change-card(href="#") Изменить номер карты
+
+							
+
+
+
+						.forming__box._goods
+
+							.forming__header Состав заказа
+
+							table.forming__list(cellspacing="0")
+
+								tr.forming__list-head
+									td.forming__list-article
+									td.forming__list-name Наименование
+									td.forming__list-cost Цена
+									td.forming__list-weight Количество
+									td.forming__list-sum Стоимость
+
+								tr.forming__list-row
+									td.forming__list-article 000349
+									td.forming__list-name Сёмга рулет г/к
+									td.forming__list-cost <span class="forming__list-num">634,00</span> руб./кг
+									td.forming__list-weight <span class="forming__list-num">800</span> гр.
+									td.forming__list-sum <span class="forming__list-num">507,20</span> руб.
+
+								tr.forming__list-row
+									td.forming__list-article 000349
+									td.forming__list-name Сёмга рулет г/к
+									td.forming__list-cost <span class="forming__list-num">634,00</span> руб./кг
+									td.forming__list-weight <span class="forming__list-num">800</span> гр.
+									td.forming__list-sum <span class="forming__list-num">507,20</span> руб.
+
+								tr.forming__list-row
+									td.forming__list-article 000349
+									td.forming__list-name Сёмга рулет г/к
+									td.forming__list-cost <span class="forming__list-num">634,00</span> руб./кг
+									td.forming__list-weight <span class="forming__list-num">800</span> гр.
+									td.forming__list-sum <span class="forming__list-num">507,20</span> руб.
+
+
+
+							.forming__goods-separator
+
+							table.forming__goods-bottom(cellspacing="0")
+
+
+								tr.forming__result
+									td.forming__goods-bottom-name Товаров на:
+									td.forming__goods-bottom-sum <span class="forming__goods-bottom-num">1496,80</span> руб.
+								tr.forming__sale
+									td.forming__goods-bottom-name Скидка по карте (n%):
+									td.forming__goods-bottom-sum <span class="forming__goods-bottom-num">44,90</span> руб.
+								tr.forming__final
+									td.forming__goods-bottom-name Итого к оплате:
+									td.forming__goods-bottom-sum <span class="forming__goods-bottom-num">1496,80</span> руб.
+
+
+
+						.forming__box._addition
+
+							.forming__header Дополнительная информация
+
+							.forming__field-wrapper
+								p.forming__field-text Комментарии к заказу:
+								textarea.forming__area._big Домофон. Осторожно, сосульки!
+
+
+						.forming__butt-wrap
+							input.forming__butt(type="submit")
+
+
+
+
+
+		include ./includes/footer.jade
+

@@ -1,0 +1,132 @@
+.myorder {
+	margin-top: 17px;
+	margin-bottom: 20px;
+	padding:28px 32px 44px 29px;
+	background: #262626;
+}
+
+.myorder__header {
+	font-weight: bold;
+	font-size: 20px;
+	margin-bottom: 20px;
+	color: #ffffff;
+}
+
+.myorder__text {
+	font-family: Arial, sans-serif;
+	color: #cecece;
+	margin-bottom: 36px;
+	font-size: 14px;
+}
+
+.myorder__number {
+	font-weight: bold;
+	font-size: 20px;
+	color: #ffffff;
+}
+
+.myorder__list {
+	list-style-type: none;
+	border-bottom: 1px solid #656565;
+	width: 714px;
+	margin-top: 24px;
+	margin-left: -3px;
+	padding-bottom: 4px;
+}
+
+.myorder__item {
+	height: 20px;
+	font-size: 14px;
+	font-family: Arial, sans-serif;
+	color: #cecece;
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+
+.myorder__item-name {
+	width: 361px;
+	margin-left: 3px;
+	float: left;
+}
+
+.myorder__item-price {
+	width: 160px;
+	float: left;
+}
+
+.myorder__item-weight {
+	width: 100px;
+	float: left;
+}
+
+.myorder__item-summ {
+	float: left;
+	text-align: right;
+	width: 90px;
+}
+
+.myorder__separator {
+	height: 1px;
+	border-top: 1px solid #656565;
+	border-bottom: 1px solid #656565;
+	width: 714px;
+	margin-left: -3px;
+	margin-top: 1px;
+}
+
+.myorder__sale {
+	margin-top: 13px;
+	text-align: right;
+	color: #7f9437;
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	width: 591px;
+	display: inline-block;
+}
+
+.myorder__sale-summ {
+	text-align: right;
+	color: #7f9437;
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	width: 120px;
+	display: inline-block;
+}
+
+.myorder__total {
+	width: 576px;
+	display: inline-block;
+	text-align: right;
+	margin-top: 13px;
+	color: #cecece;
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+}
+
+.myorder__total-summ {
+	text-align: right;
+	color: #cecece;
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	width: 135px;
+	display: inline-block;
+}
+
+.myorder__link {
+	display: inline-block;
+	margin-right: 47px;
+	color: #e67629;
+	font-size: 16px;
+	margin-top: 32px;
+
+	&._wanna {
+		font-weight: bold;
+		font-size: 20px;
+	}
+
+	&:hover {
+		color: #de960a;
+		text-decoration: none;
+	}
+
+}

@@ -1,0 +1,36 @@
+@mixin input-common() {
+	box-sizing: border-box;
+	border: 1px solid #c0c0c0;
+	border-radius: 3px;
+	padding-right: 10px;
+	padding-left: 10px;
+	font-family: 'Roboto', Arial, sans-serif;
+	font-size: 16px;
+	height: 35px;
+	line-height: 32px;
+	box-shadow: 0 2px 0px #393939;
+	background: #fff;
+}
+
+
+
+@mixin select-common() {
+	@include no-appear;
+	background: #fff url('../images/dd-icon.png') 94% 50% no-repeat;
+	box-sizing: border-box;
+	border: 1px solid #c0c0c0;
+	border-radius: 3px;
+	padding-right: 10px;
+	padding-left: 10px;
+	font-family: 'Roboto', Arial, sans-serif;
+	font-size: 16px;
+	height: 35px;
+	line-height: 32px;
+	box-shadow: 0 2px 0px #393939;
+
+	.ie8 &,
+	.ie9 & {
+		padding-top: 6px;
+		padding-bottom: 6px;
+	}
+}

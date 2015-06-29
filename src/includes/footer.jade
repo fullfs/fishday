@@ -1,0 +1,69 @@
+.footer
+
+	.footer__separator
+
+	.footer__main
+
+		.footer__wrapper
+
+			.footer__leftside
+				.footer__phone
+					.footer__phone-pic
+					span.footer__phone-number 203-62-52
+					.footer__phone-text С ОТЗЫВАМИ, ВОПРОСАМИ<br />И ПОЖЕЛАНИЯМИ ОБРАЩАЙТЕСЬ<br />ПО ТЕЛЕФОНУ ГОРЯЧЕЙ ЛИНИИ
+					.footer__autors <a href="#" class="footer__autors-link">Создание и продвижение сайта</a> —<br />Интернет-Перспектива
+
+			.footer__center
+
+				.footer__menu
+
+					ul.footer__left-menu
+
+						li.footer__menu-item
+							a.footer__menu-item-link(href="#") О проекте
+						li.footer__menu-item
+							a.footer__menu-item-link(href="#") Дисконтная карта
+						li.footer__menu-item
+							a.footer__menu-item-link(href="#") Новости
+						li.footer__menu-item
+							a.footer__menu-item-link(href="#") Отзывы
+
+					ul.footer__right-menu
+
+						li.footer__menu-item
+							a.footer__menu-item-link(href="#") Вопросы и ответы
+						li.footer__menu-item
+							a.footer__menu-item-link(href="#") Правовая информация
+						li.footer__menu-item
+							a.footer__menu-item-link(href="#") Контакты
+
+				p.footer__info Доставка высококачественных <br />морепродуктов.
+				p.footer__info 630040, г. Новосибирск, ул. Кубовая, д. 1<br /><br />
+				p.footer__info 2007-2014 ООО "Рыбный день"
+
+			.footer__rightside
+				p.footer__social-text Мы в соцсетях:
+				.footer__social-pics
+					a.footer__vk(href="#")
+					a.footer__ok(href="#")
+					a.footer__insta(href="#")
+
+				p.footer__subscr-text Подпишитесь на наши новости
+				.footer__subscr
+					form.footer__subscr-form
+						input.footer__subscr-field(placeholder="E-mail" type="text")
+						span.footer__submit-wrap
+							input.footer__subscr-submit(value=" " type="submit")
+						
+.tothetop
+	a.tothetop__button(href="#")
+
+
+#login-popup(style="display: none")
+	include ./login-popup.jade
+
+#callback-popup(style="display: none")
+	include ./callback-popup.jade
+
+script#cart-modal(type="text/x-handlebars-template")
+	include ./cart-modal-tpl.jade

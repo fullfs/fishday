@@ -1,0 +1,40 @@
+.fancybox-nav {
+	span {
+		visibility: visible;
+	}
+}
+
+
+.fancybox-overlay {
+	background: url('../images/overlay-bg.png');
+}
+
+
+.fancybox-close {
+	top: 10px;
+	right: 10px;
+	width: 43px;
+	height: 43px;
+	background: url('../images/gallery-close.png');
+}
+
+
+
+
+.fancybox-nav {
+	span {
+		width: 43px;
+		height: 43px;
+		margin-top: -21px;
+	}
+}
+
+.fancybox-prev span {
+	left: 10px;
+	background: url('../images/gallery-prev.png');
+}
+
+.fancybox-next span {
+	right: 10px;
+	background: url('../images/gallery-next.png');
+}

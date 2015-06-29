@@ -1,0 +1,28 @@
+@mixin cf() {
+	&:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+}
+
+
+@mixin opacity($value: 0) {
+	opacity: $value;
+}
+
+
+@mixin content-indent() {
+	width: 780px;
+	margin: 0 auto;
+	padding-left: 180px;
+}
+
+
+@mixin no-appear {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	-o-appearance: none;
+	appearance: none;
+}

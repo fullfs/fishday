@@ -1,0 +1,98 @@
+.ui-dialog {
+	background: #262626;
+	padding: 0;
+
+	.ui-dialog-titlebar {
+		height: 66px;
+		background: #f37122;
+    	@include gradient-v(#fdcb3c, #f37122);
+    	line-height: 64px;
+    	padding: 0 60px;
+	}
+		
+	&._shady .ui-dialog-titlebar {
+		background: transparent;
+		padding-left: 30px;
+		padding-top: 30px;
+    	line-height: 44px;
+		height: auto;
+	}
+
+		.ui-dialog-title {
+			vertical-align: middle;
+			display: inline-block;
+			text-align: center;
+			width: 100%;
+			font-family: 'Roboto', Arial, sans-serif;
+			font-weight: bold;
+			font-weight: 500;
+			text-shadow: 0px 2px 0px rgba(0,0,0,0.3);
+			font-size: 26px;
+			text-transform: uppercase;
+			color: #fff;
+			float: none;
+			margin: 0;
+		}
+
+		&._shady .ui-dialog-title {
+			text-align: left;
+			font-size: 36px;
+
+			white-space: normal;
+			width: 100%;
+			overflow: visible;
+		}
+
+		.ui-button {
+			position: absolute;
+			right: 20px; 
+			top: 21px;
+			width: 26px;
+			height: 28px;
+			margin: 0;
+			padding: 0px; 
+			background: red;
+			border: 0;
+			outline: none;
+			background: url('../images/dialog-close.png');
+		}
+
+			.ui-button-icon-primary {
+				position: static;
+				top: auto;
+				left: auto;
+				margin-top: 0;
+				margin-left: 0;
+			}
+
+			.ui-button-text {
+				padding: 0;
+			}
+
+	.ui-dialog-content {
+		padding: 0;
+	}
+
+
+
+	&._content-indented {
+		.ui-dialog-content {
+			padding: 22px 15px 40px 0;
+		}
+	}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+.ui-widget-overlay {
+	background: url('../images/overlay-bg.png');
+}

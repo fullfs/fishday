@@ -1,0 +1,117 @@
+doctype html
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+html 
+	<!--<![endif]-->
+	head
+		include ./includes/head.jade
+
+	body
+		include ./includes/main-menu.jade
+		.page-wrapper
+			include ./includes/header.jade
+
+
+
+
+
+			.content
+
+
+
+
+				.breadcrumbs
+
+					a.breadcrumbs__item(href="#") Главная
+					a.breadcrumbs__item(href="#") Компания
+					a.breadcrumbs__item(href="#") Новости
+
+				h3.content-header новости
+
+
+				ul.company__menu 
+
+					li.company__menu-item
+						a.company__menu-link(href="#") о компании
+
+					li.company__menu-item
+						a.company__menu-link(href="#") дисконтная карта
+
+					li.company__menu-item._selected
+						span.company__menu-link новости
+
+					li.company__menu-item
+						a.company__menu-link(href="#") отзывы
+
+					li.company__menu-item
+						a.company__menu-link(href="#") вопрос-ответ
+
+					li.company__menu-item
+						a.company__menu-link(href="#") правовая информация
+
+					li.company__menu-item
+						a.company__menu-link(href="#") контакты
+
+
+				.newslist
+
+					
+
+					ul.newslist__list
+
+						li.newslist__item
+							.newslist__pic-wrap
+								img.newslist__pic(src="images/news-pic.png")
+							.newslist__main
+								a.newslist__header(href="#") Своя среди чужих, чужая среди своих (видео)
+								.newslist__date 13.04.2014
+								.newslist__text Проблема незаконного вывоза российской рыбы в иностранные порты
+
+						li.newslist__item
+							.newslist__pic-wrap
+								img.newslist__pic(src="images/news-pic.png")
+							.newslist__main
+								a.newslist__header(href="#") Состоялось открытие 5-го магазина сети «Рыбный день». Фотоотчет.
+								.newslist__date 13.04.2014
+								.newslist__text Состоялось открытие 5-го магазина сети Рыбный день. Фотоотчет.
+
+						li.newslist__item
+							.newslist__pic-wrap
+								img.newslist__pic(src="images/news-pic.png")
+							.newslist__main
+								a.newslist__header(href="#") «Станция метро «Рыбный день»
+								.newslist__date 13.04.2014
+								.newslist__text Рыба ищет, где глубже, а человек, где рыба вкуснее! А вкуснее она на «станции метро «Рыбный день», которую, кстати говоря, не так просто и найти...
+
+						li.newslist__item
+							.newslist__pic-wrap
+							.newslist__main
+								a.newslist__header(href="#") Требуются сотрудники
+								.newslist__date 13.04.2014
+								.newslist__text Шеф-повар, Повар основных блюд (гриль), Суши-повар, Продавец-кассир, Термист, Резчик рыбы,Грузчик, Техничка.<br /><br />По всем вопросам обращаться по телефону (383) 203-62-52
+
+						li.newslist__item
+							.newslist__pic-wrap
+								img.newslist__pic(src="images/news-pic.png")
+							.newslist__main
+								a.newslist__header(href="#") НОВЫЕ РЕЦЕПТЫ на нашем сайте!
+								.newslist__date 13.04.2014
+								.newslist__text Новые рецепты на нашем сайте. Смотрите в разделе <a href="#" class="newslist__inner-link">Рецепты</a>
+
+
+
+
+
+
+				include ./includes/paginator.jade
+
+
+
+
+				
+
+
+
+		include ./includes/footer.jade
+

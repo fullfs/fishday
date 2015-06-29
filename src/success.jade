@@ -1,0 +1,49 @@
+doctype html
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+html 
+	<!--<![endif]-->
+	head
+		include ./includes/head.jade
+
+	body
+		include ./includes/main-menu.jade
+		.page-wrapper
+			include ./includes/header.jade
+
+
+
+
+
+			.content
+
+
+
+
+				.breadcrumbs
+
+					a.breadcrumbs__item(href="#") Главная
+
+				h3.content-header Регистрация
+
+
+				
+				.success-block
+
+					p.success-block__header Регистрация успешно завершена.
+
+					p.success-block__text На указанный вами адрес электронной почты отправлено подтверждающее письмо с активационной ссылкой.
+
+					a.success-block__link._big(href="#") Начать покупки
+
+					a.success-block__link(href="#") Главная
+
+					
+
+
+
+
+
+		include ./includes/footer.jade
+

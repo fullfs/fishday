@@ -1,0 +1,91 @@
+doctype html
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+html 
+	<!--<![endif]-->
+	head
+		include ./includes/head.jade
+
+	body
+		include ./includes/main-menu.jade
+		.page-wrapper
+			include ./includes/header.jade
+
+
+
+
+
+			.content
+
+
+
+
+				.breadcrumbs
+
+					a.breadcrumbs__item(href="#") Главная
+
+				h3.content-header Регистрация
+
+
+				
+				.signup
+
+					// В этой форме имена полей завязаны на js-валидацию
+					// Если нужно изменить имена полей, то нужно учесть эти изменения в js
+					// Поменять можно в файле pages.js, поиска Project.Pages.SignUp
+					form.signup__form
+
+						.signup__field-wrap
+							span.signup__field-name._star Имя
+							input.signup__field(type="text" name="firstname")
+
+						.signup__field-wrap
+							span.signup__field-name._star Фамилия
+							input.signup__field(type="text" name="lastname")
+
+						.signup__field-wrap
+							span.signup__field-name._star Электронная почта
+							// Пример серверной ошибки. Чтобы вывести серверную ошибку нужно добавить класс validation-error
+							// для поля (input) и добавить под ним span c таким же классом, содержащий текст ошибки
+							input.signup__field.validation-error(type="text" name="email")
+							span.validation-error Этот адрес уже зарегистрирован
+
+
+						.signup__field-wrap
+							span.signup__field-name._star Пароль
+							input.signup__field(type="text" name="password")
+
+						.signup__field-wrap
+							span.signup__field-name._star Подтверждение пароля
+							input.signup__field(type="text" name="confirm_password")
+
+						.signup__captcha-wrap
+							img.signup__captcha(src="images/captcha.png")
+
+						.signup__field-wrap
+							span.signup__field-name._star Введите код с картинки
+							// Пример серверной ошибки. Чтобы вывести серверную ошибку нужно добавить класс validation-error
+							// для поля (input) и добавить под ним span c таким же классом, содержащий текст ошибки
+							input.signup__field.validation-error(type="text" name="captcha")
+							span.validation-error Введенный код не совпадает с картинкой
+
+
+						.signup__toleft
+							label.signup__label
+								input.signup__agree-check(type="checkbox")
+								span.signup__agree-text Я согласен с <a class="signup__inner-link" href="#">Правилами и Условиями</a>
+
+							label.signup__label
+								input.signup__agree-check(type="checkbox")
+								span.signup__agree-text Я хочу получать рассылку
+
+						button.signup__butt(type="submit") зарегистрироваться
+
+
+
+
+
+
+		include ./includes/footer.jade
+

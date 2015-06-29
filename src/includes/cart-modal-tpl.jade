@@ -1,0 +1,35 @@
+.cart._in-modal
+	form.cart__form(action="/")
+		ul.cart__list {{#each list}}
+			li.cart__item
+				input(type="hidden" name="item[{{@index}}]id" value="{{id}}")
+				span.cart__item-delete
+				.cart__item-pic-wrap
+					img.cart__item-pic(src="{{img}}" alt="")
+
+				.cart__item-info
+					p.cart__item-name {{name}}
+					p.cart__item-price
+						span.cart__item-main-price {{price_base}}
+						span.cart__item-tenth {{price_after_dec}}
+						span руб./кг
+
+				.cart__item-form
+					span.cart__item-less
+					input.cart__item-field(type="text" value="{{value.value}}" name="item[{{@index}}]value" maxlength="5" data-type="{{value.type}}")
+					span.cart__item-form-text {{value.sign}}
+					span.cart__item-more
+
+				.cart__item-summ
+					span.cart__item-main-price
+					span.cart__item-tenth
+			| {{/each}}
+
+		.cart__list-separator
+
+		.cart__total-text итого:
+		.cart__total
+			span.cart__item-main-price 634
+			span.cart__item-tenth 00
+
+		button.cart__order(type="submit") оформить заказ

@@ -1,0 +1,154 @@
+doctype html
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+html 
+	<!--<![endif]-->
+	head
+		include ./includes/head.jade
+
+	body
+		include ./includes/main-menu.jade
+		.page-wrapper
+			include ./includes/header.jade
+
+
+
+
+
+			.content
+
+
+
+
+				.breadcrumbs
+
+					a.breadcrumbs__item(href="#") Главная
+					a.breadcrumbs__item(href="#") Мой счет
+					a.breadcrumbs__item Мои заказы
+				h3.content-header Мои заказы
+
+				ul.company__menu
+
+					li.company__menu-item
+						a.company__menu-link(href="#") мой профиль
+
+					li.company__menu-item._selected
+						span.company__menu-link мои заказы
+
+					li.company__menu-item
+						a.company__menu-link(href="#") подписка
+
+					li.company__menu-item
+						a.company__menu-link(href="#") выйти
+
+					
+				
+				.orderlist
+
+					.orderlist__wrapper
+
+					
+						table.orderlist__table(cellspacing=0, callpadding=0)
+							thead
+								tr.orderlist__stroke._head
+									td.orderlist__date-cell Дата
+									td.orderlist__number-cell Номер заказа
+									td.orderlist__summ-cell Сумма, руб.
+									td.orderlist__cash-cell Оплата
+									td.orderlist__state-cell Статус
+							tbody
+								tr.orderlist__visibile-stroke
+									td.orderlist__date-cell
+										span.orderlist__date-cell 25.06.2014
+									td.orderlist__number-cell
+										span.orderlist__inner-link 159-789-02
+									td.orderlist__summ-cell
+										span.orderlist__summ-text 1035,<span class="orderlist__tenth">00</span>
+									td.orderlist__cash-cell
+										span.orderlist__cash-text Наличные
+									td.orderlist__state-cell
+										span.orderlist__state-text._progress Формируется
+								tr.orderlist__hidden-stroke
+									td(colspan="5")
+										table.orderlist__goods-list(cellspacing=0, callpadding=0)
+											tr.orderlist__goods-head
+												td.orderlist__goods-head-cell
+													span.orderlist__goods-head-text состав заказа:
+											tr.orderlist__goods-stroke
+												td.orderlist__goods-name-cell
+													span.orderlist__goods-name-text Сёмга филе г/к
+												td.orderlist__goods-weight-cell
+													span.orderlist__goods-weight-text 0,350 кг
+												td.orderlist__goods-summ-cell
+													span.orderlist__goods-summ-text 365,00 руб.
+											tr.orderlist__goods-stroke
+												td.orderlist__goods-name-cell
+													span.orderlist__goods-name-text Нерка рулет г/к
+												td.orderlist__goods-weight-cell
+													span.orderlist__goods-weight-text 0,350 кг
+												td.orderlist__goods-summ-cell
+													span.orderlist__goods-summ-text 365,00 руб.
+											tr.orderlist__goods-stroke
+												td.orderlist__goods-name-cell
+													span.orderlist__goods-name-text Нерка рулет г/к
+												td.orderlist__goods-weight-cell
+													span.orderlist__goods-weight-text 0,350 кг
+												td.orderlist__goods-summ-cell
+													span.orderlist__goods-summ-text 365,00 руб.
+								tr.orderlist__separator-stroke
+									td(colspan="5")
+
+							tbody
+								tr.orderlist__visibile-stroke
+									td.orderlist__date-cell 
+										span.orderlist__date-cell 04.05.2014
+									td.orderlist__number-cell 
+										span.orderlist__inner-link 134-129-03
+									td.orderlist__summ-cell
+										span.orderlist__summ-text 1035,<span class="orderlist__tenth">00</span>
+									td.orderlist__cash-cell
+										span.orderlist__cash-text Наличные
+									td.orderlist__state-cell
+										span.orderlist__state-text._done Доставлен
+								tr.orderlist__hidden-stroke
+									td(colspan="5")
+										table.orderlist__goods-list(cellspacing=0, callpadding=0)
+											tr.orderlist__goods-head
+												td.orderlist__goods-head-cell
+													span.orderlist__goods-head-text состав заказа:
+											tr.orderlist__goods-stroke
+												td.orderlist__goods-name-cell
+													span.orderlist__goods-name-text Сёмга филе г/к
+												td.orderlist__goods-weight-cell
+													span.orderlist__goods-weight-text 0,350 кг
+												td.orderlist__goods-summ-cell
+													span.orderlist__goods-summ-text 365,00 руб.
+											tr.orderlist__goods-stroke
+												td.orderlist__goods-name-cell
+													span.orderlist__goods-name-text Нерка рулет г/к
+												td.orderlist__goods-weight-cell
+													span.orderlist__goods-weight-text 0,350 кг
+												td.orderlist__goods-summ-cell
+													span.orderlist__goods-summ-text 365,00 руб.
+											tr.orderlist__goods-stroke
+												td.orderlist__goods-name-cell
+													span.orderlist__goods-name-text Нерка рулет г/к
+												td.orderlist__goods-weight-cell
+													span.orderlist__goods-weight-text 0,350 кг
+												td.orderlist__goods-summ-cell
+													span.orderlist__goods-summ-text 365,00 руб.
+								tr.orderlist__separator-stroke
+									td(colspan="5")
+			
+
+
+
+						include ./includes/paginator
+
+					
+
+
+
+		include ./includes/footer.jade
+

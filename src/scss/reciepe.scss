@@ -1,0 +1,217 @@
+.reciepe {
+	padding: 12px 10px 12px 10px;
+	background: #262626;
+}
+
+.reciepe__top {
+	@include cf;
+}
+
+.reciepe__pic-wrap {
+	width: 279px;
+	height: 419px;
+	margin-right: 21px;
+	float: left;
+}
+
+.reciepe__pic {
+	width: 279px;
+	height: 419px;
+}
+
+.reciepe__info {
+	float: right;
+	width: 460px;
+}
+
+.reciepe__name {
+	font-weight: bold;
+	font-size: 24px;
+	color: #ffffff;
+}
+
+.reciepe_cat-block {
+	font-family: Arial;
+	font-style: italic;
+	font-size: 14px;
+	color: #a3a3a3;
+	@include cf;
+	margin-top: 10px;
+}
+
+.reciepe__cat {
+	float: left;
+}	
+
+.reciepe__subcat {
+	float: left;
+	margin-left: 20px;
+	position: relative;
+
+	&:before {
+		content: '―';
+		position: absolute;
+		top: 0;
+		left: -17px;
+	}
+}
+
+.reciepe__specials {
+	margin-top: 26px;
+	@include cf;
+}
+
+.reciepe__specials-item {
+	float: left;
+	text-align: center;
+	margin-right: 55px;
+}
+
+.reciepe__specials-pic {
+
+	display: block;
+	margin: auto;
+	opacity: 0.5;
+
+	.reciepe__specials-item._portions & {
+		background: url('../images/portions.png');
+		width: 16px;
+		height: 24px;
+	}
+
+	.reciepe__specials-item._time & {
+		background: url('../images/time.png');
+		width: 25px;
+		height: 26px;
+	}
+
+	.reciepe__specials-item._level & {
+		background: url('../images/level.png');
+		width: 24px;
+		height: 24px;
+	}
+
+}
+
+.reciepe__specials-text {
+	font-family: Arial;
+	font-size: 11px;
+	color: #777777;
+}
+
+.reciepe__specials-separator {
+	height: 1px;
+	border-top: 1px solid #555555;
+	border-bottom: 1px solid #555555;
+	margin-top: 17px;
+}
+
+.reciepe__ingredients {
+
+}
+
+.reciepe__ingredients-header {
+	font-weight: bold;
+	color: #ffffff;
+	font-size: 18px;
+	margin-top: 16px;
+}
+
+.reciepe__ingredients-list {
+	list-style-type: none;
+	width: 434px;
+	margin-left: 9px;
+	margin-top: 10px;
+}
+
+.reciepe__ingredients-item {
+
+	width: 100%;
+	position: relative;
+	@include cf;
+	font-family: Arial;
+	font-style: italic;
+	font-size: 14px;
+	color: #dedede;
+	font-weight: normal;
+	padding-bottom: 6px;
+	padding-top: 9px;
+
+	&:before {
+		content: '';
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		border-top: 1px solid #434343;
+	}
+
+	&:first-child:before {
+		border: 0;
+	}
+
+}
+
+.reciepe__ingredients-name  {
+	width: 334px;
+	float: left;
+}
+
+.reciepe__ingredients-measure {
+	width: 100px;
+	float: right;
+	text-align: right;
+}
+
+
+.reciepe__process {
+
+}
+
+.reciepe__process-header {
+	font-weight: bold;
+	color: #ffffff;
+	font-size: 18px;
+	margin-top: 19px;
+}
+
+.reciepe__process-list {
+	font-family: Arial;
+	font-size: 14px;
+	color: #dedede;
+	font-weight: bold;
+	padding-left: 22px;
+	margin-top: 20px;
+	border-bottom: 1px solid #3f3f3f;
+	padding-bottom: 9px;
+}
+
+.reciepe__process-item {
+	margin-bottom: 20px;
+}
+
+.reciepe__process-item-text {
+	font-weight: normal;
+}
+
+
+.reciepe__separator {
+	margin-top: 1px;
+	height: 1px;
+	border-bottom: 1px solid #3f3f3f;
+	border-top: 1px solid #3f3f3f;
+}
+
+.reciepe__share {
+	margin-top: 16px;
+}
+
+.reciepe__share-item {
+	display: inline-block;
+	margin-left: 4px;
+
+	&:first-child {
+		margin-left: 0px;
+	}
+}

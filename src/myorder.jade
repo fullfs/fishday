@@ -1,0 +1,78 @@
+doctype html
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+html 
+	<!--<![endif]-->
+	head
+		include ./includes/head.jade
+
+	body
+		include ./includes/main-menu.jade
+		.page-wrapper
+			include ./includes/header.jade
+
+
+
+
+
+			.content
+
+
+
+
+				.breadcrumbs
+
+					a.breadcrumbs__item(href="#") Главная
+
+				h3.content-header мой заказ
+
+
+				.myorder
+				
+					p.myorder__header Ваш заказ оформлен.
+					p.myorder__text В течение 5 минут наши операторы свяжутся с вами по указанному телефону.
+
+					p.myorder__number Заказ №159-789-02.
+
+					ul.myorder__list
+						
+
+						li.myorder__item
+							
+							.myorder__item-name Сёмга рулет г/к
+							.myorder__item-price 634,00 руб./кг
+							.myorder__item-weight 0,800 кг
+							.myorder__item-summ 507,20 руб.
+
+						li.myorder__item
+							
+							.myorder__item-name Сёмга рулет г/к
+							.myorder__item-price 634,00 руб./кг
+							.myorder__item-weight 0,800 кг
+							.myorder__item-summ 507,20 руб.
+
+						li.myorder__item
+							
+							.myorder__item-name Сёмга рулет г/к
+							.myorder__item-price 1300,00 руб./кг
+							.myorder__item-weight 0,800 кг
+							.myorder__item-summ 507,20 руб.
+
+					.myorder__separator
+
+					.myorder__sale Скидка (-3%):
+					.myorder__sale-summ 44.90 руб.
+					.myorder__total К оплате:
+					.myorder__total-summ 1451,90 руб.
+
+					a.myorder__link._wanna(href="#") Хочу еще!
+					a.myorder__link(href="#") Главная
+
+				
+
+
+
+
+		include ./includes/footer.jade
+

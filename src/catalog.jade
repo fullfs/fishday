@@ -1,0 +1,70 @@
+doctype html
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+html 
+	<!--<![endif]-->
+	head
+		include ./includes/head.jade
+
+	body
+		include ./includes/main-menu.jade
+		.page-wrapper
+			include ./includes/header.jade
+
+
+
+			.content
+
+
+
+
+				.breadcrumbs
+
+					a.breadcrumbs__item(href="#") Главная
+					a.breadcrumbs__item(href="#") Каталог
+					a.breadcrumbs__item Горячее копчение
+
+				h3.content-header горячее копчение
+
+				.catalog
+
+					.catalog__top
+
+						.catalog__show <span class="catalog__sort-text">Показать  —  </span><a href="#" class="catalog__sort-text _new _link">Новинки</a><a href="#" class="catalog__sort-text _promo _link">Акции</a><a href="#" class="catalog__sort-text _hit _link">Хиты</a>
+
+						.catalog__sort <span class="catalog__sort-text">Сортировать по:</span><span class="catalog__sort-chosen">новизне</span><a href="#" class="catalog__sort-link">цене</a>
+
+						.catalog__amount <span class="catalog__sort-text">Показывать:</span><span class="catalog__sort-chosen">по 15</span><a href="#" class="catalog__sort-link">все</a>
+
+					.catalog__separator
+
+
+
+
+					.catalog__list
+						include ./includes/offer-item.jade
+						include ./includes/offer-item2.jade
+						include ./includes/offer-item.jade
+						include ./includes/offer-item.jade
+						include ./includes/offer-item.jade
+						include ./includes/offer-item.jade
+						include ./includes/offer-item.jade
+						include ./includes/offer-item.jade
+						include ./includes/offer-item.jade
+						include ./includes/offer-item.jade
+						include ./includes/offer-item.jade
+						include ./includes/offer-item.jade
+						include ./includes/offer-item.jade
+						include ./includes/offer-item.jade
+						include ./includes/offer-item.jade
+
+						
+
+
+					include ./includes/paginator.jade
+
+
+
+		include ./includes/footer.jade
+

@@ -1,0 +1,93 @@
+doctype html
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+html 
+	<!--<![endif]-->
+	head
+		include ./includes/head.jade
+
+	body
+		include ./includes/main-menu.jade
+		.page-wrapper
+			include ./includes/header.jade
+
+
+
+
+
+			.content
+
+
+
+
+				.breadcrumbs
+
+					a.breadcrumbs__item(href="#") Главная
+					a.breadcrumbs__item(href="#") Компания
+					a.breadcrumbs__item(href="#") Вопрос-ответ
+					a.breadcrumbs__item(href="#") Бесплатный мастер-класс от модного московского шеф-повара Сержа Марковича.
+
+				h3.content-header вопрос-ответ
+
+
+				ul.company__menu 
+
+					li.company__menu-item
+						a.company__menu-link(href="#") о компании
+
+					li.company__menu-item
+						a.company__menu-link(href="#") дисконтная карта
+
+					li.company__menu-item
+						a.company__menu-link(href="#") новости
+
+					li.company__menu-item
+						a.company__menu-link(href="#") отзывы
+
+					li.company__menu-item._selected
+						span.company__menu-link вопрос-ответ
+
+					li.company__menu-item
+						a.company__menu-link(href="#") правовая информация
+
+					li.company__menu-item
+						a.company__menu-link(href="#") контакты
+
+
+
+
+
+				a.content__back(href="#") к списку новостей
+
+
+				.news
+
+					.news__header Бесплатный мастер-класс от модного московского шеф-повара Сержа Марковича.
+					.news__date 13.04.2014
+					.news__pic-wrap
+						img.news__pic(src="images/news-inner-pic.png")
+					p.news__text Ведущий Серж Маркович работает шеф-поваром уже 20 лет, совершенствуя свое мастерство в разных странах мира. Основатель собственного ресторана «Дикое море» в Москве, автор бестселлера «Вкус моря», посвященного морепродуктам, победитель и призер международных конкурсов по поварскому искусству и дизайну блюд, герой кулинарных шоу на телеканалах «Россия», «Охота и рыбалка» раскроет профессиональные секреты приготовления различных блюд из рыбы и морепродуктов, научит выбирать рыбу, а самое главное — покажет, что на кухне главное не рецепты, а творчество.<br /><br />Про методы курсовой работы Вы можете прочитать на сайте <a href="#" class="news__inner-link">ped-praktika.ru</a>.<br /><br />Россия - одиннадцатая страна, где Серж представляет кулинарные шедевры. Взрывной темперамент, сербский юмор, секреты мастерства создают незабываемую атмосферу живого общения с профессионалом своего дела.<br /><br />В программе мастер-класса: авторские рецепты блюд из северной креветки, филе трески, осьминога, гребешка, омара, семги, дорадо.
+					p.news__text._fat Мастер-классы пройдут 27-28 ноября с 14:00 до 18:00 в магазине «Рыбный день» на ул. Челюскинцев, 32. Вход свободный.
+
+					.news__separator
+
+					.news__share
+						span.news__share-item
+							img(src="images/share-vk.png")
+						span.news__share-item
+							img(src="images/share-fb.png")
+						span.news__share-item
+							img(src="images/share-ok.png")
+
+
+
+
+				
+
+
+
+
+
+		include ./includes/footer.jade
+

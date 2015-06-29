@@ -1,0 +1,113 @@
+doctype html
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+html 
+	<!--<![endif]-->
+	head
+		include ./includes/head.jade
+
+	body
+		include ./includes/main-menu.jade
+		.page-wrapper
+			include ./includes/header.jade
+
+
+
+			.content
+
+
+				.breadcrumbs
+					a.breadcrumbs__item(href="#") Главная
+
+
+				.content-header корзина
+
+				.cart
+					p.cart__header Вы выбрали
+					form.cart__form(action="/")
+						ul.cart__list
+							
+							li.cart__item
+								span.cart__item-delete
+								.cart__item-pic-wrap
+									img.cart__item-pic(src="images/pic-preview.png")
+
+								.cart__item-info
+									p.cart__item-name Сёмга рулет горячего копчения
+									p.cart__item-price
+										span.cart__item-main-price 634
+										span.cart__item-tenth 45
+										span руб./кг
+
+								.cart__item-form
+									span.cart__item-less
+									input.cart__item-field(type="text" value="0" maxlength="5" data-type="weight")
+									span.cart__item-form-text г
+									span.cart__item-more
+
+								.cart__item-summ
+									span.cart__item-main-price 0
+									span.cart__item-tenth 00
+
+
+							li.cart__item
+								span.cart__item-delete
+								.cart__item-pic-wrap
+									img.cart__item-pic(src="images/pic-preview.png")
+
+								.cart__item-info
+									p.cart__item-name Сёмга рулет г/к
+									p.cart__item-price
+										span.cart__item-main-price 634
+										span.cart__item-tenth 00
+										span руб./кг
+
+								.cart__item-form
+									span.cart__item-less
+									input.cart__item-field(type="text" value="0" maxlength="5" data-type="item")
+									span.cart__item-form-text шт.
+									span.cart__item-more
+
+								.cart__item-summ
+									span.cart__item-main-price 0
+									span.cart__item-tenth 00
+
+							li.cart__item
+								span.cart__item-delete
+								.cart__item-pic-wrap
+									img.cart__item-pic(src="images/pic-preview.png")
+
+								.cart__item-info
+									p.cart__item-name Сёмга рулет горячего копчения
+									p.cart__item-price
+										span.cart__item-main-price 634
+										span.cart__item-tenth 00
+										span руб./кг
+
+								.cart__item-form
+									span.cart__item-less
+									input.cart__item-field(type="text" value="0" maxlength="5" data-type="weight")
+									span.cart__item-form-text г
+									span.cart__item-more
+
+								.cart__item-summ
+									span.cart__item-main-price 0
+									span.cart__item-tenth 00
+
+
+						.cart__list-separator
+
+						.cart__total-text итого:
+						.cart__total
+							span.cart__item-main-price 634
+							span.cart__item-tenth 00
+
+						button.cart__order(type="submit") оформить заказ
+				
+
+
+
+
+		include ./includes/footer.jade
+
