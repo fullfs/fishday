@@ -241,6 +241,10 @@
 	width: 270px;
 	margin: auto;
 	margin-top: 28px;
+
+	&._faq, &._review {
+		margin-top: 0px;
+	}
 }
 
 .index-page__post-mini-wrap {
