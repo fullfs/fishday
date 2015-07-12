@@ -1,6 +1,7 @@
 Project.Utils.changeValue = function($field, dir) {
 	var value = parseInt($field.val(), 10);
 	var type = $field.data('type');
+	var step = $field.data('step') || 100;
 
 	if (isNaN(value)) {
 		value = 0;
@@ -8,8 +9,8 @@ Project.Utils.changeValue = function($field, dir) {
 
 	if (dir == 'minus') {
 		if (type === 'weight') {
-			if (value > 100) {
-				value -= 100;
+			if (value > step) {
+				value -= step;
 			} else {
 				value = 0;
 			}
@@ -27,7 +28,7 @@ Project.Utils.changeValue = function($field, dir) {
 	if (dir == 'plus') {
 		if (type === 'weight') {
 			if (value < 99999) {
-				value += 100;
+				value += step;
 			} 
 		}
 
@@ -61,7 +62,7 @@ Project.Utils.addToCart = function(data, valueData) {
 	if (offer.value.type === 'weight') {
 		offer.value.sign = 'г';
 		if (!offer.value.value) {
-			offer.value.value = 100;
+			offer.value.value = offer.value.step || 100;
 		}
 	}
 

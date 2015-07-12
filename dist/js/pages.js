@@ -86,7 +86,8 @@ Project.Pages.OfferCard = Project.extend({
 			var item = that.$el.data('item');
 			var value = $field.val();
 			var type = $field.data('type');
-			Project.Utils.addToCart(item, {type: type, value: value});
+			var step = $field.data('step');
+			Project.Utils.addToCart(item, {type: type, step: step, value: value});
 		});
 
 
