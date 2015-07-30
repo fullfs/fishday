@@ -554,3 +554,12 @@ Project.Pages.News = Project.extend({
 		this.$('.news__pic-link').fancybox();
 	}
 });
+
+
+// Рецепт
+Project.Pages.Reciepe = Project.extend({
+	init: function() {
+		this.$('.reciepe__pic-link').fancybox();
+	}
+});
+

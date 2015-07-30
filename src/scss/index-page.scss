@@ -132,7 +132,7 @@
 }
 
 .index-page__review {
-	margin-top: 35px;
+	margin-top: -20px;
 	// margin-bottom: -30px;
 	padding-bottom: 25px;
 	background: #222222;
@@ -186,6 +186,12 @@
 		left: 0;
 		border-bottom: 1px solid #c5ce28;
 		position: absolute;
+	}
+
+	&:hover {
+		&:after {
+			display: none;
+		}
 	}
 }
 
@@ -245,6 +251,12 @@
 	&._faq, &._review {
 		margin-top: 0px;
 	}
+}
+
+.index-page__post-error-text {
+	color: red;
+	display: none;
+	margin-bottom: 5px;
 }
 
 .index-page__post-mini-wrap {
@@ -322,7 +334,7 @@
 	box-shadow: 0px 3px 1px 0px #4c4c4c;
 	cursor: pointer;
 	margin-bottom: 34px;
-	padding-top: 6px;
+	padding-top: 4px;
 
 	&:hover {
 		color: #914e26;

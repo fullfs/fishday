@@ -381,14 +381,33 @@ Project.Blocks.ToTopButton = Project.extend({
 // Форма обратной связи (отзывы)
 Project.Blocks.FeedbackForm = Project.extend({
 	init: function() {
-		var $fieldName = $('.index-page__post-name');
-		var $fieldMail = $('.index-page__post-mail');
-		var $fieldText = $('.index-page__post-text');
+		var that = this;
+		var $fieldName = this.$('.index-page__post-name');
+		var $fieldMail = this.$('.index-page__post-mail');
+		var $fieldText = this.$('.index-page__post-text');
 
 		this.$('.index-page__post-form').on('submit', function(e) {
 			// Если хоть одно поле не заполнено - не отправляем форму
 			if (!$fieldName.val() || !$fieldMail.val() || !$fieldText.val()) {
 				e.preventDefault();
+			}
+
+			if (!$fieldName.val()) {
+				that.$('.index-page__post-error-text._name').show();
+			} else {
+				that.$('.index-page__post-error-text._name').hide();
+			}
+
+			if (!$fieldMail.val()) {
+				that.$('.index-page__post-error-text._email').show();
+			} else {
+				that.$('.index-page__post-error-text._email').hide();
+			}
+
+			if (!$fieldText.val()) {
+				that.$('.index-page__post-error-text._message').show();
+			} else {
+				that.$('.index-page__post-error-text._message').hide();
 			}
 		});
 	}

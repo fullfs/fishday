@@ -33,4 +33,5 @@ $(function() {
 	new Project.Pages.Profile($('.profile'));
 	new Project.Pages.About($('.about'));
 	new Project.Pages.News($('.news'));
+	new Project.Pages.Reciepe($('.reciepe'));
 });

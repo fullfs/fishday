@@ -15,12 +15,13 @@
 
 .about__pics-wrap {
 	margin-bottom: 19px;
+	@include cf;
 }
 
 .about__pic {
 	width: 232px;
 	height: 156px;
-	display: inline-block;
+	float: left;
 	margin-left: 16px;
 
 	.about__pic-link:first-child & {

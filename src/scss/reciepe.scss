@@ -1,6 +1,7 @@
 .reciepe {
 	padding: 12px 10px 12px 10px;
 	background: #262626;
+	margin-top: 10px;
 }
 
 .reciepe__top {
@@ -12,6 +13,10 @@
 	height: 419px;
 	margin-right: 21px;
 	float: left;
+}
+
+.reciepe__pic-link {
+
 }
 
 .reciepe__pic {
@@ -180,15 +185,25 @@
 	font-family: Arial;
 	font-size: 14px;
 	color: #dedede;
-	font-weight: bold;
-	padding-left: 22px;
-	margin-top: 20px;
+	margin-top: 18px;
 	border-bottom: 1px solid #3f3f3f;
-	padding-bottom: 9px;
+	padding-bottom: 26px;
+	list-style-position: outside;
+	line-height: 20px;
+
+	li + li {
+		margin-top: 16px;
+	}
+}
+
+ul.reciepe__process-list,
+ol.reciepe__process-list {
+	padding-left: 20px;
 }
 
 .reciepe__process-item {
-	margin-bottom: 20px;
+	padding-left: 4px;
+	font-weight: bold;
 }
 
 .reciepe__process-item-text {
