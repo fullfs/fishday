@@ -31,13 +31,6 @@ Project.Pages.Main = Project.extend({
 				autoplay: true,
 				autoplaySpeed: $recList.data('interval')
 			});
-
-
-								
-		this.$('.offer-item').each(function() {
-			var $item = $(this);
-			new Project.Blocks.OfferItem($item);
-		});
 	}
 
 });
@@ -145,13 +138,6 @@ Project.Pages.OfferCard = Project.extend({
 				autoplay: true,
 				autoplaySpeed: $recList.data('interval')
 			});
-
-
-								
-		this.$('.offer-item').each(function() {
-			var $item = $(this);
-			new Project.Blocks.OfferItem($item);
-		});
 	}
 });
 
@@ -189,10 +175,6 @@ Project.Pages.PromoList = Project.extend({
 Project.Pages.Catalog = Project.extend({
 	init: function() {
 
-		this.$('.offer-item').each(function() {
-			var $item = $(this);
-			new Project.Blocks.OfferItem($item);
-		});
 	}
 });
 

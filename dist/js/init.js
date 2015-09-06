@@ -34,4 +34,9 @@ $(function() {
 	new Project.Pages.About($('.about'));
 	new Project.Pages.News($('.news'));
 	new Project.Pages.Reciepe($('.reciepe'));
+
+	$('.content .offer-item').each(function() {
+		var $item = $(this);
+		new Project.Blocks.OfferItem($item);
+	});
 });

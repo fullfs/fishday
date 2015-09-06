@@ -55,6 +55,7 @@
 .goods__small-pic-wrap {
 	display: inline-block;
 	margin-left: 14px;
+    margin-bottom: 8px;
 
 	&._selected {
 		border-bottom: 3px solid #913905;
@@ -90,8 +91,12 @@
 }
 
 .goods__price {
-	color: #d62800;
+	color: #ffffff;
 	padding-top: 16px;
+
+	&._action {
+		color: #d62800;
+	}
 
 	&._small {
 		color: #ffffff;
@@ -244,7 +249,7 @@
 	font-family: Arial, sans-serif;
 	color: #cecece;
 	font-size: 14px;
-	margin-top: 19px;
+	margin-top: 14px;
 
 	&._fat {
 		font-weight: bold;
@@ -261,13 +266,13 @@
 	margin-left: 4px;
 
 	&:first-child {
-		margin-left: 0px	;
+		margin-left: 0px;
 	}
 }
 
 .goods__bottom {
 	width: 760px;
-	margin-top: 20px;
+	margin-top: 12px;
 	overflow: hidden;
 	padding-bottom: 16px;
 }

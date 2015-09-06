@@ -116,7 +116,7 @@ Project.Blocks.Header = Project.extend({
 			if (that.cartItems[i].value.type === 'item') {
 				itemPrice = that.cartItems[i].price * that.cartItems[i].value.value;
 			}
-			console.log(4423423, itemPrice)
+			console.log(4423423, that.cartItems)
 			that.totalPrice += itemPrice;
 		};
 
