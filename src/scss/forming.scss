@@ -121,7 +121,7 @@
 	color: #cecece;
 	font-size: 14px;
 	font-weight: bold;
-	font-family: Arial;
+	font-family: Arial, sans-serif;
 	padding-left: 5px;
 
 	.forming__field-wrapper._address & {
@@ -133,7 +133,7 @@
 	color: #cecece;
 	font-size: 14px;
 	display: block;
-	font-family: Arial;
+	font-family: Arial, sans-serif;
 	padding-left: 18px;
 }
 
@@ -148,7 +148,7 @@
 .forming__change-card {
 	display: inline-block;
 	color: #e67629;
-	font-family: Arial;
+	font-family: Arial, sans-serif;
 	font-size: 14px;
 	position: relative;
 	padding-top: 7px;
@@ -178,7 +178,7 @@
 }
 
 .forming__cash-bottom {
-	font-family: Arial;
+	font-family: Arial, sans-serif;
 	font-size: 14px;
 	color: #cecece;
 	padding: 23px 0px 21px 4px;
@@ -195,7 +195,7 @@
 	height: 35px;
 
 	td {
-		font-family: Arial;
+		font-family: Arial, sans-serif;
 		font-size: 12px;
 		color: #cecece;
 		border-bottom: 3px solid #454545;
@@ -216,7 +216,7 @@
 .forming__list-article {
 	width: 69px;
 	color: #939393;
-	font-family: Arial;
+	font-family: Arial, sans-serif;
 	font-size: 12px;
 	padding-left: 5px;
 }
@@ -232,7 +232,7 @@
 .forming__list-cost {
 	width: 163px;
 	font-size: 13px;
-	font-family: Arial;
+	font-family: Arial, sans-serif;
 	color: #cecece;
 
 	.forming__list-num {
@@ -244,7 +244,7 @@
 .forming__list-weight {
 	width: 148px;
 	font-style: italic;
-	font-family: Arial;
+	font-family: Arial, sans-serif;
 	font-size: 12px;
 	color: #cecece;
 
@@ -257,7 +257,7 @@
 
 .forming__list-sum {
 	width: 116px;
-	font-family: Arial;
+	font-family: Arial, sans-serif;
 	font-size: 13px;
 	color: #cecece;
 	text-align: center;
@@ -295,7 +295,7 @@
 	height: 30px;
 
 	& td {
-		font-family: Arial;
+		font-family: Arial, sans-serif;
 		font-weight: bold;
 		font-size: 16px;
 		color: #cecece;
@@ -332,7 +332,7 @@
 	height: 53px;
 
 	td {
-		font-family: Arial;
+		font-family: Arial, sans-serif;
 		font-weight: bold;
 		color: #ffffff;
 		font-size: 18px;

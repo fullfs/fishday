@@ -17,7 +17,7 @@
 
 	& tr, & td {
 		// border: 0;
-		font-family: Arial;
+		font-family: Arial, sans-serif;
 		color: #c6c6c6;
 		font-size: 12px;
 	}
@@ -45,7 +45,7 @@
 	width: 106px;
 	text-align: center;
 	padding-right: 6px;
-	font-family: Arial;
+	font-family: Arial, sans-serif;
 	color: #c6c6c6;
 	font-size: 12px;
 	font-weight: bold;
@@ -64,7 +64,7 @@
 	color: #e67629;
 	position: relative;
 	font-size: 16px;
-	font-family: Arial;
+	font-family: Arial, sans-serif;
 	font-weight: bold;
 	cursor: pointer;
 
@@ -95,7 +95,7 @@
 .orderlist__summ-text {
 	color: #ffffff;
 	font-size: 16px;
-	font-family: Arial;
+	font-family: Arial, sans-serif;
 	font-weight: bold;
 }
 
@@ -109,7 +109,7 @@
 
 .orderlist__cash-text {
 	color: #ffffff;
-	font-family: Arial;
+	font-family: Arial, sans-serif;
 	font-size: 12px;
 	font-weight: bold;
 }
@@ -119,7 +119,7 @@
 }
 
 .orderlist__state-text {
-	font-family: Arial;
+	font-family: Arial, sans-serif;
 	font-size: 12px;
 	font-weight: bold;
 
@@ -147,7 +147,7 @@
 
 	& td {
 		font-size: 12px;
-		font-family: Arial;
+		font-family: Arial, sans-serif;
 		color: #ffffff;
 	}
 }

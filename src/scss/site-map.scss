@@ -1,0 +1,89 @@
+.site-map-header {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background: #262626;
+    padding: 24px 24px 20px 28px;
+    position: relative;
+
+    &:before {
+    	content: '';
+    	position: absolute;
+    	top: 0px;
+    	height: 0px;
+    	border-top: 1px solid #3f3f3f;
+    	left: 28px;
+    	right: 24px;
+    }
+}
+
+	.site-map-header__title {
+		font-size: 20px;
+		line-height: 24px;
+		font-weight: 500;
+		text-transform: uppercase;
+		color: #fff;
+	}
+
+.site-map {
+    margin-top: 16px;
+    margin-bottom: 10px;
+    background: #262626;
+    padding: 42px 24px 35px 28px;
+	font-family: Arial, sans-serif;
+
+	.site-map-header + & {
+		margin-top: 0;
+		padding-top: 0;
+	}
+}
+
+	.site-map__cols {
+    	@include cf;
+	}
+
+		.site-map__list {
+			padding: 0;
+			margin: 0 0 0 40px;
+			list-style: none;
+
+			&._starter {
+				margin-left: 0px;
+			}
+
+			&._col {
+				margin-top: 8px;
+				margin-left: 0;
+				float: left;
+				width: 50%;
+				box-sizing: border-box;
+				padding-left: 40px;
+
+				& + & {
+					padding-left: 80px;
+				}
+			}
+		}
+
+			.site-map__list-item {
+				font-size: 14px;
+				line-height: 22px;
+				font-weight: normal;
+
+				&._parent {
+					font-weight: bold;
+					margin-bottom: 8px;
+				}
+
+				& > .site-map__list {
+					margin-top: 8px;
+				}
+			}
+
+				.site-map__list-link {
+					color: $color-orange;
+					text-decoration: none;
+
+					&:hover {
+						color: $color-orange-l;
+					}
+				}

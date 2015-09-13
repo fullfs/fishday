@@ -1,0 +1,101 @@
+doctype html
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+html 
+	<!--<![endif]-->
+	head
+		include ./includes/head.jade
+
+	body
+		include ./includes/main-menu.jade
+		.page-wrapper
+			include ./includes/header.jade
+
+			.content
+
+				.breadcrumbs
+					a.breadcrumbs__item(href="#") Главная
+
+				h3.content-header Страница не найдена
+
+				.b-404
+					.b-404__img-h
+						img.b-404__img(src="images/404.png" alt="")
+
+					p.b-404__message.
+						Неправильно набран адрес, <br>
+						или <br>
+						такой страницы на сайте больше не существует.
+
+					p.b-404__notice.
+						Вернитесь на <a href="/">главную</a> или воспользуйтесь картой сайта.
+
+
+				.site-map-header
+					h3.site-map-header__title Карта сайта
+
+				.site-map
+					.site-map__col
+						ul.site-map__list._starter
+							li.site-map__list-item._parent
+								a.site-map__list-link(href="#") Главная
+								.site-map__cols
+									ul.site-map__list._col
+										li.site-map__list-item._parent
+											a.site-map__list-link(href="#") Меню
+											ul.site-map__list
+												li.site-map__list-item
+													a.site-map__list-link(href="#") Икра
+												li.site-map__list-item
+													a.site-map__list-link(href="#") Морепродукты
+												li.site-map__list-item
+													a.site-map__list-link(href="#") Охлажденная
+												li.site-map__list-item
+													a.site-map__list-link(href="#") Замороженная
+												li.site-map__list-item
+													a.site-map__list-link(href="#") Горячее копчение
+												li.site-map__list-item
+													a.site-map__list-link(href="#") Холодное копчение
+												li.site-map__list-item
+													a.site-map__list-link(href="#") Слабосоленая
+												li.site-map__list-item
+													a.site-map__list-link(href="#") Вяленая
+												li.site-map__list-item
+													a.site-map__list-link(href="#") Кулинария
+												li.site-map__list-item
+													a.site-map__list-link(href="#") Полуфабрикаты
+												li.site-map__list-item
+													a.site-map__list-link(href="#") Пресервы
+												li.site-map__list-item
+													a.site-map__list-link(href="#") Снеки
+												li.site-map__list-item
+													a.site-map__list-link(href="#") Приправы
+
+									ul.site-map__list._col
+										li.site-map__list-item._parent
+											a.site-map__list-link(href="#") Акции
+										li.site-map__list-item._parent
+											a.site-map__list-link(href="#") Доставка и оплата
+										li.site-map__list-item._parent
+											a.site-map__list-link(href="#") Рецепты
+										li.site-map__list-item._parent
+											a.site-map__list-link(href="#") Компания
+											ul.site-map__list
+												li.site-map__list-item
+													a.site-map__list-link(href="#") О компании
+												li.site-map__list-item
+													a.site-map__list-link(href="#") Дисконтная карта
+												li.site-map__list-item
+													a.site-map__list-link(href="#") Новости
+												li.site-map__list-item
+													a.site-map__list-link(href="#") Отзывы
+												li.site-map__list-item
+													a.site-map__list-link(href="#") Вопрос-ответ
+												li.site-map__list-item
+													a.site-map__list-link(href="#") Правовая информация
+												li.site-map__list-item
+													a.site-map__list-link(href="#") Контакты
+
+
+		include ./includes/footer.jade

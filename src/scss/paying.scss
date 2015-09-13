@@ -146,7 +146,7 @@
 .paying__size-text {
 	text-align: center;
 	color: #ffffff;
-	font-family: Arial;
+	font-family: Arial, sans-serif;
 	font-weight: bold;
 	font-size: 11px;
 	text-transform: uppercase;
@@ -271,7 +271,7 @@
 .paying__condition-text {
 	color: #d2d2d2;
 	font-size: 14px;
-	font-family: Arial;
+	font-family: Arial, sans-serif;
 	line-height: 17px;
 	margin-bottom: 16px;
 }
@@ -287,7 +287,7 @@
 	position: relative;
 	color: #e67629;
 	font-size: 14px;
-	font-family: Arial;
+	font-family: Arial, sans-serif;
 	border-bottom: 1px dashed #e67629;
 
 	&:hover {
