@@ -226,22 +226,10 @@ a, button {
 	text-decoration: none;
 	color: #5ac6ff;
 	font-family: Arial, sans-serif;
-
-	&:after {
-		content: '';
-		position: absolute;
-		top: -1px;
-		left: 0;
-		height: 100%;
-		width: 100%;
-		border-bottom: 1px solid #5ac6ff;
-	}
+	border-bottom: 1px solid #5ac6ff;
 
 	&:hover {
-		color: #a8e1ff;
-		&:after {
-			border: 0;
-		}
+		border-color: transparent;
 	}
 
 }
@@ -288,13 +276,9 @@ a, button {
 	padding-right: 13px;
 	padding-top: 10px;
 
-	&._selected {
-		text-transform: uppercase;
-		font-size: 14px;
-		font-weight: bold;
-		padding-top: 12px;
-		color: #e2630a;
-	}
+	// Временно, пока не переделали верстку на сайте
+	font-weight: bold;
+	color: #e2630a;
 }
 
 .header__menu-item-link {
@@ -305,26 +289,19 @@ a, button {
 	position: relative;
 	font-weight: bold;
 	vertical-align: top;
-
-	&:after {
-		content: '';
-		position: absolute;
-		top: 0px;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		border-bottom: 1px solid #d8d8d8;
-	}
+	border-bottom: 1px solid #d8d8d8;
 
 	&:hover {
+		border-color: transparent;
 		color: #de960a;
-
-		&:after {
-			border: 0;
-		}
-
 	}
 
+
+	.header__menu-item._selected & {
+		font-weight: bold;
+		color: #e2630a;
+		border-color: transparent;
+	}
 }
 
 .header__order {
@@ -333,6 +310,12 @@ a, button {
 	cursor: pointer;
 	color: #ffffff;
 	text-align: right;
+	white-space: nowrap;
+}
+
+.header__order-link {
+	text-decoration: none;
+	color: #fff;
 }
 
 .header__order-text {
@@ -364,21 +347,13 @@ a, button {
 
 .breadcrumbs__item {
 	position: relative;
-	padding-right: 16px;
+	margin-right: 16px;
 	color: #9b9b9b;
 	text-decoration: none;
+	border-bottom: 1px solid #9b9b9b;
 
-	&:after {
-		content: '';
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		right: 17px;
-
-	}
-
-	&:hover:after {
-		display: none;
+	&:hover {
+		border-color: transparent;
 	}
 }
 

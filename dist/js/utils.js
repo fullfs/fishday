@@ -2,6 +2,7 @@ Project.Utils.changeValue = function($field, dir) {
 	var value = parseInt($field.val(), 10);
 	var type = $field.data('type');
 	var step = $field.data('step') || 100;
+	var quantity;
 
 	if (isNaN(value)) {
 		value = 0;
@@ -11,17 +12,19 @@ Project.Utils.changeValue = function($field, dir) {
 		if (type === 'weight') {
 			if (value > step) {
 				value -= step;
-			} else {
-				value = 0;
-			}
+			} 
+			// else {
+			// 	value = 0;
+			// }
 		}
 
 		if (type === 'item') {
 			if (value > 1) {
 				value -= 1;
-			} else {
-				value = 0;
 			}
+			//  else {
+			// 	value = 0;
+			// }
 		}
 	}
 
@@ -38,7 +41,16 @@ Project.Utils.changeValue = function($field, dir) {
 			} 
 		}
 	}
+
+	if (type === 'weight') {
+		quantity = value / step
+	} else if (type === 'item') {
+		quantity = value;
+	}
+	 
 	$field.val(value);
+
+	return quantity;
 };
 
 Project.Utils.addToCart = function(data, valueData) {
@@ -83,7 +95,41 @@ Project.Utils.addToCart = function(data, valueData) {
 };
 
 
+Project.Utils.modifyMiniCart = function(productData) {
+    $.ajax({
+        type: 'post',
+        url: '/include/ajax/add2basket.php',
+        dataType: 'json',
+        data: productData,
+        success: function(data) {
+            if (data && data['STATUS'] == 1) {
+                switch(productData.action) {
+                    case 'add' :
+                        console.log('Add to cart success', data);
+						$('body').trigger('modifyMiniCart', {
+							price: data.PRODUCT_PRICE * 100
+						});
+                    break;
+                }
+            }
+        }
+    });
+}
+
+
 
 Project.Utils.numberToText = function(value) {
 	return String( value.toFixed(2) ).replace('.', ',');
+};
+
+
+Project.Utils.formatMoney = function(number, c, d, t){
+var n = number, 
+    c = isNaN(c = Math.abs(c)) ? 2 : c, 
+    d = d == undefined ? "." : d, 
+    t = t == undefined ? "," : t, 
+    s = n < 0 ? "-" : "", 
+    i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "", 
+    j = (j = i.length) > 3 ? j % 3 : 0;
+   return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
 };

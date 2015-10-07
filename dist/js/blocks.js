@@ -2,10 +2,14 @@
 Project.Blocks.Header = Project.extend({
 	cartItems: [],
 
-	totalPrice: 0,
+	totalPrice: null,
 
 	init: function() {
 		var that = this;
+
+
+		// Записываем текущую общую цену товаров в корзине
+		this.totalPrice = this.getTotalPrice();
 
 		// Вход
 		this.$('.header__signin-link').click(function() {
@@ -59,84 +63,52 @@ Project.Blocks.Header = Project.extend({
 
 
 		// Мини корзина
-		this.$('.header__order').click(function(e) {
-			e.preventDefault();
-
-			if (that.cartItems.length == 0) {
-				/* debug */
-				alert('товаров в корзине нет - не открываем модалку с корзиной')
-				return;
-			}
-
-			var source = $('#cart-modal').html();
-			var template = Handlebars.compile(source);
-			var context = {list: that.cartItems};
-			var html    = template(context);
-			var $content = $('<div>').html(html);
-
-			var dialog = new Project.Blocks.Dialog($content, {title: 'Корзина'});
-			dialog.open();
-			new Project.Blocks.Cart($content);
-
-			$content.on('itemRemoved', function(e, index) {
-				that.cartItems.splice(index, 1);
-				that.calculateTotalPrice();
-				if (!that.cartItems.length) {
-					$content.dialog('close');
-				}
-			});
-		});
-
-
-		// Глобальная ловилка для добавления товара в корзину
-		$('body').on('addedToCart', function(e, item) {
-			that.cartItems.push(item);
-
-			var priceSplit = String(item.price).split('.');
-			item.price_base = priceSplit[0];
-			item.price_after_dec = priceSplit[1] ? priceSplit[1] : '00';
-			that.calculateTotalPrice();
+		$('body').on('modifyMiniCart', function(e, item) {
+			that.setTotalPriceAnimated(item.price);
 		});
 
 		return this;
 	},
 
-	calculateTotalPrice: function() {
+	setTotalPriceAnimated: function(newPrice) {
 		var that = this;
-		var totalPricePrev = that.totalPrice;
-		var itemPrice;
+		var iteratingPrice = that.totalPrice;
+		var animationStep;
+		var addedPrice;
 
-		that.totalPrice = 0;
+		clearInterval(that.priceAnimation);
 
-		for (var i = that.cartItems.length - 1; i >= 0; i--) {
-			// Вводим разные типы значений (weight/item)
-			if (that.cartItems[i].value.type === 'weight') {
-				itemPrice = that.cartItems[i].price * (that.cartItems[i].value.value / 1000);
-			}
-			if (that.cartItems[i].value.type === 'item') {
-				itemPrice = that.cartItems[i].price * that.cartItems[i].value.value;
-			}
-			console.log(4423423, that.cartItems)
-			that.totalPrice += itemPrice;
-		};
+		if (newPrice === undefined || newPrice === null) {
+			newPrice = that.totalPrice;
+		}
 
-		if (that.totalPrice - 12 > totalPricePrev) {
+		addedPrice = newPrice - that.totalPrice;
+
+		animationStep = addedPrice / 30;
+
+		if (newPrice - animationStep > that.totalPrice) {
 			that.priceAnimation = setInterval(function() {
-				if (totalPricePrev < that.totalPrice) {
-					totalPricePrev += 12;
-					that.setTotalPrice(totalPricePrev);
+				if (newPrice > iteratingPrice) {
+					iteratingPrice += animationStep;
+					that.setTotalPrice(iteratingPrice);
 				} else {
-					that.setTotalPrice(that.totalPrice);
+					that.setTotalPrice(newPrice);
 					clearInterval(that.priceAnimation);
 				}
 			}, 8);
 		} else {
-			that.setTotalPrice(that.totalPrice);
+			that.setTotalPrice(newPrice);
 		}
+
+		that.totalPrice = newPrice;
 	},
 
 	setTotalPrice: function(value) {
-		this.$('.header__order-summ').text( value.toFixed(2).replace('.', ',') );
+		this.$('.header__order-summ').text( Project.Utils.formatMoney(value / 100, 2, ',', '.') );
+	},
+
+	getTotalPrice: function(value) {
+		return Number(this.$('.header__order-summ').text().replace(',', '').replace('.', ''));
 	}
 });
 
@@ -146,24 +118,36 @@ Project.Blocks.Header = Project.extend({
 Project.Blocks.OfferItem = Project.extend({
 	init: function() {
 		var that = this;
+		var $target = this.$el;
+
 		var $field = this.$('.offer-item__field');
 		$field.numeric();
 
 
 		this.$('.offer-item__less').click(function() {
-			Project.Utils.changeValue($field, 'minus');
+			var quantity = Project.Utils.changeValue($field, 'minus');
+			// обновляем сам атрибут исключительно в визуально-отслеживательных целях.
+			// на самом деле достаточно следующей строчки
+			$target.attr('data-product-quantity', quantity);
+			$target.data('product-quantity', quantity);
 		});
 		
 		this.$('.offer-item__more').click(function() {
-			Project.Utils.changeValue($field, 'plus');
+			var quantity = Project.Utils.changeValue($field, 'plus');
+			// обновляем сам атрибут исключительно в визуально-отслеживательных целях.
+			// на самом деле достаточно следующей строчки
+			$target.attr('data-product-quantity', quantity);
+			$target.data('product-quantity', quantity);
 		});
 
 		this.$('.offer-item__cart').click(function() {
-			var item = that.$el.data('item');
-			var value = $field.val();
-			var type = $field.data('type');
-			var step = $field.data('step');
-			Project.Utils.addToCart(item, {type: type, step: step, value: value});
+	        var productData = {
+	            productId: $target.data('product-id'),
+	            quantity: $target.data("product-quantity"),
+	            action: 'add'
+	        };
+
+	        Project.Utils.modifyMiniCart(productData);
 		});
 	}	
 });
@@ -298,9 +282,9 @@ Project.Blocks.CartItem = Project.extend({
 		});
 
 
-		this.$('.cart__item-delete').click(function() {
-			that.$el.trigger('itemRemoved', that.$el.index());
-		});
+		// this.$('.cart__item-delete').click(function() {
+		// 	that.$el.trigger('itemRemoved', that.$el.index());
+		// });
 
 		this.countTotalPrice($field);
 
@@ -308,13 +292,15 @@ Project.Blocks.CartItem = Project.extend({
 	},
 
 	countTotalPrice: function($field) {
-		var priceForOne = Number( this.$('.cart__item-info .cart__item-main-price').text() );
-		var secondaryDigits = Number( this.$('.cart__item-info .cart__item-tenth').text() );
+		var $price = this.$('.cart__item-info .cart__item-price').not('._old-price');
+		var priceForOne = Number( $price.find('.cart__item-main-price').text() );
+		var secondaryDigits = Number( $price.find('.cart__item-tenth').text() );
 		var type = $field.data('type');
 
 		for (var i = 0, l = String(secondaryDigits).length ; i < l; i++) {
 			secondaryDigits = secondaryDigits * 0.1;
 		}
+
 		priceForOne += secondaryDigits;
 
 		var value;
@@ -324,7 +310,7 @@ Project.Blocks.CartItem = Project.extend({
 		if (type === 'item') {
 			value = Number($field.val());
 		}
-		
+
 		var totalPrice = priceForOne * value;
 
 		this._totalPrice = totalPrice;

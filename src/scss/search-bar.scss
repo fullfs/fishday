@@ -1,0 +1,50 @@
+.search-bar {
+	background: #262626;
+	padding: 40px 163px 40px 35px;
+	margin-top: 18px;
+	position: relative;
+}
+
+	.search-bar__form {
+
+	}
+
+		.search-bar__field {
+			@include input-common;
+			width: 100%;
+		}
+
+		.search-bar__submit {
+			position: absolute;
+			right: 35px;
+			top: 40px;
+			width: 120px;
+			text-align: center;
+			border: 0;
+			height: 36px;
+			line-height: 34px;
+			font-size: 14px;
+			font-family: inherit;
+			font-weight: bold;
+			text-transform: uppercase;
+			color: #444444;
+			cursor: pointer;
+			box-shadow: inset 0 -3px 0 0px #4c4c4c, inset 0 0 14px 1px rgba(0,0,0,0.3);
+
+			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cdcdcd+0,e8e8e8+26,8d8d8d+100 */
+			background: #cdcdcd; /* Old browsers */
+			background: -moz-linear-gradient(top, #cdcdcd 0%, #e8e8e8 26%, #8d8d8d 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#cdcdcd), color-stop(26%,#e8e8e8), color-stop(100%,#8d8d8d)); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top, #cdcdcd 0%,#e8e8e8 26%,#8d8d8d 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top, #cdcdcd 0%,#e8e8e8 26%,#8d8d8d 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top, #cdcdcd 0%,#e8e8e8 26%,#8d8d8d 100%); /* IE10+ */
+			background: linear-gradient(to bottom, #cdcdcd 0%,#e8e8e8 26%,#8d8d8d 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cdcdcd', endColorstr='#8d8d8d',GradientType=0 ); /* IE6-9 */
+
+
+			&:hover {
+				color: #914e26;
+				box-shadow: inset 0 -3px 0 0px #4c4c4c, inset 0 0 14px 1px rgba(230,193,170,.70);
+			}
+		}
+

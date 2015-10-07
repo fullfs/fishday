@@ -63,25 +63,46 @@ Project.Pages.OfferCard = Project.extend({
 	init: function() {
 		var that = this;
 
+		var $target = this.$el;
+
+		this.$('.goods__add-butt').click(function () {
+	        var productData = {
+	            productId: $target.data('product-id'),
+	            quantity: $target.data("product-quantity"),
+	            action: 'add'
+	        };
+
+	        Project.Utils.modifyMiniCart(productData);
+	    });
+
+
 		// Управление полем веса
 		var $field = this.$('.goods__add-field');
 		$field.numeric();
 
 		this.$('.goods__add-less').click(function() {
-			Project.Utils.changeValue($field, 'minus');
+			var quantity = Project.Utils.changeValue($field, 'minus');
+			// обновляем сам атрибут исключительно в визуально-отслеживательных целях.
+			// на самом деле достаточно следующей строчки
+			$target.attr('data-product-quantity', quantity);
+			$target.data('product-quantity', quantity);
 		});
 		
 		this.$('.goods__add-more').click(function() {
-			Project.Utils.changeValue($field, 'plus');
+			var quantity = Project.Utils.changeValue($field, 'plus');
+			// обновляем сам атрибут исключительно в визуально-отслеживательных целях.
+			// на самом деле достаточно следующей строчки
+			$target.attr('data-product-quantity', quantity);
+			$target.data('product-quantity', quantity);
 		});
 
-		this.$('.goods__add-butt').click(function() {
-			var item = that.$el.data('item');
-			var value = $field.val();
-			var type = $field.data('type');
-			var step = $field.data('step');
-			Project.Utils.addToCart(item, {type: type, step: step, value: value});
-		});
+		// this.$('.goods__add-butt').click(function() {
+		// 	var item = that.$el.data('item');
+		// 	var value = $field.val();
+		// 	var type = $field.data('type');
+		// 	var step = $field.data('step');
+		// 	Project.Utils.addToCart(item, {type: type, step: step, value: value});
+		// });
 
 
 
@@ -465,6 +486,7 @@ Project.Pages.Profile = Project.extend({
 		this.$('.profile__address-add').click(function(e) {
 			e.preventDefault();
 			var $newRow = $rowTpl.clone();
+			$newRow.find('.profile__address-del').data('prevent', true);
 
 			that.bindRemoveItem( $newRow.find('.profile__address-del') );
 			// that.bindCheckItem( $newRow.find('.profile__check') );
@@ -492,7 +514,10 @@ Project.Pages.Profile = Project.extend({
 
 	bindRemoveItem: function($item) {
 		var that = this;
-		$item.click(function() {
+		$item.click(function(event) {
+			if ($(this).data('prevent')) {
+				event.preventDefault();
+			}
 			$(this).closest('tr').remove();
 			that.refreshIndexes();
 			that.toggleRemoveButton();

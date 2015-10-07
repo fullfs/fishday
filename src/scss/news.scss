@@ -42,6 +42,26 @@
 	}
 }
 
+.news__content {
+	color: #dedede;
+	font-size: 14px;
+	font-family: Arial, sans-serif;
+	margin-bottom: 27px;
+	line-height: 18px;
+
+	p {
+		margin: 0 0 15px;
+	}
+
+	h2, h3, h4 {
+		font-family: Arial, sans-serif;
+		font-size: 18px;
+		font-weight: bold;
+		line-height: 20px;
+		margin: 10px 0 15px;
+	}
+}
+
 .news__inner-link {
 	color: #e2630a;
 

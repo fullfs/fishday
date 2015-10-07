@@ -119,7 +119,12 @@ html
 								.forming__field-wrapper
 									p.forming__field-text Дисконтная карта
 									input.forming__field._discount-card(type="text")
-								a.forming__change-card(href="#") Изменить номер карты
+									a.forming__change-card(href="#") Изменить номер карты
+									p.forming__card-warning
+										strong.forming__card-warning-b Важно!&#32;
+										span.forming__card-warning-text
+											| Cкидка по дисконтной карте осуществляется только при предъявлении покупателем карты курьеру!
+
 
 							
 
@@ -141,7 +146,12 @@ html
 								tr.forming__list-row
 									td.forming__list-article 000349
 									td.forming__list-name Сёмга рулет г/к
-									td.forming__list-cost <span class="forming__list-num">634,00</span> руб./кг
+									td.forming__list-cost 
+										span.forming__list-num 634,00&nbsp;
+										| руб./кг
+										.forming__old-price
+											span.forming__list-num 698,00&nbsp;
+											| руб./кг
 									td.forming__list-weight <span class="forming__list-num">800</span> гр.
 									td.forming__list-sum <span class="forming__list-num">507,20</span> руб.
 

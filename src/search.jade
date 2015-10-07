@@ -1,0 +1,60 @@
+doctype html
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+html 
+	<!--<![endif]-->
+	head
+		include ./includes/head.jade
+
+	body
+		include ./includes/main-menu.jade
+		.page-wrapper
+			include ./includes/header.jade
+
+
+
+			.content
+
+
+
+
+				.breadcrumbs
+
+					a.breadcrumbs__item(href="#") Главная
+					a.breadcrumbs__item(href="#") Каталог
+
+				h3.content-header Результаты поиска
+
+				.search-bar
+					form.search-bar__form
+						input.search-bar__field(type="text" placeholder="Например: копчение")
+						button(type="submit").search-bar__submit Искать
+
+				.catalog
+					.catalog__list
+						include ./includes/offer-item.jade
+						include ./includes/offer-item2.jade
+						include ./includes/offer-item.jade
+						include ./includes/offer-item.jade
+						include ./includes/offer-item.jade
+						include ./includes/offer-item.jade
+						include ./includes/offer-item.jade
+						include ./includes/offer-item.jade
+						include ./includes/offer-item.jade
+						include ./includes/offer-item.jade
+						include ./includes/offer-item.jade
+						include ./includes/offer-item.jade
+						include ./includes/offer-item.jade
+						include ./includes/offer-item.jade
+						include ./includes/offer-item.jade
+
+						
+
+
+					include ./includes/paginator.jade
+
+
+
+		include ./includes/footer.jade
+

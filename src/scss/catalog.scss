@@ -40,18 +40,25 @@
 	width: 314px;
 }
 
+.catalog__sort-chosen,
+.catalog__sort-link {
+	margin-left: 12px;
+}
+
 .catalog__sort-chosen {
 	color: #c5ce28;
-	padding-left: 15px;
 	text-decoration: none;
+	font-weight: bold;
+	border-bottom: 1px solid transparent;
 }
 
 .catalog__sort-link {
 	color: #ffffff;
-	padding-left: 15px;
+	text-decoration: none;
+	border-bottom: 1px solid #fff;
 
 	&:hover {
-		text-decoration: none;
+		border-color: transparent;
 	}
 }
 

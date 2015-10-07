@@ -342,8 +342,6 @@
 }
 
 .goods__deliver {
-	width: 502px;
-	float: left;
 	margin-top: 15px;
 }
 
@@ -371,10 +369,11 @@
 	font-family: Arial, sans-serif;
 	font-size: 14px;
 	color: #e2630a;
+	text-decoration: none;
+	border-bottom: 1px solid #e2630a;
 
 	&:hover {
-		text-decoration: none;
-		color: #de960a;
+		border-color: transparent;
 	}
 }
 

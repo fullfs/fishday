@@ -82,11 +82,25 @@
 .cart__item-price {
 	color: #cecece;
 	font-size: 13px;
+
+	&._new-price {
+		margin-top: -10px;
+	}
+
+	&._old-price {
+		font-size: 11px;
+		color: #777;
+	    text-decoration: line-through;
+	}
 }
 
 .cart__item-main-price {
 	font-weight: bold;
 	font-size: 28px;
+
+	.cart__item-price._old-price & {
+	    font-size: 18px;
+	}
 
 	&:after {
 		content: ',';
@@ -98,6 +112,10 @@
 	font-size: 23px;
 	font-weight: bold;
 	padding-right: 15px;
+
+	.cart__item-price._old-price & {
+		font-size: 14px;
+	}
 }
 
 .cart__item-form {
