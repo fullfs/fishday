@@ -96,6 +96,8 @@ Project.Pages.OfferCard = Project.extend({
 			$target.data('product-quantity', quantity);
 		});
 
+		Project.Utils.preventClickSelection(this.$('.goods__add-less, .goods__add-more'));
+
 		// this.$('.goods__add-butt').click(function() {
 		// 	var item = that.$el.data('item');
 		// 	var value = $field.val();

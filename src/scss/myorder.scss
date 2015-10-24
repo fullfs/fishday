@@ -115,18 +115,12 @@
 .myorder__link {
 	display: inline-block;
 	margin-right: 47px;
-	color: #e67629;
 	font-size: 16px;
 	margin-top: 32px;
+	@include link-orange;
 
 	&._wanna {
 		font-weight: bold;
 		font-size: 20px;
 	}
-
-	&:hover {
-		color: #de960a;
-		text-decoration: none;
-	}
-
 }

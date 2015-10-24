@@ -133,3 +133,11 @@ var n = number,
     j = (j = i.length) > 3 ? j % 3 : 0;
    return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
 };
+
+
+// Предовращаем выделение близлежащих строк при накликивании
+Project.Utils.preventClickSelection = function($el) {
+	$el.on('selectstart mousedown', function() {
+		return false;
+	});
+};

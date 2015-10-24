@@ -104,7 +104,7 @@ Project.Blocks.Header = Project.extend({
 	},
 
 	setTotalPrice: function(value) {
-		this.$('.header__order-summ').text( Project.Utils.formatMoney(value / 100, 2, ',', '.') );
+		this.$('.header__order-summ').text( Project.Utils.formatMoney(value / 100, 2, ',', ' ') );
 	},
 
 	getTotalPrice: function(value) {
@@ -140,10 +140,12 @@ Project.Blocks.OfferItem = Project.extend({
 			$target.data('product-quantity', quantity);
 		});
 
+		Project.Utils.preventClickSelection(this.$('.offer-item__less, .offer-item__more'));
+
 		this.$('.offer-item__cart').click(function() {
 	        var productData = {
 	            productId: $target.data('product-id'),
-	            quantity: $target.data("product-quantity"),
+	            quantity: $target.data('product-quantity'),
 	            action: 'add'
 	        };
 
@@ -268,18 +270,23 @@ Project.Blocks.CartItem = Project.extend({
 			that.$el.trigger('totalPriceRecounted');
 		});
 
+
 		this.$('.cart__item-less').click(function() {
-			Project.Utils.changeValue($field, 'minus');
+			var count = Project.Utils.changeValue($field, 'minus');
+			that.setCountToForm(count);
 			that.countTotalPrice($field);
 			that.$el.trigger('totalPriceRecounted');
 		});
 		
 		this.$('.cart__item-more').click(function() {
-			Project.Utils.changeValue($field, 'plus');
+			var count = Project.Utils.changeValue($field, 'plus');
+			that.setCountToForm(count);
 			// that.$('.cart__input-weight').val($field.val());
 			that.countTotalPrice($field);
 			that.$el.trigger('totalPriceRecounted');
 		});
+
+		Project.Utils.preventClickSelection(this.$('.cart__item-less, .cart__item-more'));
 
 
 		// this.$('.cart__item-delete').click(function() {
@@ -289,6 +296,20 @@ Project.Blocks.CartItem = Project.extend({
 		this.countTotalPrice($field);
 
 		return this;
+	},
+
+
+	setCountToForm: function(quantity) {
+		this.$('.cart__item-form').find('input[name*="QUANTITY_"][type="hidden"]').val(quantity);
+		this.$el.attr('data-product-quantity', quantity);
+		this.$el.data('product-quantity', quantity);
+
+        var productData = {
+            productId: this.$el.data('product-id'),
+            quantity: this.$el.data('product-quantity'),
+            action: 'add'
+        };
+        Project.Utils.modifyMiniCart(productData);
 	},
 
 	countTotalPrice: function($field) {

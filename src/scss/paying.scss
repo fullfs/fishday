@@ -24,7 +24,7 @@
 
 .paying__orders {
 	text-align: center;
-	padding-bottom: 52px;
+	padding-bottom: 38px;
 }
 
 .paying__orders-text {
@@ -74,6 +74,66 @@
 	left: 359px;
 }
 
+.paying__title-delivery-free,
+.paying__title-delivery-cost {
+	text-transform: uppercase;
+	font-weight: bold;
+	text-align: center;
+	color: #fff;
+}
+
+.paying__title-delivery-free {
+	font-size: 24px;
+	line-height: 30px;
+	margin-bottom: 30px;
+}
+
+.paying__title-delivery-cost {
+	font-size: 20px;
+	line-height: 24px;
+    margin-bottom: 10px;
+}
+
+
+.paying__cost {
+	text-align: center;
+	font-family: 'Roboto', Arial, sans-serif;
+	font-weight: bold;
+
+	.paying__size._med & {
+		color: #ffb403;
+	}
+
+	.paying__size._min & {
+		color: #0ca302;
+	}
+
+	.paying__size._max & {
+		color: #a50509;
+	}
+}
+	.paying__cost-num {
+		display: block;
+		font-size: 36px;
+		line-height: 36px;
+	}
+
+	.paying__cost-cur {
+		font-size: 17px;
+		line-height: 18px;
+	}
+
+
+
+.paying__size-wrap {
+	margin: 0px 0px 10px 0px;
+}
+
+.paying__cost-wrap {
+	margin: 0px 0px 0px 0px;
+	padding-bottom: 40px;
+}
+
 .paying__size {
 	width: 200px;
 	display: inline-block;
@@ -120,6 +180,21 @@
 	margin-bottom: 26px;
 }
 
+.paying__size-text {
+	text-align: center;
+	color: #ffffff;
+	font-family: Arial, sans-serif;
+	font-weight: bold;
+	font-size: 11px;
+	text-transform: uppercase;
+	padding-bottom: 5px;
+	line-height: 16px;
+}
+
+
+
+
+
 .paying__top-text {
 	padding-top: 44px;
 	width: 114px;
@@ -143,16 +218,7 @@
 	font-size: 14px;
 }
 
-.paying__size-text {
-	text-align: center;
-	color: #ffffff;
-	font-family: Arial, sans-serif;
-	font-weight: bold;
-	font-size: 11px;
-	text-transform: uppercase;
-	padding-bottom: 5px;
-	line-height: 16px;
-}
+
 
 .paying__features {
 	@include gradient-v(#fec400, #fc9400);

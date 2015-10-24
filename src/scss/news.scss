@@ -32,8 +32,11 @@
 	color: #dedede;
 	font-size: 14px;
 	font-family: Arial, sans-serif;
-	margin-bottom: 27px;
 	line-height: 18px;
+
+	& + & {
+		margin-top: 27px;
+	}
 
 	&._fat {
 		font-size: 18px;
@@ -46,7 +49,6 @@
 	color: #dedede;
 	font-size: 14px;
 	font-family: Arial, sans-serif;
-	margin-bottom: 27px;
 	line-height: 18px;
 
 	p {
@@ -73,9 +75,20 @@
 
 .news__separator {
 	width: 100%;
+	padding-top: 27px;
 	height: 1px;
+	position: relative;
+	clear: both;
 	border-bottom: 1px solid #353535;
-	border-top: 1px solid #353535;
+
+	&:before {
+		border-top: 1px solid #353535;
+		content: '';
+		left: 0;
+		right: 0;
+		bottom: 1px;
+		position: absolute;
+	}
 }
 
 .news__share {
