@@ -23,17 +23,12 @@
 }
 
 .login__forgot {
-	color: #cecece;
+	@include link-orange(#cecece);
 	font-family: Arial, sans-serif;
 	font-size: 12px;
 	position: absolute;
 	top: 7px;
 	right: 6px;
-
-	&:hover {
-		color: #ffffff;
-		text-decoration: none;
-	}
 }
 
 .login__field {
@@ -63,20 +58,14 @@
 }
 
 .login__right {
+	padding-top: 19px;
 	float: left;
 	width: 320px;
 }
 
 .login__register {
-	margin-top: 19px;
-	display: block;
 	font-size: 22px;
-	color: #cecece;
-
-	&:hover {
-		text-decoration: none;
-		color: #ffffff;
-	}
+	@include link-orange(#cecece);
 }	
 
 .login__vk {
@@ -103,6 +92,7 @@
 }
 
 .login__vk-text {
+	text-decoration: none;
 	vertical-align: top;
 	display: inline-block;
 	color: #ffffff;
@@ -141,6 +131,7 @@
 }
 
 .login__fb-text {
+	text-decoration: none;
 	vertical-align: top;
 	display: inline-block;
 	color: #ffffff;

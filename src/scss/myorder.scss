@@ -44,25 +44,32 @@
 }
 
 .myorder__item-name {
-	width: 361px;
+	width: 350px;
 	margin-left: 3px;
+	margin-right: 11px;
 	float: left;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .myorder__item-price {
-	width: 160px;
+	width: 155px;
+	white-space: nowrap;
 	float: left;
 }
 
 .myorder__item-weight {
-	width: 100px;
+	width: 80px;
+	white-space: nowrap;
 	float: left;
 }
 
 .myorder__item-summ {
 	float: left;
 	text-align: right;
-	width: 90px;
+	width: 115px;
+	white-space: nowrap;
 }
 
 .myorder__separator {
