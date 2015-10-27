@@ -257,31 +257,33 @@ Project.Pages.LegalInfo = Project.extend({
 Project.Pages.CartProceedSignIn = Project.extend({
 	init: function() {
 
-		this.$('.signin__new-form')
+		var formSelector = '.signin__form[name="regform"]';
+
+		this.$(formSelector)
 			.validateServer()
 			.validate({
 				rules: {
-					firstname: 'required',
-					lastname: 'required',
-					password: {
+					'REGISTER[NAME]': 'required',
+					'REGISTER[LAST_NAME]': 'required',
+					'REGISTER[PASSWORD]': {
 						required: true,
 						minlength: 5
 					},
-					confirm_password: {
+					'REGISTER[CONFIRM_PASSWORD]': {
 						required: true,
 						minlength: 5,
-						equalTo: '.signin__new-form input[name="password"]'
+						equalTo: formSelector + ' input[name="REGISTER[PASSWORD]"]'
 					},
-					email: {
+					'REGISTER[EMAIL]': {
 						required: true,
 						email: true
 					},
-					captcha: {
+					'captcha_word': {
 						required: true
 					},
 				},
 				messages: {
-					confirm_password: {
+					'REGISTER[CONFIRM_PASSWORD]': {
 						equalTo: 'Пароль должен совпадать с введённым выше'
 					}
 				}
