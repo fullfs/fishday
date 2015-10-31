@@ -77,9 +77,30 @@ html
 										input.forming__check(type="radio" name="deliver-type")
 										span.forming__check-text другой адрес
 
+								//- .forming__field-wrapper
+								//- 	p.forming__field-text Адрес доставки
+								//- 	textarea.forming__area
+
 								.forming__field-wrapper
 									p.forming__field-text Адрес доставки
-									textarea.forming__area
+
+									.forming__field-wrapper-sub
+										p.forming__field-text._sub Улица
+										input.forming__field(type="text" name="street")
+
+									.forming__field-wrapper-sub
+										.forming__field-wrapper-sub-unit._house
+											p.forming__field-text._sub Дом
+											input.forming__field(type="text" name="house")
+
+										.forming__field-wrapper-sub-unit._building
+											p.forming__field-text._sub Корпус
+											input.forming__field(type="text" name="building")
+
+										.forming__field-wrapper-sub-unit._flat
+											p.forming__field-text._sub Квартира
+											input.forming__field(type="text" name="flat")
+
 
 								.forming__field-wrapper
 									p.forming__field-text Район

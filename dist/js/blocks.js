@@ -160,6 +160,7 @@ Project.Blocks.LoginDialog = Project.extend({
 		var that = this;
 		that.$('form')
 			.validate({
+				focusInvalid: false,
 				rules: {
 					email: {
 						required: true,

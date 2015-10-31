@@ -55,7 +55,7 @@
 }
 
 .forming__field-wrapper {
-	width: 300px;
+	width: 265px;
 	padding-left: 18px;
 	padding-top: 26px;
 	position: relative;
@@ -66,14 +66,44 @@
 	}
 }
 
+	.forming__field-wrapper-sub {
+		margin-top: 15px;
+		@include cf;
+	}
+
+		.forming__field-wrapper-sub-unit {
+			float: left;
+
+			& + & {
+				margin-left: 8%;
+			}
+
+			&._house {
+				width: 24%;
+			}
+
+			&._building {
+				width: 25%;
+			}
+
+			&._flat {
+				width: 35%;
+			}
+		}
+
+
 .forming__field-text {
 	color: #cecece;
 	font-size: 18px;
+
+	&._sub {
+		font-size: 16px;
+	}
 }
 
 .forming__field {
 	@include input-common;
-	width: 265px;
+	width: 100%;
 	height: 35px;
 	margin-top: 5px;
 
@@ -253,8 +283,12 @@
 	}
 }
 
+.forming__list-num {
+	white-space: nowrap;
+}
+
 .forming__list-cost {
-	width: 163px;
+	width: 157px;
 	font-size: 13px;
 	font-family: Arial, sans-serif;
 	color: #cecece;
@@ -277,13 +311,13 @@
 }
 
 .forming__list-weight {
-	width: 148px;
+	width: 100px;
 	font-style: italic;
 	font-family: Arial, sans-serif;
 	font-size: 12px;
 	color: #cecece;
 
-	& .forming__list-num {
+	.forming__list-num {
 		font-size: 16px;
 		font-weight: bold;
 		font-style: normal;
@@ -291,7 +325,7 @@
 }
 
 .forming__list-sum {
-	width: 116px;
+	width: 160px;
 	font-family: Arial, sans-serif;
 	font-size: 13px;
 	color: #cecece;

@@ -15,9 +15,31 @@
 .myorder__text {
 	font-family: Arial, sans-serif;
 	color: #cecece;
-	margin-bottom: 36px;
+	margin-bottom: 16px;
 	font-size: 14px;
 }
+
+.myorder__warning {
+	border: 4px solid #c6cc2c;
+	padding: 13px 15px 15px;
+    margin-bottom: 20px;
+}
+
+	.myorder__warning-title {
+		font-family: Arial, sans-serif;
+		color: #c6cc2c;
+		font-size: 19px;
+		display: block;
+		margin-bottom: 10px;
+	}
+
+	.myorder__warning-text {
+		color: #cecece;
+		font-size: 14px;
+		line-height: 18px;
+		font-family: Arial, sans-serif;
+	}
+
 
 .myorder__number {
 	font-weight: bold;

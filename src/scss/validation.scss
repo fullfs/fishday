@@ -1,14 +1,18 @@
 span.validation-error {
-	position: absolute;
-	bottom: -18px;
+	// position: absolute;
+	// bottom: -18px;
 	width: 100%;
-	left: 0;
+	// left: 0;
 	text-align: center;
 	color: #ea2f48;
 	font-family: Arial, sans-serif;
 	font-size: 12px;
-	line-height: 12px;
-	white-space: nowrap;
+	// line-height: 12px;
+	line-height: 16px;
+    margin-top: 5px;
+    margin-bottom: -21px;
+    display: block;
+	// white-space: nowrap;
 }
 
 input.validation-error {

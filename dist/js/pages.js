@@ -262,6 +262,7 @@ Project.Pages.CartProceedSignIn = Project.extend({
 		this.$(formSelector)
 			.validateServer()
 			.validate({
+				focusInvalid: false,
 				rules: {
 					'REGISTER[NAME]': 'required',
 					'REGISTER[LAST_NAME]': 'required',
@@ -303,6 +304,7 @@ Project.Pages.SignUp = Project.extend({
 		this.$('.signup__form')
 			.validateServer()
 			.validate({
+				focusInvalid: false,
 				rules: {
 					firstname: 'required',
 					lastname: 'required',
@@ -345,6 +347,7 @@ Project.Pages.CartProceedDeliveryInfo = Project.extend({
 
 
 		this.$('.forming__form').validate({
+			focusInvalid: false,
 			rules: {
 				firstname: 'required',
 				lastname: 'required',
@@ -432,6 +435,7 @@ Project.Pages.PasswordRecovery = Project.extend({
 		this.$('.forgot__form')
 			.validateServer()
 			.validate({
+				focusInvalid: false,
 				rules: {
 					email: {
 						required: true,
@@ -452,6 +456,7 @@ Project.Pages.Subscribe = Project.extend({
 		this.$('.subscribe__form')
 			.validateServer()
 			.validate({
+				focusInvalid: false,
 				rules: {
 					email: {
 						required: true,
