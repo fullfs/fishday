@@ -109,18 +109,24 @@ html
 										option(value="1") Дзержинский
 										option(value="2") Калининский
 
-								.forming__field-wrapper
+								.forming__field-wrapper._delivery-type
 									p.forming__field-text Вид доставки
 									label.forming__check-wrap
-										input.forming__check(type="radio" name="deliver-type")
+										input.forming__check._courier(type="radio" name="deliver-type" checked)
 										span.forming__check-text Доставка курьером
 										span.forming__check-ph (краткие условия доствки)
 
 									label.forming__check-wrap
-										input.forming__check(type="radio" name="deliver-type")
+										input.forming__check._self(type="radio" name="deliver-type")
 										span.forming__check-text Самовывоз
 										span.forming__check-ph (условия самовывоза)
 
+								.forming__field-wrapper._store(style="display: none;")
+									p.forming__field-text Магазин
+									select.forming__select
+										option(value="") ...выберите магазин
+										option(value="1") Какой-то магазин 1
+										option(value="2") Какой-то магазин 2
 
 						.forming__box._cash
 

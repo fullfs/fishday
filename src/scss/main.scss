@@ -921,6 +921,7 @@ a, button {
 
 .footer__social-pics {
 	padding-top: 4px;
+	padding-bottom: 20px;
 }
 
 .footer__vk {
@@ -929,7 +930,7 @@ a, button {
 	height: 40px;
 	background: url('../images/vk.png');
 	margin-left: 2px;
-	margin-right: 7px;
+	margin-right: 8px;
 }
 
 .footer__ok {
@@ -937,7 +938,7 @@ a, button {
 	width: 40px;
 	height: 40px;
 	background: url('../images/ok.png');
-	margin-right: 5px;
+	margin-right: 8px;
 }
 
 .footer__insta {
@@ -949,64 +950,77 @@ a, button {
 
 .footer__subscr-text {
 	font-size: 11px;
-	padding-top: 40px;
 	padding-bottom: 10px;
 }
 
 .footer__subscr {
-
-}
-
-.footer__subscr-field {
-	box-sizing: border-box;
-	display: inline-block;
-	margin-right: 3px;
-	width: 140px;
-	height: 29px;
-	border: 1px solid #c0c0c0;
-	box-shadow: 0px 2px 0 0 #282828;
-	padding-left: 12px;
-	font-size: 13px;
-	font-style: italic;
-	color: #000000;
-}
-
-.footer__subscr-submit {
-	box-sizing: border-box;
-	display: inline-block;
-	width: 30px;
-	height: 29px;
-	border: 0;
-	position: relative;
-	box-shadow: 0px 2px 0 0 #282828;
-}
-
-.footer__submit-wrap {
-	position: relative;
-	display: inline-block;
-	cursor: pointer;
-}
-
-.footer__submit-wrap:hover {
-
-	&:after {
-		background: url('../images/send-hover.png');
-	}
-
-	& .footer__subscr-submit {
-		box-shadow: 0px 2px 0 0 #747474;
+	&._search {
+		padding-bottom: 22px;
 	}
 }
 
-.footer__submit-wrap:after {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: url('../images/send.png');
-}
+	.footer__subscr-field {
+		box-sizing: border-box;
+		display: inline-block;
+		margin-right: 3px;
+		width: 140px;
+		height: 29px;
+		border: 1px solid #c0c0c0;
+		box-shadow: 0px 2px 0 0 #282828;
+		padding-left: 10px;
+		padding-right: 10px;
+		font-size: 13px;
+		font-style: italic;
+		color: #000000;
+	}
+
+	.footer__subscr-submit {
+		box-sizing: border-box;
+		display: inline-block;
+		width: 30px;
+		height: 29px;
+		border: 0;
+		position: relative;
+		box-shadow: 0px 2px 0 0 #282828;
+	}
+
+	.footer__submit-wrap {
+		position: relative;
+		display: inline-block;
+		cursor: pointer;
+
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: url('../images/send.png') 0 0;
+		}
+
+		&:hover {
+			&:after {
+				background-position: 0 -29px;
+			}
+
+			.footer__subscr-submit {
+				box-shadow: 0px 2px 0 0 #747474;
+			}
+		}
+
+		&._search {
+			&:after {
+				background: url('../images/search.png') 0 0;
+			}
+
+			&:hover {
+				&:after {
+					background-position: 0 -29px;
+				}
+			}
+		}
+	}
 
 
 .tothetop {

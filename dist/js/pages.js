@@ -361,6 +361,18 @@ Project.Pages.CartProceedDeliveryInfo = Project.extend({
 
 
 
+		this.$el.on('change', '.forming__check._courier, .forming__check._self', function() {
+			if ($(this).is('._self')) {
+				that.$('.forming__field-wrapper._store').show();
+			} else {
+				that.$('.forming__field-wrapper._store').hide();
+			}
+		});
+
+
+
+
+
 		var $discountField = this.$('.forming__field._discount-card');
 
 		$discountField.on('keydown', function() {
