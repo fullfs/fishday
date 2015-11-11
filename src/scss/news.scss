@@ -51,6 +51,10 @@
 	font-family: Arial, sans-serif;
 	line-height: 18px;
 
+	a {
+		@include link-orange;
+	}
+
 	p {
 		margin: 0 0 15px;
 	}

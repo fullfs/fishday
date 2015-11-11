@@ -3,6 +3,27 @@
 	margin-bottom: 10px;
 	background: #262626;
 	padding: 32px 24px 35px 28px;
+
+	& > a,
+	p a {
+		@include link-orange;
+	}
+
+	p {
+		font-family: Arial, sans-serif;
+		font-size: 14px;
+		line-height: 18px;
+		color: #cecece;
+		margin-bottom: 17px;
+	}
+
+	h2, h3, h4 {
+		font-family: Arial, sans-serif;
+		font-size: 18px;
+		font-weight: bold;
+		line-height: 20px;
+		margin: 10px 0 15px;
+	}
 }
 
 .about__header {
@@ -29,13 +50,7 @@
 	}
 }
 
-.about__text {
-	font-family: Arial, sans-serif;
-	font-size: 14px;
-	line-height: 18px;
-	color: #cecece;
-	margin-bottom: 17px;
-}
+
 
 .about__video {
 	width: 570px;

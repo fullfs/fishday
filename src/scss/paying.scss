@@ -332,15 +332,26 @@
 	text-align: left;
 	margin-top: 25px;
 	display: none;
+
+	a {
+		@include link-orange;
+	}
+
+	p {
+		color: #d2d2d2;
+		font-size: 14px;
+		font-family: Arial, sans-serif;
+		line-height: 17px;
+		margin-bottom: 16px;
+	}
+
+	ol, ul {
+	    list-style-position: inside;
+		color: #d2d2d2;
+	}
+
 }
 
-.paying__condition-text {
-	color: #d2d2d2;
-	font-size: 14px;
-	font-family: Arial, sans-serif;
-	line-height: 17px;
-	margin-bottom: 16px;
-}
 
 .paying__condition-close {
 	margin-top: 28px;
