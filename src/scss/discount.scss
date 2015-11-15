@@ -98,10 +98,21 @@
 
 .discount__text {
 	font-family: Arial, sans-serif;
-	font-weight: bold;
-	font-size: 16px;
+	font-size: 14px;
 	color: #dedede;
 
+	a {
+		@include link-orange;
+	}
+
+	p {
+		margin-bottom: 16px;
+	}
+
+	ol, ul {
+	    list-style-position: inside;
+		color: #d2d2d2;
+	}
 }	
 
 .discount__link-wrap  {

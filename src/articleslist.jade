@@ -1,0 +1,78 @@
+doctype html
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+html 
+	<!--<![endif]-->
+	head
+		include ./includes/head.jade
+
+	body
+		include ./includes/main-menu.jade
+		.page-wrapper
+			include ./includes/header.jade
+
+
+
+
+
+			.content
+
+
+
+
+				.breadcrumbs
+
+					a.breadcrumbs__item(href="#") Главная
+					a.breadcrumbs__item(href="#") Полезные статьи
+
+				h3.content-header Полезные статьи
+
+
+				.articleslist
+					ul.articleslist__list
+
+						li.articleslist__item
+							h3.articleslist__header
+								a.articleslist__header-link(href="#") Тунец доплыл до Новосибирска!
+							p.articleslist__text 
+								| Тунец в Новосибирске ценится гораздо выше, чем к примеру, речная рыба. Ни для кого не секрет, что в последнее время наша «родная» рыба стала опасной для здоровья, в связи с неблагополучной экологией рек. Морская же рыба в этом отношении совершенно безопасна и экологически чиста.
+
+						li.articleslist__item
+							h3.articleslist__header
+								a.articleslist__header-link(href="#") Как устрицы попадают в Новосибирск
+							p.articleslist__text
+								| Устрицы жители Новосибирска смогли оценить совсем недавно, но уже за несколько лет существования на нашем рынке, они тем не менее, нашли немало поклонников.
+
+						li.articleslist__item
+							h3.articleslist__header
+								a.articleslist__header-link(href="#") Филе форели: секреты оптовой торговли
+							p.articleslist__text 
+								| Филе форели на рынке Новосибирска пользуется постоянным спросом среди населения. И аналитики отмечают дальнейший рост спроса в данном сегменте торговли морепродуктами.
+
+						li.articleslist__item
+							h3.articleslist__header
+								a.articleslist__header-link(href="#") Продажи форели охлаждённой в Новосибирске
+							p.articleslist__text
+								| Если пробежаться по магазинам, то можно заметить, что одна и та же марка форели охлаждённой в разных магазинах Новосибирска может продаваться по совершенно разным ценам.
+
+						li.articleslist__item
+							h3.articleslist__header
+								a.articleslist__header-link(href="#") Форель слабосолёная в магазинах Новосибирска
+							p.articleslist__text
+								| Форель слабосолёная, продаваемая в Новосибирске — товар довольно популярный, но покупая этот деликатесный продукт, стоит помнить, что далеко не все производители могут сохранить изысканный вкус этой рыбы и осуществить ее качественное хранение.
+
+
+
+
+				include ./includes/paginator.jade
+
+
+
+
+				
+
+
+
+		include ./includes/footer.jade
+

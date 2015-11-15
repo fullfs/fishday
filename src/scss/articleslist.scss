@@ -1,0 +1,33 @@
+.articleslist {
+	font-family: Arial, sans-serif;
+	box-sizing: border-box;
+	padding: 20px 0px 1px 20px;
+	background: #262626;
+	margin-top: 31px;
+}
+
+	.articleslist__list {
+		list-style-type: none;
+	}
+
+	.articleslist__item {
+		margin-bottom: 37px;
+	}
+
+
+	.articleslist__header {
+		display: block;
+		margin-bottom: 12px;
+		font-size: 20px;
+		font-weight: bold;
+	}
+
+		.articleslist__header-link {
+			@include link-orange;
+		}
+
+	.articleslist__text {
+		color: #dedede;
+		font-size: 14px;
+		line-height: 17px;
+	}

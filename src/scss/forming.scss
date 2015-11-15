@@ -79,15 +79,11 @@
 			}
 
 			&._house {
-				width: 24%;
-			}
-
-			&._building {
-				width: 25%;
+				width: 46%;
 			}
 
 			&._flat {
-				width: 35%;
+				width: 46%;
 			}
 		}
 
@@ -352,8 +348,6 @@
 }
 
 .forming__goods-bottom {
-
-	width: 330px;
 	float: right;
 	margin-right: 18px;
 	margin-top: 14px;
@@ -445,6 +439,9 @@
 		font-size: 20px;
 	}
 
+	.forming__goods-bottom-name {
+		padding-left: 20px;
+	}
 }
 
 .forming__butt-wrap {

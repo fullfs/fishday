@@ -66,64 +66,64 @@
 	}
 }
 
-.newslist__pages {
-	text-align: center;
-	margin-top: 20px;
-	margin-bottom: 47px;
-}
+// .newslist__pages {
+// 	text-align: center;
+// 	margin-top: 20px;
+// 	margin-bottom: 47px;
+// }
 
-.newslist__back, .newslist__next {
-	display: inline-block;
-	font-size: 18px;
-	font-weight: bold;
-	color: #ffffff;
-	text-transform: uppercase;
-	text-decoration: none;
-	position: relative;
+// .newslist__back, .newslist__next {
+// 	display: inline-block;
+// 	font-size: 18px;
+// 	font-weight: bold;
+// 	color: #ffffff;
+// 	text-transform: uppercase;
+// 	text-decoration: none;
+// 	position: relative;
 
-	&:after {
-		content: '';
-		position: absolute;
-		top: -2px;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		border-bottom: 2px solid #AAAAAA;
-	}
+// 	&:after {
+// 		content: '';
+// 		position: absolute;
+// 		top: -2px;
+// 		left: 0;
+// 		width: 100%;
+// 		height: 100%;
+// 		border-bottom: 2px solid #AAAAAA;
+// 	}
 
-	&:hover:after {
-		border: 0;
-	}
-}
+// 	&:hover:after {
+// 		border: 0;
+// 	}
+// }
 
-.newslist__next {
-	margin-left: 19px;
-}
+// .newslist__next {
+// 	margin-left: 19px;
+// }
 
-.newslist__back {
-	margin-right: 24px;
-}
+// .newslist__back {
+// 	margin-right: 24px;
+// }
 
-.newslist__page-numbers {
-	display: inline-block;
-}
+// .newslist__page-numbers {
+// 	display: inline-block;
+// }
 
-.newslist__page-link {
-	display: inline-block;
-	width: 30px;
-	height: 25px;
-	color: #ffffff;
-	border: 3px solid #ffffff;
-	text-decoration: none;
-	border-radius: 30px;
-	margin-left: 5px;
-	padding-top: 5px;
-	font-weight: bold;
-	font-size: 18px;
+// .newslist__page-link {
+// 	display: inline-block;
+// 	width: 30px;
+// 	height: 25px;
+// 	color: #ffffff;
+// 	border: 3px solid #ffffff;
+// 	text-decoration: none;
+// 	border-radius: 30px;
+// 	margin-left: 5px;
+// 	padding-top: 5px;
+// 	font-weight: bold;
+// 	font-size: 18px;
 
-	&._selected {
-		background: #ffffff;
-		color: #262626;
-	}
+// 	&._selected {
+// 		background: #ffffff;
+// 		color: #262626;
+// 	}
 
-}
+// }
