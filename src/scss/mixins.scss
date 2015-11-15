@@ -28,6 +28,17 @@
 }
 
 
+@mixin link($color: #cecece) {
+	color: $color;
+	text-decoration: none;
+	border-bottom: 1px solid $color;
+	
+	&:hover {
+		color: $color;
+		border-color: transparent;
+	}
+}
+
 @mixin link-orange($color: #e67629) {
 	color: $color;
 	text-decoration: none;

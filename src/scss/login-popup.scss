@@ -23,7 +23,7 @@
 }
 
 .login__forgot {
-	@include link-orange(#cecece);
+	@include link;
 	font-family: Arial, sans-serif;
 	font-size: 12px;
 	position: absolute;
@@ -65,7 +65,7 @@
 
 .login__register {
 	font-size: 22px;
-	@include link-orange(#cecece);
+	@include link;
 }	
 
 .login__vk {

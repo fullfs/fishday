@@ -77,7 +77,7 @@
 	position: absolute;
 	top: 7px;
 	right: 6px;
-	@include link-orange(#cecece);
+	@include link;
 }
 
 .signin__butt {
@@ -201,9 +201,8 @@
 }
 
 .signin__link {
-	color: #e2630a;
 	font-family: Arial, sans-serif;
-
+	@include link-orange(#e2630a);
 }
 
 .signin__captcha {

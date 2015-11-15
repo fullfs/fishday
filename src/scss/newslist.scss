@@ -28,21 +28,16 @@
 }
 
 .newslist__main {
+	margin-top: 7px;
 	float: left;
 	width: 540px;
 }
 
 .newslist__header {
-	display: block;
-	margin-top: 7px;
-	font-size: 21px;
 	font-weight: bold;
+	font-size: 20px;
 	color: #e67629;
-
-	&:hover {
-		color: #de960a;
-		text-decoration: none;
-	}
+	@include link-orange;
 }
 
 .newslist__date {
@@ -58,12 +53,8 @@
 }
 
 .newslist__inner-link {
-	color: #dedede;
+	@include link(#dedede);
 	font-weight: bold;
-
-	&:hover {
-		text-decoration: none;
-	}
 }
 
 // .newslist__pages {

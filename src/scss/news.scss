@@ -5,7 +5,7 @@
 }
 
 .news__header {
-	font-weight: bold;
+	font-weight: 500;
 	font-size: 24px;
 	color: #ffffff;
 	width: 650px;
@@ -69,12 +69,7 @@
 }
 
 .news__inner-link {
-	color: #e2630a;
-
-	&:hover {
-		color: #de960a;
-		text-decoration: none;
-	}
+	@include link-orange;
 }
 
 .news__separator {
