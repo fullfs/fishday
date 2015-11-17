@@ -526,7 +526,7 @@ Project.Pages.Profile = Project.extend({
 	refreshIndexes: function() {
 		var that = this;
 		this.$('.profile__address-stroke._body').each(function(index, item) {
-			$(this).find('input').each(function() {
+			$(this).find('input, select').each(function() {
 				$(this).prop('name', $(this).prop('name').replace(/\[[0-9]+\]/, '[' + index + ']') )
 			});
 		});
