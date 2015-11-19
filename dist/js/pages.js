@@ -120,7 +120,25 @@ Project.Pages.OfferCard = Project.extend({
 				}
 			);
 			dialog.open();
+
+			that.$('.buy-asap')
+				.removeClass('_show-form _show-success _show-error')
+				.show()
+				.prev('p').remove();
 		});
+
+
+		if (
+			that.$('.buy-asap').is('._show-form') ||
+			that.$('.buy-asap').is('._show-success')
+		) {
+			if (that.$('.buy-asap').is('._show-success')) {
+				that.$('.buy-asap').hide();
+			}
+			this.$('.goods__buy-butt').click();
+		}
+
+			   // _show-error _show-success
 
 
 

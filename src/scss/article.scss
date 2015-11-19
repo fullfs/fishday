@@ -77,28 +77,34 @@
 				line-height: 18px;
 				font-size: 14px;
 				color: #dedede;
-				float: left;
 				width: 50%;
-				text-align: right;
 				position: relative;
-				padding: 0 22px 0 0;
 				box-sizing: border-box;
 
 				&:before {
-				    content: '→';
 				    position: absolute;
 				    top: 0;
-			    	right: 0px;
 				}
 
-				&:first-child {
+				&._prev {
+					float: left;
 					text-align: left;
-					padding: 0 0 0 22px;
+					padding: 0 10px 0 22px;
 
 					&:before {
-						right: auto;
-				    	left: 0px;
 				    	content: '←';
+				    	left: 0px;
+					}
+				}
+
+				&._next {
+					float: right;	
+					text-align: right;
+					padding: 0 22px 0 10px;
+
+					&:before {
+					    content: '→';
+				    	right: 0px;
 					}
 				}
 			}
