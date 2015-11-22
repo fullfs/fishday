@@ -11,38 +11,43 @@ gulp.task('default', function() {
     gulp.start('buildScss');
     gulp.start('buildJade');
     watch('./src/scss/*.scss', function () {
-    	setTimeout(function() {
+        setTimeout(function() {
             gulp.start('buildScss');
         }, 100)
     });
 
     watch('./src/**/*.jade', function (file) {
-        jadePath = file.path;
+        if (file.path.match(/includes\\/)) {
+            jadePath = null;
+        } else {
+            jadePath = file.path;
+        }
+
         setTimeout(function() {
             gulp.start('buildJade');
-        }, 100)
+        }, 100);
     });
 });
 
 
 gulp.task('buildScss', function() {
     return gulp.src('./src/scss/' + config.cssFilename)
-    	// s.pipe(sourcemaps.init())
-    	.pipe(sass({
+        // s.pipe(sourcemaps.init())
+        .pipe(sass({
             errLogToConsole: true
         }))
-		// s.pipe(sourcemaps.write('./'))
-    	.pipe(gulp.dest('./dist/css/'));
+        // s.pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest('./dist/css/'));
 });
 
 
 gulp.task('buildJade', function() {
-    return gulp.src('./src/*.jade')
-	    .pipe(jade({
-	    	locals: {},
-	    	pretty: '    '
-	    }))
-	    .pipe(gulp.dest('./dist/'));
+    return gulp.src(jadePath || './src/*.jade')
+        .pipe(jade({
+            locals: {},
+            pretty: '    '
+        }))
+        .pipe(gulp.dest('./dist/'));
 });
 
 
