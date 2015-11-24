@@ -56,7 +56,7 @@
 
 	.orderlist__visibile-stroke & {
 		vertical-align: top;
-		padding-top: 9px;
+		padding-top: 11px;
 	}
 }
 
@@ -68,21 +68,22 @@
 	font-weight: bold;
 	cursor: pointer;
 
-	&:after {
-		position: absolute;
-		content: '';
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		border-bottom: 2px solid #e67629;
-	}
+	// &:after {
+	// 	position: absolute;
+	// 	content: '';
+	// 	top: 0;
+	// 	left: 0;
+	// 	width: 100%;
+	// 	height: 100%;
+	// 	border-bottom: 2px solid #e67629;
+	// }
 
 	&:hover {
 		color: #de960a;
-		&:after {
-			border: 0;
-		}
+
+		// &:after {
+		// 	border: 0;
+		// }
 	}
 }
 

@@ -124,7 +124,7 @@ Project.Pages.OfferCard = Project.extend({
 			that.$('.buy-asap')
 				.removeClass('_show-form _show-success _show-error')
 				.show()
-				.prev('p').remove();
+				.parent().find('.buy-asap_message_container').hide();
 		});
 
 
