@@ -125,7 +125,7 @@ a, button {
 	width: 291px;
 	position: relative;
 
-	& a {
+	a {
 		color: #ffffff;
 		font-weight: bold;
 		text-align: center;
@@ -134,6 +134,11 @@ a, button {
 		&.header__signin-link {
 			position: relative;
 			margin-left: 98px;
+		    margin-right: 11px;
+		}
+
+		&.header__signup-link {
+			position: relative;
 		}
 
 		&:before {
@@ -189,12 +194,6 @@ a, button {
 	&:before {
 		display: none;
 	}
-}
-
-.header__signup-link {
-	position: absolute;
-	top: 50px;
-	left: 142px;
 }
 
 .header__phone {
