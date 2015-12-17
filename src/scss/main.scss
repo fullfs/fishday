@@ -828,9 +828,10 @@ a, button {
 }
 
 .footer__autors {
-	padding-top: 71px;
 	font-size: 11px;
-	color: #a4a4a4;
+    position: absolute;
+    color: #a4a4a4;
+    bottom: 16px;
 }
 
 .footer__autors-link {
@@ -862,7 +863,7 @@ a, button {
 .footer__menu {
 	overflow: hidden;
 	font-size: 13px;
-	padding-bottom: 24px;
+	padding-bottom: 20px;
 }
 
 .footer__menu ul {
