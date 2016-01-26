@@ -80,21 +80,29 @@ Project.Pages.OfferCard = Project.extend({
 		var $field = this.$('.goods__add-field');
 		$field.numeric();
 
-		this.$('.goods__add-less').click(function() {
-			var quantity = Project.Utils.changeValue($field, 'minus');
-			// обновляем сам атрибут исключительно в визуально-отслеживательных целях.
-			// на самом деле достаточно следующей строчки
-			$target.attr('data-product-quantity', quantity);
-			$target.data('product-quantity', quantity);
-		});
-		
-		this.$('.goods__add-more').click(function() {
-			var quantity = Project.Utils.changeValue($field, 'plus');
-			// обновляем сам атрибут исключительно в визуально-отслеживательных целях.
-			// на самом деле достаточно следующей строчки
-			$target.attr('data-product-quantity', quantity);
-			$target.data('product-quantity', quantity);
-		});
+		Project.Utils.bindIterate(
+			this.$('.goods__add-less'),
+			$field,
+			'minus',
+			function(quantity) {
+				// обновляем сам атрибут исключительно в визуально-отслеживательных целях.
+				// на самом деле достаточно следующей строчки
+				$target.attr('data-product-quantity', quantity);
+				$target.data('product-quantity', quantity);
+			}
+		);
+
+		Project.Utils.bindIterate(
+			this.$('.goods__add-more'),
+			$field,
+			'plus',
+			function(quantity) {
+				// обновляем сам атрибут исключительно в визуально-отслеживательных целях.
+				// на самом деле достаточно следующей строчки
+				$target.attr('data-product-quantity', quantity);
+				$target.data('product-quantity', quantity);
+			}
+		);
 
 		Project.Utils.preventClickSelection(this.$('.goods__add-less, .goods__add-more'));
 
@@ -516,7 +524,7 @@ Project.Pages.Profile = Project.extend({
 	init: function() {
 		var that = this;
 		var $addrTable = this.$('.profile__address-table');
-		
+
 		var $rowTpl = this.$('.profile__address-stroke._body').first().clone();
 		$rowTpl.find('input[type="text"]').val('');
 		$rowTpl.find('input[type="radio"]').prop('checked', false);
@@ -608,4 +616,3 @@ Project.Pages.Reciepe = Project.extend({
 		this.$('.reciepe__pic-link').fancybox();
 	}
 });
-

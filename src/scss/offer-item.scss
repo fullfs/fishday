@@ -4,7 +4,7 @@
 	width: 250px;
 	position: relative;
 }
-	
+
 	.offer-item__link {
 		text-decoration: none;
 	}
@@ -64,19 +64,19 @@
 
 
 
-
+		.offer-item__old-price,
+		.offer-item__new-price {
+			display: inline-block;
+			vertical-align: top;
+		}
 
 
 		.offer-item__old-price {
-			display: block;
-			float: left;
 			font-size: 22px;
 			text-align: right;
-			padding-right: 10px;
-			padding-left: 36px;
 			padding-top: 6px;
 
-			& .offer-item__price-text {
+			.offer-item__price-text {
 				text-align: center;
 				font-weight: normal;
 			}
@@ -87,10 +87,7 @@
 		}
 
 		.offer-item__new-price {
-			float: left;
-			display: block;
-
-			& .offer-item__price-text {
+			.offer-item__price-text {
 				color: #d62800;
 				font-weight: normal;
 			}
@@ -176,9 +173,8 @@
 				height: 100%;
 				background: url('../images/cart2.png');
 				cursor: pointer;
-				
+
 				&:hover {
 					background: url('../images/cart2-hover.png');
 				}
 			}
-

@@ -17,7 +17,7 @@ gulp.task('default', function() {
     });
 
     watch('./src/**/*.jade', function (file) {
-        if (file.path.match(/includes\\/)) {
+        if (file.path.match(/includes\\|includes\//)) {
             jadePath = null;
         } else {
             jadePath = file.path;
@@ -49,5 +49,3 @@ gulp.task('buildJade', function() {
         }))
         .pipe(gulp.dest('./dist/'));
 });
-
-

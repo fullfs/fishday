@@ -25,7 +25,7 @@
 .discount__step-pic {
 
 	&._first {
-		background: url('../images/discount-pic1.png');
+		background: url('../images/discount-pic1.png') no-repeat;
 		width: 103px;
 		height: 100px;
 		margin-left: 48px;
@@ -33,7 +33,7 @@
 	}
 
 	&._second {
-		background: url('../images/discount-pic2.png');
+		background: url('../images/discount-pic2.png') no-repeat;
 		width: 170px;
 		height: 129px;
 		margin-top:-6px;
@@ -41,7 +41,7 @@
 	}
 
 	&._third {
-		background: url('../images/discount-pic3.png');
+		background: url('../images/discount-pic3.png') no-repeat;
 		width: 104px;
 		height: 104px;
 		margin-top: 6px;
@@ -57,23 +57,19 @@
 	color: #ffffff;
 	text-align: center;
 	text-transform: uppercase;
+	top: 140px;
+	left: 0px;
 
 	.discount__step-pic._first + & {
 		width: 200px;
-		bottom: -72px;
-		left: 0px;
-
 	}
 
 	.discount__step-pic._second + & {
 		width: 208px;
-		bottom: -64px;
-		left: 0px;
 	}
 
 	.discount__step-pic._third + & {
 		width: 149px;
-		bottom: -101px;
 		left: 52px;
 	}
 }
@@ -113,7 +109,7 @@
 	    list-style-position: inside;
 		color: #d2d2d2;
 	}
-}	
+}
 
 .discount__link-wrap  {
 	text-align: center;

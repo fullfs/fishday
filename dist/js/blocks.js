@@ -46,7 +46,7 @@ Project.Blocks.Header = Project.extend({
 
 		this.$menuHolder = this.$('.main-menu__holder');
 		this.$headerMenuWrapper = this.$('.header__bottom-wrapper');
-		
+
 		this._menuOffset = $menuHead.height() + $menuHead.offset().top ;
 		this._headerMenuOffset = $headerMenuHolder.height() + $headerMenuHolder.offset().top;
 
@@ -123,22 +123,29 @@ Project.Blocks.OfferItem = Project.extend({
 		var $field = this.$('.offer-item__field');
 		$field.numeric();
 
+		Project.Utils.bindIterate(
+			this.$('.offer-item__less'),
+			$field,
+			'minus',
+			function(quantity) {
+				// обновляем сам атрибут исключительно в визуально-отслеживательных целях.
+				// на самом деле достаточно следующей строчки
+				$target.attr('data-product-quantity', quantity);
+				$target.data('product-quantity', quantity);
+			}
+		);
 
-		this.$('.offer-item__less').click(function() {
-			var quantity = Project.Utils.changeValue($field, 'minus');
-			// обновляем сам атрибут исключительно в визуально-отслеживательных целях.
-			// на самом деле достаточно следующей строчки
-			$target.attr('data-product-quantity', quantity);
-			$target.data('product-quantity', quantity);
-		});
-		
-		this.$('.offer-item__more').click(function() {
-			var quantity = Project.Utils.changeValue($field, 'plus');
-			// обновляем сам атрибут исключительно в визуально-отслеживательных целях.
-			// на самом деле достаточно следующей строчки
-			$target.attr('data-product-quantity', quantity);
-			$target.data('product-quantity', quantity);
-		});
+		Project.Utils.bindIterate(
+			this.$('.offer-item__more'),
+			$field,
+			'plus',
+			function(quantity) {
+				// обновляем сам атрибут исключительно в визуально-отслеживательных целях.
+				// на самом деле достаточно следующей строчки
+				$target.attr('data-product-quantity', quantity);
+				$target.data('product-quantity', quantity);
+			}
+		);
 
 		Project.Utils.preventClickSelection(this.$('.offer-item__less, .offer-item__more'));
 
@@ -151,7 +158,7 @@ Project.Blocks.OfferItem = Project.extend({
 
 	        Project.Utils.modifyMiniCart(productData);
 		});
-	}	
+	}
 });
 
 
@@ -271,21 +278,27 @@ Project.Blocks.CartItem = Project.extend({
 			that.$el.trigger('totalPriceRecounted');
 		});
 
+		Project.Utils.bindIterate(
+			this.$('.cart__item-less'),
+			$field,
+			'minus',
+			function(count) {
+				that.setCountToForm(count);
+				that.countTotalPrice($field);
+				that.$el.trigger('totalPriceRecounted');
+			}
+		);
 
-		this.$('.cart__item-less').click(function() {
-			var count = Project.Utils.changeValue($field, 'minus');
-			that.setCountToForm(count);
-			that.countTotalPrice($field);
-			that.$el.trigger('totalPriceRecounted');
-		});
-		
-		this.$('.cart__item-more').click(function() {
-			var count = Project.Utils.changeValue($field, 'plus');
-			that.setCountToForm(count);
-			// that.$('.cart__input-weight').val($field.val());
-			that.countTotalPrice($field);
-			that.$el.trigger('totalPriceRecounted');
-		});
+		Project.Utils.bindIterate(
+			this.$('.cart__item-more'),
+			$field,
+			'plus',
+			function(count) {
+				that.setCountToForm(count);
+				that.countTotalPrice($field);
+				that.$el.trigger('totalPriceRecounted');
+			}
+		);
 
 		Project.Utils.preventClickSelection(this.$('.cart__item-less, .cart__item-more'));
 
@@ -328,7 +341,7 @@ Project.Blocks.CartItem = Project.extend({
 		var value;
 		if (type === 'weight') {
 			value = Number($field.val()) * 0.001;
-		} 
+		}
 		if (type === 'item') {
 			value = Number($field.val());
 		}
@@ -360,7 +373,7 @@ Project.Blocks.Features = Project.extend({
 			$(this)
 				.on('mouseenter', function() {
 					var $hint = $(this).find('.features__item-hint');
-					
+
 					$hint
 						.show()
 						.css({
@@ -420,4 +433,3 @@ Project.Blocks.FeedbackForm = Project.extend({
 		});
 	}
 });
-

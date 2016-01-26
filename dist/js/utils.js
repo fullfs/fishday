@@ -1,25 +1,64 @@
+Project.Utils.bindIterate = function($el, $field, direction, callback) {
+	var iterate = function() {
+		var quantity = Project.Utils.changeValue($field, direction);
+		if (callback) {
+			callback.call($field[0], quantity);
+		}
+	}
+
+	$el.on('mousedown', function() {
+		if ($el.data('iterator')) {
+			return;
+		}
+		var begin = setTimeout(function(argument) {
+			iterate();
+			$el.data('iterator', setInterval(iterate, 220));
+			$el.data('beginFired', true);
+		}, 350);
+
+		$el.data('begin', begin);
+	});
+	$el.on('mouseup mouseleave', function() {
+		if (!$el.data('begin')) {
+			return;
+		}
+		if (!$el.data('beginFired')) {
+			iterate();
+		}
+
+		clearTimeout($el.data('begin'))
+		clearInterval($el.data('iterator'));
+
+		$el.data('begin', null);
+		$el.data('beginFired', null);
+		$el.data('iterator', null);
+	});
+};
+
+
 Project.Utils.changeValue = function($field, dir) {
 	var value = parseInt($field.val(), 10);
 	var type = $field.data('type');
 	var step = $field.data('step') || 100;
+	var min = $field.data('min') || 0;
 	var quantity;
 
 	if (isNaN(value)) {
-		value = 0;
+		value = min;
 	}
 
 	if (dir == 'minus') {
 		if (type === 'weight') {
-			if (value > step) {
+			if (value > step && value > min) {
 				value -= step;
-			} 
+			}
 			// else {
 			// 	value = 0;
 			// }
 		}
 
 		if (type === 'item') {
-			if (value > 1) {
+			if (value > 1 && value > min) {
 				value -= 1;
 			}
 			//  else {
@@ -32,13 +71,13 @@ Project.Utils.changeValue = function($field, dir) {
 		if (type === 'weight') {
 			if (value < 99999) {
 				value += step;
-			} 
+			}
 		}
 
 		if (type === 'item') {
 			if (value < 99999) {
 				value += 1;
-			} 
+			}
 		}
 	}
 
@@ -47,7 +86,7 @@ Project.Utils.changeValue = function($field, dir) {
 	} else if (type === 'item') {
 		quantity = value;
 	}
-	 
+
 	$field.val(value);
 
 	return quantity;
@@ -124,12 +163,12 @@ Project.Utils.numberToText = function(value) {
 
 
 Project.Utils.formatMoney = function(number, c, d, t){
-var n = number, 
-    c = isNaN(c = Math.abs(c)) ? 2 : c, 
-    d = d == undefined ? "." : d, 
-    t = t == undefined ? "," : t, 
-    s = n < 0 ? "-" : "", 
-    i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "", 
+var n = number,
+    c = isNaN(c = Math.abs(c)) ? 2 : c,
+    d = d == undefined ? "." : d,
+    t = t == undefined ? "," : t,
+    s = n < 0 ? "-" : "",
+    i = parseInt(n = Math.abs(+n || 0).toFixed(c)) + "",
     j = (j = i.length) > 3 ? j % 3 : 0;
    return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
 };

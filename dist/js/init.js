@@ -12,10 +12,10 @@ $(function() {
 	// Форма обратной связи (отзывы)
 	new Project.Blocks.FeedbackForm($('.index-page__post'));
 
-	
+
 	// Контроллеры страниц. По конкроллеру на страницу.
-	// Если переданный элемент найдется на странице, то контроллер инициализируется 
-	// (автовызов метода .init), если нет, то ничего не происходит. 
+	// Если переданный элемент найдется на странице, то контроллер инициализируется
+	// (автовызов метода .init), если нет, то ничего не происходит.
 	// Так что никакого вызова "левого" кода на страницах.
 	new Project.Pages.Cart($('.cart'));
 	new Project.Pages.Main($('.index-page'));
@@ -39,4 +39,21 @@ $(function() {
 		var $item = $(this);
 		new Project.Blocks.OfferItem($item);
 	});
+
+	// Предупредительная модалка
+    var $inConstruction = $('<div></div>');
+    $inConstruction.html('Наш сайт начнет свою работу<br> в конце февраля 2016 г.');
+    $inConstruction.css({
+        padding: '50px 20px 60px 20px',
+        color: '#fff',
+        'text-align': 'center',
+        'font-size': '25px',
+        'line-height': '32px'
+    });
+    var dialog = new Project.Blocks.Dialog($inConstruction, {
+        title: 'Уважаемые посетители!'
+    });
+	if (!localStorage || !localStorage.getItem('hideInConstructionModal')) {
+		dialog.open();
+	}
 });
