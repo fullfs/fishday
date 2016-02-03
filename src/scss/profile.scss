@@ -83,6 +83,15 @@
 	}
 }
 
+.profile__card-hint-img {
+	display: block;
+	background: url('../images/card-num.png');
+	width: 259px;
+	height: 86px;
+	margin-top: 8px;
+	margin-left: 2px;
+}
+
 .profile__address-table {
 	padding: 10px 0 7px 20px;
 	font-family: Arial, sans-serif;
@@ -200,5 +209,5 @@
 		border-bottom: 1px solid #e2630a;
 	}
 
-	
+
 }

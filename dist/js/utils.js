@@ -1,13 +1,13 @@
-Project.Utils.bindIterate = function($el, $field, direction, callback) {
+Project.Utils.bindIterate = function($el, $field, direction, cbIterate, cdFinish) {
 	var iterate = function() {
 		var quantity = Project.Utils.changeValue($field, direction);
-		if (callback) {
-			callback.call($field[0], quantity);
+		if (cbIterate) {
+			cbIterate.call($field[0], quantity);
 		}
 	}
 
-	$el.on('mousedown', function() {
-		if ($el.data('iterator')) {
+	$el.on('mousedown', function(e) {
+		if (e.button !== 0 || $el.data('iterator')) {
 			return;
 		}
 		var begin = setTimeout(function(argument) {
@@ -18,8 +18,8 @@ Project.Utils.bindIterate = function($el, $field, direction, callback) {
 
 		$el.data('begin', begin);
 	});
-	$el.on('mouseup mouseleave', function() {
-		if (!$el.data('begin')) {
+	$el.on('mouseup mouseleave', function(e) {
+		if (e.button !== 0 || !$el.data('begin')) {
 			return;
 		}
 		if (!$el.data('beginFired')) {
@@ -32,6 +32,10 @@ Project.Utils.bindIterate = function($el, $field, direction, callback) {
 		$el.data('begin', null);
 		$el.data('beginFired', null);
 		$el.data('iterator', null);
+
+		if (cdFinish) {
+			cdFinish.call($field[0]);
+		}
 	});
 };
 
@@ -92,6 +96,15 @@ Project.Utils.changeValue = function($field, dir) {
 	return quantity;
 };
 
+Project.Utils.updateDataQuantity = function($el, value) {
+	// обновляем сам атрибут исключительно в визуально-отслеживательных целях.
+	// на самом деле достаточно следующей строчки
+	$el.attr('data-product-quantity', value);
+	$el.data('product-quantity', value);
+};
+
+
+
 Project.Utils.addToCart = function(data, valueData) {
 	if (!data) {
 		/* debug */
@@ -130,11 +143,17 @@ Project.Utils.addToCart = function(data, valueData) {
 		return;
 	}
 
-	$('body').trigger('addedToCart', offer);
+	// $('body').trigger('addedToCart', offer);
 };
 
 
-Project.Utils.modifyMiniCart = function(productData) {
+Project.Utils.modifyMiniCart = function($el) {
+	var productData = {
+		productId: $el.data('product-id'),
+		quantity: $el.data("product-quantity"),
+		action: 'add'
+	};
+
     $.ajax({
         type: 'post',
         url: '/include/ajax/add2basket.php',

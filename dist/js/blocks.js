@@ -123,15 +123,16 @@ Project.Blocks.OfferItem = Project.extend({
 		var $field = this.$('.offer-item__field');
 		$field.numeric();
 
+		// Задаём стартовое значение для data-product-quantity
+		var qua = Project.Utils.changeValue($field);
+		Project.Utils.updateDataQuantity($target, qua);
+
 		Project.Utils.bindIterate(
 			this.$('.offer-item__less'),
 			$field,
 			'minus',
 			function(quantity) {
-				// обновляем сам атрибут исключительно в визуально-отслеживательных целях.
-				// на самом деле достаточно следующей строчки
-				$target.attr('data-product-quantity', quantity);
-				$target.data('product-quantity', quantity);
+				Project.Utils.updateDataQuantity($target, quantity);
 			}
 		);
 
@@ -140,23 +141,14 @@ Project.Blocks.OfferItem = Project.extend({
 			$field,
 			'plus',
 			function(quantity) {
-				// обновляем сам атрибут исключительно в визуально-отслеживательных целях.
-				// на самом деле достаточно следующей строчки
-				$target.attr('data-product-quantity', quantity);
-				$target.data('product-quantity', quantity);
+				Project.Utils.updateDataQuantity($target, quantity);
 			}
 		);
 
 		Project.Utils.preventClickSelection(this.$('.offer-item__less, .offer-item__more'));
 
 		this.$('.offer-item__cart').click(function() {
-	        var productData = {
-	            productId: $target.data('product-id'),
-	            quantity: $target.data('product-quantity'),
-	            action: 'add'
-	        };
-
-	        Project.Utils.modifyMiniCart(productData);
+			Project.Utils.modifyMiniCart($target);
 		});
 	}
 });
@@ -263,11 +255,16 @@ Project.Blocks.Cart = Project.extend({
 Project.Blocks.CartItem = Project.extend({
 	init: function() {
 		var that = this;
+		var $target = this.$el;
 
-		this.$el.data('widget', this)
+		$target.data('widget', this);
 
 		var $field = this.$('.cart__item-field');
 		$field.numeric();
+
+		// Задаём стартовое значение для data-product-quantity
+		var qua = Project.Utils.changeValue($field);
+		Project.Utils.updateDataQuantity($target, qua);
 
 		$field.on('keyup', function(e) {
 			if (e.keyCode == 13) {
@@ -278,26 +275,30 @@ Project.Blocks.CartItem = Project.extend({
 			that.$el.trigger('totalPriceRecounted');
 		});
 
+
+		var bitChange = function(count) {
+			that.setCountToForm(count);
+			that.countTotalPrice($field);
+			that.$el.trigger('totalPriceRecounted');
+		}
+		var finishChange = function() {
+			Project.Utils.modifyMiniCart($target);
+		};
+
 		Project.Utils.bindIterate(
 			this.$('.cart__item-less'),
 			$field,
 			'minus',
-			function(count) {
-				that.setCountToForm(count);
-				that.countTotalPrice($field);
-				that.$el.trigger('totalPriceRecounted');
-			}
+			bitChange,
+			finishChange
 		);
 
 		Project.Utils.bindIterate(
 			this.$('.cart__item-more'),
 			$field,
 			'plus',
-			function(count) {
-				that.setCountToForm(count);
-				that.countTotalPrice($field);
-				that.$el.trigger('totalPriceRecounted');
-			}
+			bitChange,
+			finishChange
 		);
 
 		Project.Utils.preventClickSelection(this.$('.cart__item-less, .cart__item-more'));
@@ -315,15 +316,7 @@ Project.Blocks.CartItem = Project.extend({
 
 	setCountToForm: function(quantity) {
 		this.$('.cart__item-form').find('input[name*="QUANTITY_"][type="hidden"]').val(quantity);
-		this.$el.attr('data-product-quantity', quantity);
-		this.$el.data('product-quantity', quantity);
-
-        var productData = {
-            productId: this.$el.data('product-id'),
-            quantity: this.$el.data('product-quantity'),
-            action: 'add'
-        };
-        Project.Utils.modifyMiniCart(productData);
+		Project.Utils.updateDataQuantity(this.$el, quantity);
 	},
 
 	countTotalPrice: function($field) {
@@ -332,7 +325,7 @@ Project.Blocks.CartItem = Project.extend({
 		var secondaryDigits = Number( $price.find('.cart__item-tenth').text() );
 		var type = $field.data('type');
 
-		for (var i = 0, l = String(secondaryDigits).length ; i < l; i++) {
+		for (var i = 0, l = String(secondaryDigits).length; i < l; i++) {
 			secondaryDigits = secondaryDigits * 0.1;
 		}
 

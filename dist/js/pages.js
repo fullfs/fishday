@@ -66,13 +66,7 @@ Project.Pages.OfferCard = Project.extend({
 		var $target = this.$el;
 
 		this.$('.goods__add-butt').click(function () {
-	        var productData = {
-	            productId: $target.data('product-id'),
-	            quantity: $target.data("product-quantity"),
-	            action: 'add'
-	        };
-
-	        Project.Utils.modifyMiniCart(productData);
+	        Project.Utils.modifyMiniCart($target);
 	    });
 
 
@@ -80,15 +74,16 @@ Project.Pages.OfferCard = Project.extend({
 		var $field = this.$('.goods__add-field');
 		$field.numeric();
 
+		// Задаём стартовое значение для data-product-quantity
+		var qua = Project.Utils.changeValue($field);
+		Project.Utils.updateDataQuantity($target, qua);
+
 		Project.Utils.bindIterate(
 			this.$('.goods__add-less'),
 			$field,
 			'minus',
 			function(quantity) {
-				// обновляем сам атрибут исключительно в визуально-отслеживательных целях.
-				// на самом деле достаточно следующей строчки
-				$target.attr('data-product-quantity', quantity);
-				$target.data('product-quantity', quantity);
+				Project.Utils.updateDataQuantity($target, quantity);
 			}
 		);
 
@@ -97,10 +92,7 @@ Project.Pages.OfferCard = Project.extend({
 			$field,
 			'plus',
 			function(quantity) {
-				// обновляем сам атрибут исключительно в визуально-отслеживательных целях.
-				// на самом деле достаточно следующей строчки
-				$target.attr('data-product-quantity', quantity);
-				$target.data('product-quantity', quantity);
+				Project.Utils.updateDataQuantity($target, quantity);
 			}
 		);
 

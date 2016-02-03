@@ -49,6 +49,15 @@
 	position: relative;
 }
 
+.signin__card-hint-img {
+	display: block;
+	background: url('../images/card-num.png');
+	width: 259px;
+	height: 86px;
+	margin-top: 8px;
+	margin-left: 2px;
+}
+
 .signin__field-name {
 	font-size: 18px;
 	color: #cecece;
