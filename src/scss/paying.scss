@@ -140,34 +140,27 @@
 	vertical-align: top;
 }
 
-.paying__size._med {
-
+.paying__size._min {
 	margin-left: 20px;
 	margin-right: 70px;
 
-	& .paying__size-bg {
-		background: url('../images/round-y.png');
-	}
-
-}
-
-.paying__size._min {
-
-	margin-right: 70px;
-
-	& .paying__size-bg {
+	.paying__size-bg {
 		background: url('../images/round-g.png');
 	}
+}
 
-	& .paying__size-text {
-		font-size: 14px;
+.paying__size._med {
+	margin-right: 70px;
+
+	.paying__size-bg {
+		background: url('../images/round-y.png');
 	}
 
 }
 
 .paying__size._max {
 
-	& .paying__size-bg {
+	.paying__size-bg {
 		background: url('../images/round-r.png');
 	}
 
@@ -280,7 +273,7 @@
 	&._cash {
 		width: 48px;
 		height: 42px;
-		background: url('../images/feature2.png');	
+		background: url('../images/feature2.png');
 		margin-left: 32px;
 		margin-top: 20px;
 	}
@@ -322,10 +315,10 @@
 	font-size: 20px;
 	cursor: pointer;
 
-	&:hover {   
+	&:hover {
 		color: #de960a;
 		border: 0;
-	} 
+	}
 }
 
 .paying__condition-text-wrapper {
